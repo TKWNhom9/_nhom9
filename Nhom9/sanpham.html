@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm - Matcha Drink Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="ad-banner">
+            <marquee>Nhập mã MATSUYANF để nhận ưu đãi 50K cho đơn hàng trên 200k!</marquee>
+        </div>
+        <nav class="navbar">
+            <div class="navbar-left">
+                <div class="logo">
+                    <img src="images/logo2.jpg" alt="Logo Matsuya">    
+                </div>   
+                <ul class="navigation">
+                    <li><a href="trangchu.html">TRANG CHỦ</a></li>
+                    <li><a href="#">GIỚI THIỆU</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">SẢN PHẨM</a>
+                        <div class="dropdown-content">
+                            <a href="#" onclick="showProducts('matcha', event)">Trà Matcha</a>
+                            <a href="#" onclick="showProducts('houjicha', event)">Trà Houjicha</a>
+                            <a href="#" onclick="showProducts('banh', event)">Bánh Matcha</a>
+                            <a href="#" onclick="showProducts('bot', event)">Bột Matcha</a>
+                            <a href="#" onclick="showProducts('dungcu', event)">Dụng cụ</a>
+                        </div>
+                    </li>            
+                    <li><a href="#">TIN TỨC</a></li>
+                    <li><a href="#">LIÊN HỆ</a></li>
+                    <li><a href="#">KHÁC</a></li>
+                </ul>
+            </div>
+    
+            <div class="navbar-right">
+               
+                <form action="/search" method="get" class="search-container">
+                    <button class="btn" type="button" onclick="toggleSearch()">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <input class="input" type="text" name="query" placeholder="Tìm kiếm..." />
+                </form>
+             <div class="icon-bar">
+                    <button class="icon-button">
+                      <img src="images/giohang.png" alt="User" class="icon-img">
+                    </button>
+                    <button class="icon-button">
+                      <img src="images/yeuthich.png" alt="Cart" class="icon-img">
+                    </button>
+                    <button class="icon-button">
+                        <img src="images/tk.png" alt="Cart" class="icon-img">
+                      </button>
+                  </div>
+            </div>
+        </nav>
+    </header>
+<!--điều hướng-->
+   
+ 
+
+<!-- Tabs danh mục -->
+<!-- Tabs danh mục -->
+<div class="category-tabs">
+    <div class="category-tab active" onclick="showProducts('matcha', event)">Trà Matcha</div>
+    <div class="category-tab" onclick="showProducts('houjicha', event)">Trà Houjicha</div>
+    <div class="category-tab" onclick="showProducts('banh', event)">Bánh Matcha</div>
+    <div class="category-tab" onclick="showProducts('bot', event)">Bột Matcha</div>
+    <div class="category-tab" onclick="showProducts('dungcu', event)">Dụng cụ pha</div>
+</div>
+
+
+<!-- Danh sách sản phẩm -->
+<div id="matcha" class="products active">
+    <div class="product-item">
+        <img src="images/matcha/latte.jpg" alt="Matcha Latte">
+        <div class="product-name">Matcha Latte</div>
+        <div class="product-price">65.000đ</div>
+    </div>
+    <div class="product-item">
+        <img src="images/matcha/dau.jpg" alt="Matcha Macchiato">
+        <div class="product-name">Matcha Latte Dâu</div>
+        <div class="product-price">70.000đ</div>
+    </div>
+    <div class="product-item">
+        <img src="images/matcha/coco.jpg" alt="Matcha Đá Xay">
+        <div class="product-name">Coco Matcha</div>
+        <div class="product-price">75.000đ</div>
+    </div>
+    <div class="product-item">
+        <img src="images/matcha/daxay.jpg" alt="Matcha Milk Tea">
+        <div class="product-name">Matcha Đá xay</div>
+        <div class="product-price">55.000đ</div>
+    </div>
+    <div class="product-item">
+        <img src="images/matcha/daudo.jpg" alt="Cold Brew Matcha">
+        <div class="product-name">Matcha Đậu đỏ</div>
+        <div class="product-price">60.000đ</div>
+    </div>
+    <div class="product-item">
+        <img src="images/matcha/.jpg" alt="Matcha Yogurt">
+        <div class="product-name">Matcha ....</div>
+        <div class="product-price">68.000đ</div>
+    </div>
+    <div class="product-item">
+        <img src="images/matcha/cotcoco.jpg" alt="Matcha Espresso Fusion">
+        <div class="product-name">Matcha cốt dừa</div>
+        <div class="product-price">72.000đ</div>
+    </div>
+    <div class="product-item">
+        <img src="images/matcha/xoai.jpg" alt="Matcha Truyền Thống">
+        <div class="product-name">Matcha Xoài</div>
+        <div class="product-price">50.000đ</div>
+    </div>
+    <div class="product-item">
+        <img src="images/matcha/americano.jpg" alt="Matcha Kem Tươi">
+        <div class="product-name">Matcha Americano</div>
+        <div class="product-price">70.000đ</div>
+    </div>
+</div>
+
+
+<div id="houjicha" class="products">
+    <div class="product-item">
+        <img src="images/houji.jpg" alt="Houjicha Latte">
+        <div class="product-name">Houjicha Chiato</div>
+        <div class="product-price">65.000đ</div>
+    </div>
+    <div class="product-item">
+        <img src="images/houjilatte.jpg" alt="Houjicha Cold Brew">
+        <div class="product-name">Houjicha Latte</div>
+        <div class="product-price">62.000đ</div>
+    </div>
+</div>
+
+
+<div id="banh" class="products">
+    <div class="product-item">
+        <img src="images/banhkem.jpg" alt="Bánh Matcha Cheesecake">
+        <div class="product-name">Matcha Tiramisu</div>
+        <div class="product-price">45.000đ</div>
+    </div>
+    <div class="product-item">
+        <img src="images/cookie.jpg" alt="Bánh Matcha Tiramisu">
+        <div class="product-name">Matcha Cookie</div>
+        <div class="product-price">50.000đ</div>
+    </div>
+    <div class="product-item">
+        <img src="images/cupcake.jpg" alt="Bánh Brownie Matcha">
+        <div class="product-name">Muffin Matcha</div>
+        <div class="product-price">40.000đ</div>
+    </div>
+    <div class="product-item">
+        <img src="images/cupcakekem.jpg" alt="Bánh Pancake Matcha">
+        <div class="product-name">Cupcake Matcha</div>
+        <div class="product-price">48.000đ</div>
+    </div>
+    <div class="product-item">
+        <img src="images/crepe.jpg" alt="Bánh Roll Matcha">
+        <div class="product-name">Crepe Matcha</div>
+        <div class="product-price">42.000đ</div>
+    </div>
+    <div class="product-item">
+        <img src="images/mochi.jpg" alt="Bánh Lava Matcha">
+        <div class="product-name">Mochi matcha chấm sữa</div>
+        <div class="product-price">55.000đ</div>
+    </div>
+    <div class="product-item">
+        <img src="images/macaron.jpg" alt="Bánh Soufflé Matcha">
+        <div class="product-name">Macaron Matcha</div>
+        <div class="product-price">53.000đ</div>
+    </div>
+    <div class="product-item">
+        <img src="images/mochikem.jpg" alt="Bánh Mochi Matcha">
+        <div class="product-name">Matcha mochi kem lạnh</div>
+        <div class="product-price">35.000đ</div>
+    </div>
+    <div class="product-item">
+        <img src="images/banh9.jpg" alt="Bánh Madeleine Matcha">
+        <div class="product-name">Madeleine Matcha</div>
+        <div class="product-price">38.000đ</div>
+    </div>
+</div>
+
+<div id="bot" class="products">
+    <div class="product-item">
+        <img src="images/botharu.jpg" alt="Bột Matcha Premium">
+        <div class="product-name">Bột Matcha Haru</div>
+        <div class="product-price">200.000đ</div>
+    </div>
+    <div class="product-item">
+        <img src="images/botuji.jpg" alt="Bột Matcha Culinary">
+        <div class="product-name">Bột Matcha Uji</div>
+        <div class="product-price">150.000đ</div>
+    </div>
+    <div class="product-item">
+        <img src="images/bot3.jpg" alt="Bột Matcha Ceremonial">
+        <div class="product-name">Bột Matcha Ceremonial</div>
+        <div class="product-price">250.000đ</div>
+    </div>
+    <div class="product-item">
+        <img src="images/bot4.jpg" alt="Bột Matcha Đặc Biệt">
+        <div class="product-name">Bột Matcha Đặc Biệt</div>
+        <div class="product-price">300.000đ</div>
+    </div>
+</div>
+
+
+<div id="dungcu" class="products">
+    <div class="product-item">
+        <img src="images/chasen.jpg" alt="Chasen (cây đánh trà)">
+        <div class="product-name">Chasen - Cây đánh trà</div>
+        <div class="product-price">150.000đ</div>
+    </div>
+    <div class="product-item">
+        <img src="images/chawan.jpg" alt="Chawan (bát trà)">
+        <div class="product-name">Chawan - Bát trà</div>
+        <div class="product-price">250.000đ</div>
+    </div>
+    <div class="product-item">
+        <img src="images/set.jpg" alt="Chashaku (muỗng tre)">
+        <div class="product-name">Bộ dụng cụ pha trà</div>
+        <div class="product-price">100.000đ</div>
+    </div>
+</div>
+
+
+  
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+    var category = localStorage.getItem('selectedCategory'); // Lấy danh mục từ localStorage
+    if (category) {
+        showProducts(category); // Gọi hàm để hiển thị danh mục
+        localStorage.removeItem('selectedCategory'); // Xóa danh mục sau khi sử dụng
+    }
+});
+
+function showProducts(category) {
+    var tabs = document.querySelectorAll('.products');
+    tabs.forEach(tab => tab.classList.remove('active')); // Ẩn tất cả danh mục
+
+    var categoryTabs = document.querySelectorAll('.category-tab');
+    categoryTabs.forEach(tab => tab.classList.remove('active')); // Ẩn tất cả các tab
+
+    // Hiển thị danh mục sản phẩm tương ứng
+    document.getElementById(category).classList.add('active');
+
+    // Cập nhật tiêu đề danh mục
+    const categoryName = category.charAt(0).toUpperCase() + category.slice(1).replace(/_/g, ' ');
+    const categoryHeader = document.querySelector('.category-header');
+    categoryHeader.textContent = categoryName; // Cập nhật tiêu đề
+
+    // Thêm class active cho tab hiện tại
+    const activeTab = Array.from(categoryTabs).find(tab => tab.textContent.trim().toLowerCase() === category);
+    if (activeTab) {
+        activeTab.classList.add('active'); // Thêm class active cho tab hiện tại
+    }
+}
+</script>
+
+
+</body>
+</html>

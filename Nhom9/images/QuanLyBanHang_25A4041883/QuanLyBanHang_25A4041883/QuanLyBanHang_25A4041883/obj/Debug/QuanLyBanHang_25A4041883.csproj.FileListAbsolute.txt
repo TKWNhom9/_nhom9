@@ -1,0 +1,10 @@
+E:\Ngọc\QuanLyBanHang_25A4041883\QuanLyBanHang_25A4041883\bin\Debug\QuanLyBanHang_25A4041883.exe.config
+E:\Ngọc\QuanLyBanHang_25A4041883\QuanLyBanHang_25A4041883\bin\Debug\QuanLyBanHang_25A4041883.exe
+E:\Ngọc\QuanLyBanHang_25A4041883\QuanLyBanHang_25A4041883\bin\Debug\QuanLyBanHang_25A4041883.pdb
+E:\Ngọc\QuanLyBanHang_25A4041883\QuanLyBanHang_25A4041883\obj\Debug\QuanLyBanHang_25A4041883.csproj.AssemblyReference.cache
+E:\Ngọc\QuanLyBanHang_25A4041883\QuanLyBanHang_25A4041883\obj\Debug\QuanLyBanHang_25A4041883.Form1.resources
+E:\Ngọc\QuanLyBanHang_25A4041883\QuanLyBanHang_25A4041883\obj\Debug\QuanLyBanHang_25A4041883.Properties.Resources.resources
+E:\Ngọc\QuanLyBanHang_25A4041883\QuanLyBanHang_25A4041883\obj\Debug\QuanLyBanHang_25A4041883.csproj.GenerateResource.cache
+E:\Ngọc\QuanLyBanHang_25A4041883\QuanLyBanHang_25A4041883\obj\Debug\QuanLyBanHang_25A4041883.csproj.CoreCompileInputs.cache
+E:\Ngọc\QuanLyBanHang_25A4041883\QuanLyBanHang_25A4041883\obj\Debug\QuanLyBanHang_25A4041883.exe
+E:\Ngọc\QuanLyBanHang_25A4041883\QuanLyBanHang_25A4041883\obj\Debug\QuanLyBanHang_25A4041883.pdb
