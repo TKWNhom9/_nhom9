@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chi tiết sản phẩm - Matcha Chuối</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Container chính */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        /* Chi tiết sản phẩm */
+        .product-detail {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .left-column {
+            flex: 1;
+            display: flex;
+            justify-content: center; /* Căn giữa ảnh */
+        }
+
+        .main-image {
+            width: 90%; /* Tăng chiều rộng hình ảnh */
+            max-width: 400px; /* Đặt kích thước tối đa lớn hơn */
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .thumbnail-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+            .thumbnail-container img {
+                width: 60px;
+                height: 60px;
+                border-radius: 6px;
+                cursor: pointer;
+                border: 1px solid #aaa;
+            }
+
+        .right-column {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        /* Tiêu đề sản phẩm */
+        .product-title {
+            font-size: 28px;
+            color: #2a4421;
+            font-weight: bold;
+        }
+
+        /* Giá sản phẩm */
+        .product-price {
+            font-size: 22px;
+            color: #f294aa;
+            margin: 10px 0;
+        }
+
+        /* Tùy chọn */
+        .options {
+            margin: 15px 0;
+        }
+
+            .options label {
+                display: block;
+                margin-bottom: 8px;
+                font-size: 16px;
+                color: #065f46;
+            }
+
+        .option-icon {
+            width: 28px; /* Kích thước biểu tượng nhỏ hơn */
+            height: 20px;
+            margin-right: 5px; /* Khoảng cách giữa biểu tượng và text */
+        }
+
+        /* Hộp số lượng */
+        .quantity-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .quantity-label {
+            font-weight: bold;
+            color: #2a4421;
+            font-size: 16px;
+            min-width: 90px; /* Giữ độ rộng ổn định */
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            overflow: hidden;
+            height: 35px;
+        }
+
+            .quantity-control input {
+                width: 40px;
+                text-align: center;
+                border: none;
+                font-size: 16px;
+                background-color: #f3fffc;
+                color: #2a4421;
+            }
+
+            .quantity-control button {
+                width: 35px;
+                height: 100%;
+                background-color: #f3fffc;
+                border: 1px solid #ccc;
+                font-size: 18px;
+                font-weight: bold;
+                color: #2a4421;
+                cursor: pointer;
+                transition: all 0.2s ease;
+            }
+
+                .quantity-control button:hover {
+                    background-color: #065f46;
+                    color: white;
+                    border-color: #065f46;
+                }
+
+
+
+
+        /* Nút bấm */
+        .product-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .btn {
+            font-family: monospace, sans-serif; /* Đồng bộ với body */
+            padding: 14px 22px;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border: 2px solid #1C643F;
+        }
+
+        /* Nút Thêm giỏ hàng: trắng, hover xanh lá đậm */
+
+
+        /* Nút Mua ngay: nền xanh lá đậm, chữ trắng → hover nền hồng, chữ trắng */
+        .btn-add-to-cart,
+        .btn-buy-now {
+            background-color: #1C643F;
+            color: white;
+            padding: 15px 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+            .btn-add-to-cart:hover,
+            .btn-buy-now:hover {
+                background-color: #FFB6C1; /* hồng như ảnh */
+                color: white;
+            }
+        /* Tabs */
+        .custom-tab-wrapper {
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 40px;
+            font-family: sans-serif;
+        }
+
+        .custom-tab-buttons {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .tab-btn {
+            font-family: monospace, sans-serif; /* Đồng bộ với body */
+            font-size: 16px; /* Nhỏ hơn 1 chút cho nhẹ nhàng hơn */
+            font-weight: 600; /* Đậm vừa phải, tránh nặng nề */
+            padding: 10px 16px;
+            color: #2a4421;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-bottom: none;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+            .tab-btn.active {
+                background-color: #065f46;
+                color: white;
+                border-color: #065f46;
+            }
+
+
+            .tab-btn:not(:last-child) {
+                margin-right: 4px;
+            }
+
+        .custom-tab-content {
+            display: none;
+            border: 1px solid #ddd;
+            border-radius: 0 0 8px 8px;
+            padding: 20px;
+            background-color: #fff;
+            font-size: 16px;
+            font-family: monospace, sans-serif;
+            color: #222;
+        }
+
+            .custom-tab-content.active {
+                display: block;
+            }
+
+
+        /* Sản phẩm tương tự */
+        /* Font Awesome icon */
+       
+        .suggested-products {
+            padding: 50px 20px;
+            background-color: #f1fcf3;
+            text-align: center;
+            margin-top: 40px; /* tạo khoảng cách với phần tiếp theo */
+        }
+
+
+            .suggested-products h2 {
+                font-size: 28px;
+                margin-bottom: 20px;
+                color: #2e7d32;
+            }
+
+        .scroll-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scroll-wrapper {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 10px 10px 30px 10px;
+        }
+
+            .scroll-wrapper::-webkit-scrollbar {
+                display: none; /* Ẩn thanh cuộn mặc định */
+            }
+
+        .suggested-product {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 16px;
+            width: 220px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+            .suggested-product:hover {
+                transform: translateY(-5px);
+            }
+
+            .suggested-product img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 8px;
+                margin-bottom: 10px;
+            }
+
+            .suggested-product h3 {
+                font-size: 18px;
+                margin: 5px 0;
+                color: #004714;
+            }
+
+            .suggested-product p {
+                color: #f294aa;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+
+        .btn-buy {
+            background-color: #fcd8dd;
+            color: #000;
+            font-weight: bold;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+            .btn-buy:hover {
+                background-color: #fcb5c1;
+            }
+
+        .scroll-btn {
+            position: absolute;
+            top: 45%;
+            transform: translateY(-50%);
+            background-color: #fce4ec;
+            border: none;
+            font-size: 24px;
+            color: #165132;
+            cursor: pointer;
+            padding: 10px 12px;
+            border-radius: 50%;
+            z-index: 10;
+        }
+
+            .scroll-btn.left {
+                left: 5px;
+            }
+
+            .scroll-btn.right {
+                right: 5px;
+            }
+
+
+        /* dau trang*/
+        .breadcrumb-container {
+            margin-top: 40px; /* Dịch xuống dưới */
+            margin-left: 30px; /* Dịch vào bên trong (trái) */
+            margin-bottom: 10px; /* Khoảng cách phía dưới */
+        }
+
+
+        .breadcrumb {
+            font-family: monospace, sans-serif;
+            font-size: 16px;
+            color: #333;
+        }
+
+            .breadcrumb a {
+                color: #333;
+                text-decoration: none;
+                transition: color 0.2s;
+            }
+
+                .breadcrumb a:hover {
+                    color: #1C643F; /* màu xanh matcha */
+                }
+
+            .breadcrumb .current {
+                color: #FFB6C1; /* đỏ cho mục hiện tại */
+            }
+    </style>
+
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="ad-banner">
+            <marquee>Nhập mã MATSUYANF để nhận ưu đãi 50K cho đơn hàng trên 200k!</marquee>
+        </div>
+        <nav class="navbar">
+            <div class="navbar-left">
+                <div class="logo">
+                    <img src="images/logo2.jpg" alt="Logo Matsuya">
+                </div>
+                <ul class="navigation">
+                    <li><a href="index.html">TRANG CHỦ</a></li>
+                    <li><a href="#">GIỚI THIỆU</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">SẢN PHẨM</a>
+                        <div class="dropdown-content">
+                            <a href="#" onclick="showProducts('matcha', event)">Trà Matcha</a>
+                            <a href="#" onclick="showProducts('houjicha', event)">Trà Houjicha</a>
+                            <a href="#" onclick="showProducts('banh', event)">Bánh Matcha</a>
+                            <a href="#" onclick="showProducts('bot', event)">Bột Matcha</a>
+                            <a href="#" onclick="showProducts('dungcu', event)">Dụng cụ</a>
+                        </div>
+                    </li>
+                    <li><a href="#">TIN TỨC</a></li>
+                    <li><a href="#">LIÊN HỆ</a></li>
+                    <li><a href="#">KHÁC</a></li>
+                </ul>
+            </div>
+
+            <div class="navbar-right">
+
+                <form action="/search" method="get" class="search-container">
+                    <button class="btn" type="button" onclick="toggleSearch()">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <input class="input" type="text" name="query" placeholder="Tìm kiếm..." />
+                </form>
+                <div class="icon-bar">
+                    <button class="icon-button">
+                        <img src="images/giohang.png" alt="User" class="icon-img">
+                    </button>
+                    <button class="icon-button">
+                        <img src="images/yeuthich.png" alt="Cart" class="icon-img">
+                    </button>
+                    <button class="icon-button">
+                        <img src="images/tk.png" alt="Cart" class="icon-img">
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <div class="product-detail">
+            <div class="left-column">
+                <img src="images/coco.jpg" class="main-image" id="mainImage" />
+            </div>
+
+            <div class="right-column">
+                <div class="product-title">Coco matcha</div>
+                <div class="product-price">55.000đ</div>
+                <div class="options">
+                    <p><img src="images/icon.jpg" alt="Giao hàng" class="option-icon"> Giao hàng trong ngày tại nội thành</p>
+                    <p><img src="images/icon1.jpg" alt="Cam kết" class="option-icon"> Cam kết không phẩm màu, không chất bảo quản</p>
+                </div>
+                <div class="quantity-box">
+                    <span class="quantity-label">Số lượng:</span>
+                    <div class="quantity-control">
+                        <button type="button" onclick="decreaseQty()">−</button>
+                        <input type="text" id="qty" value="1" readonly />
+                        <button type="button" onclick="increaseQty()">+</button>
+                    </div>
+                </div>
+
+
+                <div class="product-actions">
+                    <button class="btn btn-add-to-cart">Thêm giỏ hàng</button>
+                    <button class="btn btn-buy-now">Mua ngay</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- TAB -->
+        <div class="product-tabs">
+            <div class="custom-tab-wrapper">
+                <div class="custom-tab-buttons">
+                    <button class="tab-btn active" onclick="showCustomTab(0)">Mô tả</button>
+                    <button class="tab-btn" onclick="showCustomTab(1)">Hướng dẫn đặt hàng</button>
+                </div>
+                <div class="custom-tab-content active">
+                    <p>
+                        <strong>Coco Matcha</strong> là sự kết hợp độc đáo giữa bột matcha thượng hạng từ Nhật Bản và nước dừa tươi mát. Vị chát nhẹ của matcha hòa quyện cùng vị ngọt dịu, thơm béo đặc trưng của dừa, tạo nên một thức uống thanh nhã, mới lạ và đầy lôi cuốn.
+                        <br><br>
+
+                        <strong>Giàu chất chống oxy hóa & khoáng chất</strong>: hỗ trợ làm đẹp da, tăng cường đề kháng.<br>
+                        <strong>Dùng lạnh ngon nhất</strong>: mát lạnh sảng khoái, cực kỳ thích hợp cho những ngày nắng nóng.<br>
+                        <strong>Không phẩm màu – không chất bảo quản</strong>: an toàn tuyệt đối cho sức khỏe.
+                        <br><br>
+
+                        Thức uống phù hợp cho mọi lứa tuổi, đặc biệt lý tưởng cho người theo đuổi lối sống xanh, sạch và lành mạnh mỗi ngày.
+                    </p>
+                </div>
+                <div class="custom-tab-content">
+                    <p>
+                        <strong>Bước 1: Chọn sản phẩm cần mua</strong><br>
+                        Bạn có thể truy cập trang web để tìm và chọn sản phẩm mong muốn qua nhiều cách sau:<br>
+                        – Sử dụng ô tìm kiếm ở phía trên, nhập tên sản phẩm cần mua (có thể tìm theo tên cụ thể, theo hãng sản xuất...). Trang web sẽ cung cấp cho bạn những gợi ý chính xác để chọn lựa.<br><br>
+
+                        <strong>Bước 2: Đặt hàng sản phẩm</strong><br>
+                        Sau khi đã chọn được sản phẩm ưng ý, bạn tiến hành đặt hàng bằng cách:<br>
+                        – Nhấp vào nút <em>MUA NGAY</em> nếu muốn thanh toán toàn bộ số tiền của sản phẩm.<br>
+                        – Điền đầy đủ thông tin theo yêu cầu trên trang web, sau đó chọn hình thức nhận hàng là giao tận nơi hoặc ra siêu thị nhận hàng, chọn cách thanh toán là trả tiền khi nhận hàng hoặc thanh toán trực tuyến (bằng thẻ ATM, VISA, hoặc MasterCard) và hoàn tất việc đặt hàng.<br><br>
+
+                        <strong>Lưu ý:</strong><br>
+                        1. Chúng tôi chỉ chấp nhận đơn hàng khi có đủ thông tin chính xác về địa chỉ và số điện thoại. Sau khi bạn đặt hàng, chúng tôi sẽ liên lạc lại để xác minh thông tin và thỏa thuận thêm nếu cần thiết.<br>
+                        2. Trong một số trường hợp đặc biệt như giá trị đơn hàng quá lớn hoặc thời gian giao hàng vào buổi tối đến địa chỉ khó tiếp cận hoặc có thể gây nguy hiểm, chúng tôi sẽ chủ động liên lạc với quý khách để thống nhất thời gian giao hàng cụ thể.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- SẢN PHẨM TƯƠNG TỰ -->
+        <!-- SẢN PHẨM GỢI Ý -->
+        <section class="suggested-products">
+            <h2>SẢN PHẨM GỢI Ý</h2>
+
+            <div class="scroll-container">
+                <!-- Nút cuộn trái -->
+                <button class="scroll-btn left" onclick="scrollLeft()">&#10094;</button>
+
+                <!-- Danh sách sản phẩm cuộn ngang -->
+                <div class="scroll-wrapper" id="scrollArea">
+                    <div class="suggested-product">
+                        <img src="images/matcha/latte.jpg" alt="Matcha Latte">
+                        <h3>Matcha Latte</h3>
+                        <p>45.000đ</p>
+                        <button class="btn-buy">Mua ngay</button>
+                    </div>
+
+                    <div class="suggested-product">
+                        <img src="images/matcha/dau.jpg" alt="Matcha Dâu">
+                        <h3>Matcha Dâu</h3>
+                        <p>49.000đ</p>
+                        <button class="btn-buy">Mua ngay</button>
+                    </div>
+
+                    <div class="suggested-product">
+                        <img src="images/matcha/xoai.jpg" alt="Matcha Xoài">
+                        <h3>Matcha Xoài</h3>
+                        <p>49.000đ</p>
+                        <button class="btn-buy">Mua ngay</button>
+                    </div>
+
+                    <div class="suggested-product">
+                        <img src="images/houjilatte.jpg" alt="Houjicha Latte">
+                        <h3>Houjicha Latte</h3>
+                        <p>48.000đ</p>
+                        <button class="btn-buy">Mua ngay</button>
+                    </div>
+
+                    <div class="suggested-product">
+                        <img src="images/banhkem.jpg" alt="Bánh Matcha Cheesecake">
+                        <h3>Bánh Matcha Cheesecake</h3>
+                        <p>42.000đ</p>
+                        <button class="btn-buy">Mua ngay</button>
+                    </div>
+
+                    <div class="suggested-product">
+                        <img src="images/mochikem.jpg" alt="Mochi Matcha">
+                        <h3>Mochi Matcha</h3>
+                        <p>49.000đ</p>
+                        <button class="btn-buy">Mua ngay</button>
+                    </div>
+                </div>
+
+                <!-- Nút cuộn phải -->
+                <button class="scroll-btn right" onclick="scrollRight()">&#10095;</button>
+            </div>
+        </section>
+
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="newsletter">
+                <i class="icon-email">✉️</i>
+                <span>Hãy để chúng mình lắng nghe góp ý của cậu!</span>
+            </div>
+            <div class="subscribe">
+                <input type="email" placeholder="Nhập email của bạn">
+                <button>Đăng ký</button>
+            </div>
+        </div>
+
+        <div class="footer-content">
+            <div class="footer-section logo-contact">
+                <img src="images/logo2.jpg" alt="Matsuya Logo" class="logo">
+                <ul>
+                    <li><i class="icon">📍</i> 12 phố Chùa Bộc, phường Quang Trung, quận Đống Đa, Hà Nội</li>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.620803649952!2d105.82537677387555!3d21.007832088499686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac806cfc0845%3A0x3848505bd3b9490f!2zMTIgUC4gQ2jDuWEgQuG7mWMsIFF1YW5nIFRydW5nLCDEkOG7kW5nIMSQYSwgSMOgIE7hu5lpIDEwMDAwMCwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1746035458690!5m2!1sen!2s"
+                                width="300"
+                                height="300"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy">
+                        </iframe>
+
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+                <ul>
+                    <li><i class="icon">📧</i> matsuya2025@gmail.com</li>
+                    <li><i class="icon">📞</i> 0394889183</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>THÔNG TIN</h3>
+                <p>Chính sách bảo mật</p>
+                <p>Chính sách hoàn trả</p>
+                <p>Điều khoản sử dụng</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>GIỜ MỞ CỬA</h4>
+                <p>Từ 9:00 - 21:30 tất cả các ngày trong tuần<br>(bao gồm cả các ngày lễ, ngày Tết).</p>
+                <h4>GÓP Ý, KHIẾU NẠI</h4>
+                <p><i class="icon">📞</i> 1900 6750</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Nút lên đầu trang -->
+    <button onclick="scrollToTop()" id="btnTop" title="Lên đầu trang">↑</button>
+
+
+
+
+    <!-- TAB SCRIPT -->
+    <script>
+        // Tabs cũ
+        function showTab(index) {
+            const tabs = document.querySelectorAll('.tab-content');
+            const buttons = document.querySelectorAll('.tab-buttons button');
+            tabs.forEach(t => t.classList.remove('active'));
+            buttons.forEach(b => b.classList.remove('active'));
+            tabs[index].classList.add('active');
+            buttons[index].classList.add('active');
+        }
+
+        // Tabs chi tiết sản phẩm
+        function showCustomTab(index) {
+            const tabs = document.querySelectorAll('.custom-tab-content');
+            const buttons = document.querySelectorAll('.tab-btn');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            buttons.forEach(btn => btn.classList.remove('active'));
+            tabs[index].classList.add('active');
+            buttons[index].classList.add('active');
+        }
+
+        // Tăng giảm số lượng
+        function increaseQty() {
+            const qtyInput = document.getElementById('qty');
+            let value = parseInt(qtyInput.value);
+            qtyInput.value = value + 1;
+        }
+
+        function decreaseQty() {
+            const qtyInput = document.getElementById('qty');
+            let value = parseInt(qtyInput.value);
+            if (value > 1) {
+                qtyInput.value = value - 1;
+            }
+        }
+
+        // Thanh trượt cuộn ngang (scroll-by)
+        function scrollLeft() {
+            const el = document.getElementById('scrollArea');
+            el.scrollBy({ left: -500, behavior: 'smooth' });
+            console.log('Scroll Left to:', el.scrollLeft - 500);
+        }
+
+        function scrollRight() {
+            const el = document.getElementById('scrollArea');
+            el.scrollBy({ left: 300, behavior: 'smooth' });
+            console.log('Scroll Right to:', el.scrollLeft + 300);
+        }
+
+
+    // Thanh trượt theo index (slide thủ công)
+    document.addEventListener('DOMContentLoaded', () => {
+    let currentIndex = 0;
+    const itemsToShow = 3;
+    const productList = document.querySelector('.product-list');
+    const totalItems = document.querySelectorAll('.product-item').length;
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+
+    function updateSlider() {
+    const offset = -currentIndex * 220;
+    productList.style.transform = `translateX(${offset}px)`;
+    productList.style.transition = 'transform 0.3s ease';
+    }
+
+    if (prevButton && nextButton && productList) {
+    prevButton.addEventListener('click', () => {
+    if (currentIndex > 0) {
+    currentIndex--;
+    updateSlider();
+    }
+    });
+
+    nextButton.addEventListener('click', () => {
+    if (currentIndex < totalItems - itemsToShow) {
+    currentIndex++;
+    updateSlider();
+    }
+    });
+
+    updateSlider();
+    }
+    });
+    </script>
+</body>
+</html>
