@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matcha Drink Store - Đăng nhập</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <div class="ad-banner">
+        <marquee>Nhập mã MATSUYANF để nhận ưu đãi 50K cho đơn hàng trên 200k!</marquee>
+    </div>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.jpg" alt="Logo Matsuya">    
+        </div>   
+        <ul class="navigation">
+            <li><a href="trangchu.html">TRANG CHỦ</a></li>
+            <li><a href="#">GIỚI THIỆU</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">SẢN PHẨM</a>
+                <div class="dropdown-content">
+                    <a href="sanpham.html#matcha" onclick="showProducts('matcha', event)">Trà Matcha</a>
+                    <a href="sanpham.html#houjicha" onclick="showProducts('houjicha', event)">Trà Houjicha</a>
+                    <a href="sanpham.html#banh" onclick="showProducts('banh', event)">Bánh Matcha</a>
+                    <a href="sanpham.html#bot" onclick="showProducts('bot', event)">Bột Matcha</a>
+                    <a href="sanpham.html#dungcu" onclick="showProducts('dungcu', event)">Dụng cụ</a>
+                </div>
+            </li>            
+            <li><a href="#">TIN TỨC</a></li>
+            <li><a href="#">LIÊN HỆ</a></li>
+            <li><a href="#">KHÁC</a></li>
+        </ul>
+
+        <div class="search-container">
+            <input type="text" placeholder="Tìm kiếm..." class="search-input">
+            <button class="search-btn"></button>
+        </div>
+    </nav>
+</header>
+
+<!-- Form Đăng nhập -->
+<main class="login-page">
+    <div class="login-container">
+      <h2>ĐĂNG NHẬP</h2>
+      <p>Nếu bạn chưa có tài khoản, <a href="#" class="register-link">đăng ký tại đây</a></p>
+      <form action="#">
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Mật khẩu" required>
+        <button type="submit">Đăng nhập</button>
+      </form>
+      <a href="#" class="forgot-password">Quên mật khẩu</a>
+    </div>
+  </main>
+  
+
