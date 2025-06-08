@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Xác nhận đơn hàng</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f6f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 25px 30px;
+        }
+        .column p, .column span {
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .column h3 {
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+
+        h2 {
+            color: #1a4d2e;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .thank-you {
+            color: #2d8f45;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .column {
+            flex: 1;
+            min-width: 260px;
+        }
+
+        h3 {
+            color: #1a4d2e;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .order-summary {
+            background: #fafafa;
+            border-radius: 8px;
+            padding: 20px;
+            font-size: 13px;
+        }
+
+        .product-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+            border-bottom: 1px dashed #ddd;
+            padding-bottom: 6px;
+        }
+
+        .product-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+        }
+
+            .product-info img {
+                width: 42px;
+                height: 42px;
+                border-radius: 5px;
+                object-fit: cover;
+            }
+
+        .badge {
+            position: absolute;
+            top: -6px;
+            left: -6px;
+            background-color: #28a745;
+            color: white;
+            font-size: 11px;
+            font-weight: bold;
+            border-radius: 50%;
+            padding: 2px 6px;
+        }
+
+        .total-line {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+
+            .total-line.final {
+                font-weight: bold;
+                font-size: 14px;
+                color: #1a4d2e;
+                border-top: 1px solid #ccc;
+                padding-top: 10px;
+                margin-top: 12px;
+            }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h2>✅ Cảm ơn bạn đã đặt hàng</h2>
+        <p class="thank-you">Chúng tôi đã gửi xác nhận đơn hàng đến email của bạn. Vui lòng kiểm tra hộp thư!</p>
+
+        <div class="row">
+            <div class="column">
+                <h3>Thông tin mua hàng</h3>
+                <p><strong>Họ tên:</strong> <span id="buyerName">...</span></p>
+                <p><strong>Email:</strong> <span id="buyerEmail">...</span></p>
+                <p><strong>Địa chỉ:</strong> <span id="buyerAddress">...</span></p>
+                <p><strong>Thanh toán:</strong> <span id="paymentMethod">...</span></p>
+            </div>
+            <div class="column">
+                <h3>Phương thức giao hàng</h3>
+                <p><strong>Giao đến:</strong> <span id="deliveryAddress">...</span></p>
+                <p><strong>Giao hàng:</strong> <span id="shippingMethod">Giao tận nơi</span></p>
+            </div>
+        </div>
+
+        <div class="order-summary">
+            <h3>Đơn hàng (<span id="totalItems">0</span> sản phẩm)</h3>
+            <div id="orderItems"></div>
+
+            <div class="total-line">
+                <span>Tạm tính:</span>
+                <span id="tamTinh">0đ</span>
+            </div>
+            <div class="total-line">
+                <span>Giảm giá:</span>
+                <span id="giamGia">0đ</span>
+            </div>
+
+            <div class="total-line">
+                <span>Phí vận chuyển:</span>
+                <span id="phiShip">0đ</span>
+            </div>
+            <div class="total-line final">
+                <span>Tổng cộng:</span>
+                <span id="tongCong">0đ</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        // Giả sử dữ liệu từ localStorage (hoặc server)
+            const orderInfo = JSON.parse(localStorage.getItem("orderInfo")) || { };
+            let name = orderInfo.name || "Người dùng";
+            let email = orderInfo.email || "email@example.com";
+            let address = orderInfo.address || "Hà Nội";
+            let payment = orderInfo.paymentMethod || "Chuyển khoản";
+            let shippingFee = parseInt(localStorage.getItem("shippingFee")) || 0;
+            let discount = parseInt(localStorage.getItem("discount")) || 0;
+            let subtotal = parseInt(localStorage.getItem("productTotal")) || 0;
+
+            const order = orderInfo.cart || [];
+
+            document.getElementById("buyerName").textContent = name;
+            document.getElementById("buyerEmail").textContent = email;
+            document.getElementById("buyerAddress").textContent = address;
+            document.getElementById("paymentMethod").textContent = payment;
+            document.getElementById("deliveryAddress").textContent = address;
+
+            let itemContainer = document.getElementById("orderItems");
+            let totalItems = 0;
+            let totalPrice = 0;
+
+        order.forEach(item => {
+                totalItems += item.quantity;
+            totalPrice += item.price * item.quantity;
+            itemContainer.innerHTML += `
+            <div class="product-item">
+                <div class="product-info">
+                    <div style="position: relative;">
+                        <img src="${item.image}" alt="${item.name}">
+                            <span class="badge">${item.quantity}</span>
+                    </div>
+                    ${item.name}
+                </div>
+                <span>${(item.price).toLocaleString()}đ</span>
+            </div>
+            `;
+        });
+
+            document.getElementById("totalItems").textContent = totalItems;
+            document.getElementById("tamTinh").textContent = subtotal.toLocaleString() + "đ";
+
+            // Hiển thị giảm giá (nếu có)
+            const giamGiaEl = document.getElementById("giamGia");
+            if (giamGiaEl) {
+                giamGiaEl.textContent = discount > 0 ? `- ${discount.toLocaleString()}đ` : "0đ";
+        }
+
+            document.getElementById("phiShip").textContent = shippingFee.toLocaleString() + "đ";
+            document.getElementById("tongCong").textContent = (subtotal - discount + shippingFee).toLocaleString() + "đ";
+    </script>
+
+</body>
+</html>

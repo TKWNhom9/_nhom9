@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matcha Drink Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  </head>
+<body>
+
+    <header>
+        <div class="ad-banner">
+            <marquee>Nhập mã MATSUYANF để nhận ưu đãi 50K cho đơn hàng trên 200k!</marquee>
+        </div>
+
+        <nav class="navbar">
+            <div class="navbar-left">
+                <!-- Nút ☰ đưa vào đây -->
+                <button class="menu-toggle" onclick="toggleMenu()">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+
+
+                <div class="logo">
+                    <a href="trangchu.html">
+                        <img src="images/logo2.jpg" alt="Logo Matsuya">
+                    </a>
+                </div>
+                <!-- Thay nút ☰ bằng icon material -->
+
+
+                <ul class="navigation">
+                    <li><a href="trangchu.html">TRANG CHỦ</a></li>
+                    <li><a href="gioithieu.html">GIỚI THIỆU</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">SẢN PHẨM</a>
+                        <div class="dropdown-content">
+                            <a href="tatcasp.html">Tất cả sản phẩm</a>
+                            <a href="matcha.html">Trà Matcha</a>
+                            <a href="houji.html">Trà Houjicha</a>
+                            <a href="banh.html">Bánh Matcha</a>
+                            <a href="bot.html">Bột Matcha</a>
+                            <a href="dungcu.html">Dụng cụ</a>
+                            <a href="combo.html">Combo</a>
+                        </div>
+                    </li>
+                    <li><a href="tintuc.html">TIN TỨC</a></li>
+                    <li><a href="lienhe.html">LIÊN HỆ</a></li>
+                </ul>
+            </div>
+            <div class="navbar-right">
+                <div class="icon-bar">
+                    <button class="icon-button" onclick="window.location.href='giohang.html'">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                    </button>
+
+                    <button class="icon-button" onclick="window.location.href='spyeuthich.html'">
+                        <span class="material-symbols-outlined">favorite</span>
+                    </button>
+                    <button class="icon-button" onclick="window.location.href='login.html'">
+                        <span class="material-symbols-outlined">person</span>
+                    </button>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- Side menu -->
+    <div id="side-menu" class="side-menu">
+        <button class="close-btn" onclick="toggleMenu()">x</button>
+        <nav class="menu-items">
+            <a href="trangchu.html">Trang chủ</a>
+            <a href="gioithieu.html">Giới thiệu</a>
+            <!-- Dropdown sản phẩm -->
+            <a href="#" onclick="toggleDropdown(event)">Sản phẩm ▾</a>
+            <ul class="dropdown-menu" id="product-dropdown">
+                <a href="matcha.html">Trà Matcha</a>
+                <a href="houji.html">Trà Houjicha</a>
+                <a href="banh.html">Bánh Matcha</a>
+                <a href="bot.html">Bột Matcha</a>
+                <a href="dungcu.html">Dụng cụ</a>
+                <a href="combo.html">Combo</a>
+            </ul>
+            <a href="tintuc.html">Tin tức</a>
+            <a href="lienhe.html">Liên hệ</a>
+        </nav>
+    </div>
+
+
+
+    <!-- Script -->
+    <script>
+        function toggleMenu() {
+            document.getElementById("side-menu").classList.toggle("active");
+        }
+    </script>
+
+    <!-- Side menu -->
+    <div id="side-menu" class="side-menu">
+        <button class="close-btn" onclick="toggleMenu()">x</button>
+        <nav class="menu-items">
+            <a href="trangchu.html">Trang chủ</a>
+            <a href="gioithieu.html">Giới thiệu</a>
+            <!-- Dropdown sản phẩm -->
+            <a href="#" onclick="toggleDropdown(event)">Sản phẩm ▾</a>
+            <ul class="dropdown-menu" id="product-dropdown">
+                <a href="matcha.html">Trà Matcha</a>
+                <a href="houji.html">Trà Houjicha</a>
+                <a href="banh.html">Bánh Matcha</a>
+                <a href="bot.html">Bột Matcha</a>
+                <a href="dungcu.html">Dụng cụ</a>
+                <a href="combo.html">Combo</a>
+            </ul>
+            <a href="tintuc.html">Tin tức</a>
+            <a href="lienhe.html">Liên hệ</a>
+        </nav>
+    </div>
+
+
+
+    <!-- Script -->
+    <script>
+        function toggleMenu() {
+            document.getElementById("side-menu").classList.toggle("active");
+        }
+    </script>
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="trangchu.html">Trang chủ</a> /
+            <a href="tintuc.html">Tin tức</a> /
+            <strong>TRÀ DANH CHO BÀ BẦU</strong>
+        </div>
+
+        <div class="main-content">
+            <h1>TRÀ DANH CHO BÀ BẦU</h1>
+            <div class="author-date">Lê Minh Ngọc &nbsp;&nbsp; 13/06/2025</div>
+            <p>
+                Trong giai đoạn mang thai, việc duy trì chế độ dinh dưỡng hợp lý và đủ nước là điều cực kỳ quan trọng để thai nhi phát triển khỏe mạnh. Nhiều mẹ thường lựa chọn các loại trà xanh, matcha bên cạnh nước lọc. Tuy nhiên liệu có bầu uống matcha được không ? Đặc biệt là trong giai đoạn 3 tháng đầu thai kỳ. Liệu thức uống này có an toàn cho cả mẹ và bé ? Hãy cùng tìm hiểu ngay trong bài viết này!
+
+                <img src="images/tinchoban61.jpg" alt="Các loại trà thảo mộc" class="news-image">
+
+                <h2>1. Có bầu uống Matcha được không ?</h2>
+            <p>Trong suốt thai kỳ, các bác sĩ thường khuyên bà bầu hạn chế tiêu thụ các thực phẩm và đồ uống có chứa cafein, bởi cafein có thể ảnh hưởng đến sự phát triển của thai nhi. Các nghiên cứu đã chỉ ra rằng việc tiêu thụ quá nhiều cafein, đặc biệt từ cà phê hoặc trà đen, có thể làm tăng nguy cơ sẩy thai, sinh non, hoặc ảnh hưởng đến sự phát triển của thai nhi. Tuy nhiên, điều này không có nghĩa là bà bầu phải hoàn toàn tránh xa tất cả các thức uống có chứa cafein</p>
+
+            <p>Một điểm quan trọng cần lưu ý là lượng cafein trong matcha - bột trà xanh thấp hơn rất nhiều so với cà phê hay trà đen. Trung bình, 100ml trà matcha chỉ chứa khoảng 30mg cafein. Do đó, nếu mẹ bầu uống khoảng 1-2 ly trà matcha mỗi ngày (tương đương khoảng 330ml), lượng cafein mẹ tiêu thụ sẽ không vượt quá mức an toàn khuyến cáo.</p>
+
+            <p>Việc uống matcha trong suốt thai kỳ đều an toàn, miễn là mẹ bầu tuân thủ một lượng vừa phải. Một số hãng sữa bầu hiện nay còn cho ra các sản phẩm có hương vị matcha, nhằm mang lại một lựa chọn dinh dưỡng mới mẻ và bổ dưỡng cho mẹ bầu. Điều này cho thấy matcha không chỉ an toàn và được xem như một nguồn bổ sung chất chống oxy hóa và dưỡng chất thiết yếu. </p>
+
+            <h2>2. Bầu uống Matcha có tác dụng gì ?</h2>
+            <P><strong>Điều hòa huyết áp:</strong></P>
+            <p>Việc duy trì huyết áp ổn định rất quan trọng trong suốt thai kỳ. Nhiều mẹ bị cao huyết áp có thể phải đối mặt với những biến chứng nghiêm trọng như tiền sản giật. Uống trà Matcha đúng cách có thể giúp mẹ bầu kiểm soát huyết áp và giảm nguy cơ mắc các bệnh lý nguy hiểm trong thai kỳ. </p>
+            <P><strong>Giảm nguy cơ mắc các bệnh mãn tính: </strong></P>
+            <p>Matcha là nguồn cung cấp dồi dào các chất chống oxy hóa, có tác dụng ngăn ngừa nhiều bệnh mãn tính như ung thư, bệnh tim mạch và tiểu đường. Việc uống trà xanh đều đặn giúp bảo vệ sức khỏe của mẹ bầu một cách toàn diện, từ đó hỗ trợ sự phát triển khỏe mạnh của thai nhi.</p>
+
+            <P><strong>Ổn định tâm trạng và giảm căng thẳng: </strong></P>
+
+            <p>Thay đổi nội tiết tố trong thai kỳ khiến mẹ bầu dễ cáu gắt, lo âu và có tâm trạng thất thường. Với hàm lượng L-theanine có thể giúp thư giãn tinh thần, cải thiện tâm trạng và giảm căng thẳng hiệu quả. Đây là một cách tự nhiên giúp mẹ bầu cảm thấy thoải mái hơn trong suốt thai kỳ.</p>
+            <P><strong>Cải thiện sức khỏe hệ miễn dịch:  </strong></P>
+
+            <p>Các chất chống oxy hóa không chỉ giúp tăng cường trao đổi chất mà còn cải thiện hệ miễn dịch, giúp mẹ bầu phòng tránh bệnh tật và duy trì sức khỏe tốt trong suốt thai kỳ.</p>
+
+            <p>Ngoài trà xanh, bà bầu cũng có thể lựa chọn các loại trà thảo mộc để thư giãn tinh thần, cải thiện sức khỏe tiêu hóa, và giảm các triệu chứng khó chịu trong thai kỳ, đặc biệt là trong thời gian bị ốm nghén. Một số loại trà thảo mộc tốt cho mẹ bầu bao gồm:</p>
+            <ul>
+                <li><strong>Trà bạc hà:</strong> Trà bạc hà có tác dụng giảm buồn nôn và giúp cải thiện các triệu chứng ốm nghén. Ngoài ra, trà bạc hà còn giúp thư giãn hệ tiêu hóa, làm dịu cơn đau dạ dày và hỗ trợ giảm đầy hơi.</li>
+                <li><strong>Trà gừng:</strong> Gừng là một loại thảo dược nổi tiếng giúp giảm tình trạng buồn nôn và khó chịu dạ dày trong thai kỳ. Trà gừng có thể giúp mẹ bầu dễ chịu hơn, đặc biệt là trong giai đoạn đầu thai kỳ khi triệu chứng ốm nghén rất phổ biến.</li>
+                <li><strong>Trà hoa cúc:</strong> Trà hoa cúc nổi tiếng với công dụng làm dịu và cải thiện giấc ngủ. Nếu mẹ bầu gặp phải chứng mất ngủ hoặc cảm thấy lo âu, trà hoa cúc có thể là lựa chọn tuyệt vời giúp thư giãn và cải thiện chất lượng giấc ngủ.</li>
+                <li><strong>Trà lá mâm xôi đỏ:</strong> Trà lá mâm xôi đỏ được cho là có tác dụng giúp tăng cường sức khỏe tử cung, đặc biệt là trong những tháng cuối thai kỳ. Trà này giúp làm mềm cơ tử cung và thúc đẩy các cơn co thắt tự nhiên, giúp quá trình chuyển dạ diễn ra thuận lợi hơn.</li>
+            </ul>
+
+            <h2>3. Những lưu ý khi uống Matcha trong thai kỳ</h2>
+            <p>Mặc dù matcha là một thức uống bổ dưỡng và có nhiều lợi ích cho sức khỏe, nhưng để đảm bảo an toàn cho cả mẹ và bé trong thai kỳ, bà bầu cần lưu ý một số điểm quan trọng:</p>
+
+            <p><strong>Không uống khi bụng đói:</strong> Matcha chứa ít tannin hơn các loại trà khác, nhưng nếu bà bầu uống trà khi bụng đói, nó có thể gây ra những triệu chứng khó chịu như buồn nôn, táo bón, hoặc kích ứng dạ dày. Để tránh tình trạng này, mẹ bầu nên uống matcha sau khi đã ăn một bữa nhẹ, giúp bảo vệ dạ dày và cải thiện quá trình tiêu hóa.</p>
+
+            <p><strong>Không uống sau khi ăn:</strong> Có thể làm loãng dịch vị trong dạ dày và ảnh hưởng đến khả năng hấp thụ sắt từ thực phẩm. Điều này có thể dẫn đến tình trạng thiếu sắt, một vấn đề phổ biến ở bà bầu trong thai kỳ. Để tránh tình trạng này, mẹ bầu nên đợi ít nhất 1 giờ sau khi ăn xong trước khi uống trà xanh. Tốt nhất là nên uống matcha sau 2 giờ, khi quá trình tiêu hóa đã ổn định, để trà có thể hỗ trợ tiêu hóa, giảm chất béo thừa và cung cấp năng lượng hiệu quả.</p>
+            <p>
+                Và đừng quên Matsuya - thương hiệu matcha trà xanh chuẩn Nhật uy tín, nơi bạn an tâm chất lượng với giá thành hợp lý. Matsuya chúng tôi hân hạnh là người bạn đồng hành của bạn trong cuộc sống hàng ngày, giúp bạn khỏe hơn, đẹp hơn và sống vui hơn!
+            </p>
+
+        </div> <!-- ✅ Đóng main-content đúng chỗ -->
+
+        <aside class="sidebar">
+            <h3>Tin tức cho bạn</h3>
+            <ul class="news-list">
+
+                <li class="news-item">
+                    <img src="images/tea1.jpg" alt="Matcha" />
+                    <div class="news-text">
+                        <a href="tinchoban1.html">
+                            <p>Giảm cân hiệu quả với trà xanh Matcha</p>
+                        </a>
+                        <span class="time">Vừa xong</span>
+                    </div>
+                </li>
+
+                <li class="news-item">
+                    <img src="images/tea2.jpg" alt="Matcha chống lão hóa" />
+                    <div class="news-text">
+                        <a href="tinchoban2.html">
+                            <p>Matcha chống lão hóa</p>
+                        </a>
+                        <span>5 ngày</span>
+                    </div>
+                </li>
+                <li class="news-item">
+                    <img src="images/tea3.jpg" alt="Nên uống Matcha khi nào" />
+                    <div class="news-text">
+                        <a href="tinchoban3.html">
+                            <p>Nên uống Matcha khi nào</p>
+                        </a>
+                        <span>8 ngày</span>
+                    </div>
+                </li>
+
+                <li class="news-item">
+                    <img src="images/tea4.jpg" alt="Bột trà xanh Matcha Đài Loan kém chất lượng ?" />
+                    <div class="news-text">
+                        <a href="tinchoban4.html">
+                            <p>Bột trà xanh Matcha Đài Loan kém chất lượng ?</p>
+                        </a>
+                        <span>10 ngày</span>
+                    </div>
+                </li>
+
+                <li class="news-item">
+                    <img src="images/tea5.jpg" alt="Trà cho bà bầu" />
+                    <div class="news-text">
+                        <a href="tinchoban5.html">
+                            <p>Trà cho bà bầu</p>
+                        </a>
+                        <span>12 ngày</span>
+                    </div>
+                </li>
+
+                <li class="news-item">
+                    <img src="images/tea6.jpg" alt="Uống trà xanh Matcha bao nhiêu là đủ và uống trà Matcha như thế nào?" />
+                    <div class="news-text">
+                        <a href="tinchoban6.html">
+                            <p>Uống trà xanh Matcha bao nhiêu là đủ và uống trà Matcha như thế nào?</p>
+                        </a>
+                        <span>14 ngày</span>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+    </div>
+
+    <div class="custom-social-section">
+        <div class="line-divider"></div>
+        <div class="custom-social-icons">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://example.com" target="_blank" class="social-icon" title="Chia sẻ Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/intent/tweet?url=https://example.com&text=Check%20this%20out!" target="_blank" class="social-icon" title="Chia sẻ Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="mailto:?subject=Bạn nên xem cái này&body=Hãy xem link này: https://example.com" class="social-icon" title="Gửi email">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://pinterest.com/pin/create/button/?url=https://example.com" target="_blank" class="social-icon" title="Chia sẻ Pinterest">
+                <i class="fab fa-pinterest-p"></i>
+            </a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://example.com" target="_blank" class="social-icon" title="Chia sẻ LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="newsletter">
+                <i class="icon-email">✉️</i>
+                <span>Hãy để chúng mình lắng nghe góp ý của cậu!</span>
+            </div>
+            <form class="subscribe" id="feedbackForm">
+                <input type="text" id="feedbackInput" placeholder="Nhập góp ý của bạn" required>
+                <button type="submit">Gửi</button>
+            </form>
+
+        </div>
+
+        <div class="footer-content">
+            <div class="footer-section logo-contact">
+                <img src="images/logo2.jpg" alt="Matsuya Logo" class="logo">
+                <ul>
+                    <li><i class="icon">📍</i> 12 phố Chùa Bộc, phường Quang Trung, quận Đống Đa, Hà Nội</li>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.620803649952!2d105.82537677387555!3d21.007832088499686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac806cfc0845%3A0x3848505bd3b9490f!2zMTIgUC4gQ2jDuWEgQuG7mWMsIFF1YW5nIFRydW5nLCDEkOG7kW5nIMSQYSwgSMOgIE7hu5lpIDEwMDAwMCwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1746035458690!5m2!1sen!2s"
+                                width="300"
+                                height="300"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy">
+                        </iframe>
+
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+                <ul>
+                    <li><i class="icon">📧</i> matsuya2025@gmail.com</li>
+                    <li><i class="icon">📞</i> 0394889183</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>CHÍNH SÁCH</h3>
+
+                <ul class="policy-list">
+                    <li><i class="fas fa-chevron-right"></i> <a href="chinhsach3.html">Chính sách bán hàng</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="chinhsach1.html">Chính sách thanh toán</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="chinhsach.html">Điều khoản dịch vụ</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="chinhsach2.html">Chính sách bảo mật</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>GIỜ MỞ CỬA</h4>
+                <p>Từ 9:00 - 21:30 tất cả các ngày trong tuần<br>(bao gồm cả các ngày lễ, ngày Tết).</p>
+                <h4>GÓP Ý, KHIẾU NẠI</h4>
+                <p><i class="icon">📞</i> 1900 6750</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("feedbackForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Ngăn form reload trang
+
+
+            const feedback = document.getElementById("feedbackInput").value.trim();
+
+
+            if (feedback === "") {
+                alert("Vui lòng nhập góp ý của bạn.");
+                return;
+            }
+
+
+
+            // Hiển thị alert
+            alert("Cảm ơn bạn đã góp ý: " + feedback);
+
+
+            // Xoá nội dung sau khi gửi
+            document.getElementById("feedbackInput").value = "";
+        });
+    </script>
+</body>
+
+</html>

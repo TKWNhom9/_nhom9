@@ -1,0 +1,285 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chính sách | Matsuya</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body>
+    <style>
+        .breadcrumb {
+            font-size: 14px;
+            font-family: "Segoe UI", sans-serif;
+            color: #777;
+            margin: 12px 0 0 20px;
+        }
+
+            .breadcrumb a {
+                color: #1b5e20;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+            .breadcrumb span {
+                margin: 0 6px;
+                color: #999;
+            }
+
+        .navigation li a {
+            font-family: monospace, sans-serif !important;
+        }
+
+        .policy-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 18px;
+            color: #1b5e20;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        h2 {
+            font-size: 14px;
+            color: #1b5e20;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        p {
+            margin-bottom: 12px;
+            line-height: 1.6;
+            font-size: 14px;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+            ul li {
+                margin-bottom: 8px;
+                font-size: 14px;
+                font-family: "Segoe UI", sans-serif;
+            }
+    </style>
+
+    <!-- Header -->
+    <header>
+        <div class="ad-banner">
+            <marquee>Nhập mã MATSUYANF để nhận ưu đãi 50K cho đơn hàng trên 200k!</marquee>
+        </div>
+
+        <nav class="navbar">
+            <div class="navbar-left">
+                 <!-- Nút ☰ đưa vào đây -->
+              <button class="menu-toggle" onclick="toggleMenu()">
+                <span class="material-symbols-outlined">menu</span>
+              </button>
+
+                <div class="logo">
+                    <img src="images/logo2.jpg" alt="Logo Matsuya">
+                </div>
+
+
+                <ul class="navigation">
+                    <li><a href="trangchu.html">TRANG CHỦ</a></li>
+                    <li><a href="gioithieu.html">GIỚI THIỆU</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">SẢN PHẨM</a>
+                        <div class="dropdown-content">
+                            <a href="tatcasp.html">Tất cả sản phẩm</a>
+                            <a href="matcha.html">Trà Matcha</a>
+                            <a href="houji.html">Trà Houjicha</a>
+                            <a href="banh.html">Bánh Matcha</a>
+                            <a href="bot.html">Bột Matcha</a>
+                            <a href="dungcu.html">Dụng cụ</a>
+                            <a href="combo.html">Combo</a>
+                        </div>
+                    </li>
+                    <li><a href="tintuc.html">TIN TỨC</a></li>
+                    <li><a href="lienhe.html">LIÊN HỆ</a></li>
+                </ul>
+            </div>
+
+            <div class="navbar-right">
+                <div class="icon-bar">
+                    <button class="icon-button" onclick="window.location.href='giohang.html'">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                    </button>
+
+                    <button class="icon-button" onclick="window.location.href='spyeuthich.html'">
+                        <span class="material-symbols-outlined">favorite</span>
+                    </button>
+                    <button class="icon-button" onclick="window.location.href='login.html'">
+                        <span class="material-symbols-outlined">person</span>
+                    </button>
+                </div>
+            </div>
+
+
+        </nav>
+
+
+    </header>
+
+          
+<!-- Side menu -->
+<div id="side-menu" class="side-menu">
+  <button class="close-btn" onclick="toggleMenu()">x</button>
+  <nav class="menu-items">
+    <a href="trangchu.html">Trang chủ</a>
+    <a href="gioithieu.html">Giới thiệu</a>
+    <!-- Dropdown sản phẩm -->
+      <a href="#" onclick="toggleDropdown(event)">Sản phẩm ▾</a>
+      <ul class="dropdown-menu" id="product-dropdown">
+        <a href="matcha.html">Trà Matcha</a>
+        <a href="houji.html">Trà Houjicha</a>
+        <a href="banh.html">Bánh Matcha</a>
+        <a href="bot.html">Bột Matcha</a>
+        <a href="dungcu.html">Dụng cụ</a>
+        <a href="combo.html">Combo</a>
+      </ul>
+    <a href="tintuc.html">Tin tức</a>
+    <a href="lienhe.html">Liên hệ</a>
+  </nav>
+</div>
+
+
+
+<!-- Script -->
+<script>
+function toggleMenu() {
+  document.getElementById("side-menu").classList.toggle("active");
+}
+</script>
+
+<script>
+function toggleDropdown(event) {
+  event.preventDefault();
+  const dropdown = document.getElementById("product-dropdown");
+  dropdown.classList.toggle("show");
+}
+</script>
+
+    <!-- Breadcrumb căn trái hẳn -->
+    <!-- Breadcrumb sát lề trái -->
+    <div class="breadcrumb">
+        <a href="trangchu.html">Trang chủ</a>
+        <span>/</span>
+        <span>Điều khoản dịch vụ</span>
+    </div>
+    <div class="policy-container">
+        <h1>Điều khoản dịch vụ</h1>
+
+        <h2>1. Giới thiệu</h2>
+        <p>Chào mừng quý khách hàng đến với website của chúng tôi.</p>
+        <p>Khi quý khách hàng truy cập vào trang website của chúng tôi có nghĩa là quý khách đồng ý với các điều khoản này. Trang web có quyền thay đổi, chỉnh sửa, thêm hoặc lược bỏ bất kỳ phần nào trong Điều khoản mua bán hàng hóa này, vào bất cứ lúc nào. Các thay đổi có hiệu lực ngay khi được đăng trên trang web mà không cần thông báo trước. Và khi quý khách tiếp tục sử dụng trang web, sau khi các thay đổi về Điều khoản này được đăng tải, có nghĩa là quý khách chấp nhận với những thay đổi đó.</p>
+        <p>Quý khách hàng vui lòng kiểm tra thường xuyên để cập nhật những thay đổi của chúng tôi.</p>
+
+        <h2>2. Hướng dẫn sử dụng website</h2>
+        <p>Khi vào web của chúng tôi, khách hàng phải đảm bảo đủ 18 tuổi, hoặc truy cập dưới sự giám sát của cha mẹ hay người giám hộ hợp pháp. Khách hàng đảm bảo có đầy đủ hành vi dân sự để thực hiện các giao dịch mua bán hàng hóa theo quy định hiện hành của pháp luật Việt Nam.</p>
+        <p>Khi đăng ký tài khoản, quý khách đồng ý nhận các email giới thiệu sản phẩm và chương trình khuyến mãi từ chúng tôi. Nếu không muốn tiếp tục nhận, quý khách có thể hủy đăng ký bằng cách nhấp vào liên kết ở cuối mỗi email.</p>
+
+        <h2>3. Thanh toán an toàn và tiện lợi</h2>
+        <p>Người mua có thể tham khảo các phương thức thanh toán sau đây và lựa chọn áp dụng phương thức phù hợp:</p>
+        <ul>
+            <li><strong>Cách 1:</strong> Thanh toán sau (COD – giao hàng và thu tiền tận nơi)</li>
+            <li><strong>Cách 2:</strong> Thanh toán online qua thẻ tín dụng, chuyển khoản</li>
+        </ul>
+    </div>
+</body>
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-top">
+        <div class="newsletter">
+            <i class="icon-email">✉️</i>
+            <span>Hãy để chúng mình lắng nghe góp ý của cậu!</span>
+        </div>
+        <form class="subscribe" id="feedbackForm">
+            <input type="text" id="feedbackInput" placeholder="Nhập góp ý của bạn" required>
+            <button type="submit">Gửi</button>
+        </form>
+
+    </div>
+
+    <div class="footer-content">
+        <div class="footer-section logo-contact">
+            <img src="images/logo2.jpg" alt="Matsuya Logo" class="logo">
+            <ul>
+                <li><i class="icon">📍</i> 12 phố Chùa Bộc, phường Quang Trung, quận Đống Đa, Hà Nội</li>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.620803649952!2d105.82537677387555!3d21.007832088499686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac806cfc0845%3A0x3848505bd3b9490f!2zMTIgUC4gQ2jDuWEgQuG7mWMsIFF1YW5nIFRydW5nLCDEkOG7kW5nIMSQYSwgSMOgIE7hu5lpIDEwMDAwMCwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1746035458690!5m2!1sen!2s"
+                            width="300"
+                            height="300"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy">
+                    </iframe>
+
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+            <ul>
+                <li><i class="icon">📧</i> matsuya2025@gmail.com</li>
+                <li><i class="icon">📞</i> 0394889183</li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>CHÍNH SÁCH</h3>
+
+            <ul class="policy-list">
+                <li><i class="fas fa-chevron-right"></i> <a href="chinhsach3.html">Chính sách bán hàng</a></li>
+                <li><i class="fas fa-chevron-right"></i> <a href="chinhsach1.html">Chính sách thanh toán</a></li>
+                <li><i class="fas fa-chevron-right"></i> <a href="chinhsach.html">Điều khoản dịch vụ</a></li>
+                <li><i class="fas fa-chevron-right"></i> <a href="chinhsach2.html">Chính sách bảo mật</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>GIỜ MỞ CỬA</h4>
+            <p>Từ 9:00 - 21:30 tất cả các ngày trong tuần<br>(bao gồm cả các ngày lễ, ngày Tết).</p>
+            <h4>GÓP Ý, KHIẾU NẠI</h4>
+            <p><i class="icon">📞</i> 1900 6750</p>
+        </div>
+    </div>
+</footer>
+<script>
+    // Thêm sự kiện để gửi form khi nhấn Enter
+    document.getElementById("feedbackForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Ngăn form reload trang
+
+
+        const feedback = document.getElementById("feedbackInput").value.trim();
+
+
+        if (feedback === "") {
+            alert("Vui lòng nhập góp ý của bạn.");
+            return;
+        }
+
+
+
+        // Hiển thị alert
+        alert("Cảm ơn bạn đã góp ý: " + feedback);
+
+
+        // Xoá nội dung sau khi gửi
+        document.getElementById("feedbackInput").value = "";
+    });
+</script>
+</body>
+</html>

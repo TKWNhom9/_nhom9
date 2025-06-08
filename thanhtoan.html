@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matcha Drink Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #1a4d2e;
+            margin: 0;
+            padding: 0;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 22px;
+            font-weight: 600;
+            margin: 24px 0;
+            color: #1a4d2e;
+        }
+
+        .checkout-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+            max-width: 1080px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+        }
+
+        .checkout-form {
+            background: #ffffff;
+        }
+
+            .checkout-form label {
+                font-weight: 600;
+                font-size: 13px;
+                display: block;
+                margin-bottom: 4px;
+                margin-top: 12px;
+            }
+
+            .checkout-form input,
+            .checkout-form textarea {
+                width: 100%;
+                padding: 8px 10px;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                font-size: 13px;
+                margin-bottom: 8px;
+            }
+        .quantity-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #96cd82; /* ← chỉnh tại đây */
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 12px;
+        }
+
+      
+        .payment-methods {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #fff;
+            font-family: sans-serif;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .payment-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 11px;
+            font-size: 12px;
+            border-bottom: 1px solid #eee;
+            width: fit-content;
+        }
+
+            .payment-option:last-child {
+                border-bottom: none;
+            }
+
+            .payment-option input[type="radio"] {
+                appearance: auto;
+                accent-color: #1a73e8;
+                margin: 0;
+                flex-shrink: 0;
+            }
+
+            .payment-option label {
+                margin: 0;
+                cursor: pointer;
+                color: #333;
+                font-weight: 500;
+                white-space: nowrap;
+                font-size: 13px;
+            }
+
+        .qr-code {
+            display: none;
+            margin-top: 14px;
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px dashed #ccc;
+        }
+
+            .qr-code img {
+                width: 160px;
+                border-radius: 8px;
+            }
+
+        .cart-summary {
+            background: #f9f9f9;
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            font-size: 13px;
+            width: 500px;
+        }
+
+            .cart-summary h3 {
+                font-size: 16px;
+                margin-bottom: 10px;
+                color: #1a4d2e;
+                text-align: center; /* ← thêm dòng này */
+            }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+            .cart-item img {
+                width: 42px;
+                height: 42px;
+                border-radius: 6px;
+                object-fit: cover;
+            }
+
+        .coupon-row {
+            display: flex;
+            gap: 8px;
+            margin-top: 14px;
+        }
+
+        #couponInput {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+
+        #applyCouponBtn {
+            padding: 8px 14px;
+            background-color: #96cd82;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+            #applyCouponBtn:hover {
+                background-color: #1a6fa3;
+            }
+
+        #checkout-cart-total {
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 16px;
+            color: #1a4d2e;
+        }
+
+        .cart-summary-total {
+            margin-top: 14px;
+            font-size: 13px;
+            color: #333;
+        }
+
+            .cart-summary-total p {
+                display: flex;
+                justify-content: space-between;
+                margin: 6px 0;
+            }
+
+        .cart-summary-final {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline; /* <- Sửa ở đây */
+            font-weight: bold;
+            font-size: 16px;
+            color: #1a4d2e;
+            margin-top: 8px;
+        }
+
+        .cart-summary-final-value {
+            font-size: 16px;
+            font-weight: bold;
+            color: #1a4d2e;
+            line-height: 1; /* Giữ chữ và ký hiệu cùng hàng */
+        }
+
+
+        /* Phần chữ "Tổng cộng:" */
+        .cart-summary-final-label {
+            font-size: 16px;
+            color: #1a4d2e; /* Bạn có thể thay bằng màu khác nếu muốn */
+        }
+
+       
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 5px;
+                font-size: 13px;
+                color: #333;
+                font-weight: 600;
+            }
+
+            .form-group select {
+                width: 100%;
+                padding: 10px 12px;
+                font-size: 13px;
+                border: 1.5px solid #ccc;
+                border-radius: 8px;
+                background-color: white;
+                appearance: none;
+                background-image: url("data:image/svg+xml,%3Csvg fill='gray' height='18' viewBox='0 0 24 24' width='18' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5H7z'/%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-position: right 12px center;
+                background-size: 16px;
+                cursor: pointer;
+                transition: border-color 0.3s ease;
+            }
+
+                .form-group select:focus {
+                    border-color: #4caf50;
+                    outline: none;
+                }
+        main {
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            color: #1a4d2e;
+        }
+        .order-summary {
+            padding: 16px;
+            font-family: Arial, sans-serif;
+            color: #96cd82; /* màu xanh đậm */
+        }
+
+        .order-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 16px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 12px;
+        }
+
+            .order-item img {
+                width: 80px;
+                height: 80px;
+                object-fit: cover;
+                border: 2px dashed #d6e7dd;
+                border-radius: 8px;
+                margin-right: 12px;
+            }
+
+        .item-details {
+            flex: 1;
+        }
+
+            .item-details strong {
+                font-size: 1.1rem;
+                color: #005e3c;
+                display: block;
+                margin-bottom: 4px;
+            }
+
+            .item-details p {
+                margin: 2px 0;
+                font-size: 0.95rem;
+            }
+        .checkout-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .back-to-cart {
+            color: #96cd82;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+            .back-to-cart i {
+                margin-right: 5px;
+            }
+
+        .checkout-btn {
+            padding: 10px 24px;
+            background-color: #96cd82;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+            .checkout-btn:hover {
+                background-color: #96cd82;
+            }
+
+    </style>
+
+</head>
+
+  
+<body>
+
+    <header>
+        <div class="ad-banner">
+            <marquee>Nhập mã MATSUYANF để nhận ưu đãi 50K cho đơn hàng trên 200k!</marquee>
+        </div>
+
+        <nav class="navbar">
+            <div class="navbar-left">
+                <!-- Nút ☰ đưa vào đây -->
+                <button class="menu-toggle" onclick="toggleMenu()">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+
+                <div class="logo">
+                    <a href="trangchu.html">
+                        <img src="images/logo2.jpg" alt="Logo Matsuya">
+                    </a>
+                </div>
+
+
+                <ul class="navigation">
+                    <li><a href="trangchu.html">TRANG CHỦ</a></li>
+                    <li><a href="gioithieu.html">GIỚI THIỆU</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">SẢN PHẨM</a>
+                        <div class="dropdown-content">
+                            <a href="tatcasp.html">Tất cả sản phẩm</a>
+                            <a href="matcha.html">Trà Matcha</a>
+                            <a href="houji.html">Trà Houjicha</a>
+                            <a href="banh.html">Bánh Matcha</a>
+                            <a href="bot.html">Bột Matcha</a>
+                            <a href="dungcu.html">Dụng cụ</a>
+                            <a href="combo.html">Combo</a>
+                        </div>
+                    </li>
+                    <li><a href="tintuc.html">TIN TỨC</a></li>
+                    <li><a href="lienhe.html">LIÊN HỆ</a></li>
+                </ul>
+            </div>
+
+            <div class="navbar-right">
+                <div class="icon-bar">
+                    <button class="icon-button" onclick="window.location.href='giohang.html'">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                    </button>
+
+                    <button class="icon-button" onclick="window.location.href='spyeuthich.html'">
+                        <span class="material-symbols-outlined">favorite</span>
+                    </button>
+                    <button class="icon-button" onclick="window.location.href='login.html'">
+                        <span class="material-symbols-outlined">person</span>
+                    </button>
+                </div>
+            </div>
+
+
+
+        </nav>
+    </header>
+
+    <!-- Side menu -->
+    <div id="side-menu" class="side-menu">
+        <button class="close-btn" onclick="toggleMenu()">x</button>
+        <nav class="menu-items">
+            <a href="trangchu.html">Trang chủ</a>
+            <a href="gioithieu.html">Giới thiệu</a>
+            <!-- Dropdown sản phẩm -->
+            <a href="#" onclick="toggleDropdown(event)">Sản phẩm ▾</a>
+            <ul class="dropdown-menu" id="product-dropdown">
+                <a href="matcha.html">Trà Matcha</a>
+                <a href="houji.html">Trà Houjicha</a>
+                <a href="banh.html">Bánh Matcha</a>
+                <a href="bot.html">Bột Matcha</a>
+                <a href="dungcu.html">Dụng cụ</a>
+                <a href="combo.html">Combo</a>
+            </ul>
+            <a href="tintuc.html">Tin tức</a>
+            <a href="lienhe.html">Liên hệ</a>
+        </nav>
+    </div>
+
+
+
+    <!-- Script -->
+    <script>
+        function toggleMenu() {
+            document.getElementById("side-menu").classList.toggle("active");
+        }
+    </script>
+
+    <!-- MAIN: FORM THANH TOÁN -->
+    <main>
+        <h1 class="page-title">THÔNG TIN THANH TOÁN</h1>
+
+        <div class="checkout-container">
+            <!-- Thông tin khách hàng -->
+            <div class="checkout-form">
+                <label for="fullname">Họ tên</label>
+                <input type="text" id="fullname" placeholder="Nhập họ tên" required>
+
+                <label for="phone">Điện thoại</label>
+                <input type="text" id="phone" placeholder="Nhập số điện thoại" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Nhập email" required>
+
+                <label for="address">Địa chỉ</label>
+                <input type="text" id="address" placeholder="Nhập địa chỉ">
+
+                <!-- Tỉnh (cố định là Hà Nội) -->
+                <div class="form-group">
+                    <label for="province">Tỉnh/Thành phố</label>
+                    <select id="province" disabled required>
+                        <option value="Hà Nội" selected>Hà Nội</option>
+                    </select>
+                </div>
+
+                <!-- Quận/Huyện -->
+                <div class="form-group">
+                    <label for="district">Quận/Huyện</label>
+                    <select id="district" required>
+                        <option value="">-- Chọn quận/huyện --</option>
+                        <option value="Đống Đa">Đống Đa</option>
+                        <option value="Hoàn Kiếm">Hoàn Kiếm</option>
+                        <option value="Cầu Giấy">Cầu Giấy</option>
+                        <option value="Thanh Xuân">Thanh Xuân</option>
+                        <option value="Hoàng Mai">Hoàng Mai</option>
+                        <option value="Hà Đông">Hà Đông</option>
+                    </select>
+                </div>
+
+                <!-- Phường/Xã -->
+                <div class="form-group">
+                    <label for="ward">Phường/Xã</label>
+                    <select id="ward">
+                        <option value="">-- Chọn phường/xã --</option>
+                        <option value="Phường Trung Liệt">Phường Trung Liệt</option>
+                        <option value="Phường Phương Liên">Phường Phương Liên</option>
+                        <option value="Phường Láng Hạ">Phường Láng Hạ</option>
+                        <option value="Phường Hàng Trống">Phường Hàng Trống</option>
+                        <option value="Phường Khương Trung">Phường Khương Trung</option>
+                    </select>
+                </div>
+
+                <!-- Hình thức thanh toán -->
+                <label style="font-weight: bold; display: block; margin-bottom: 10px;">Hình thức thanh toán</label>
+                <div class="payment-methods">
+                    <div class="payment-option">
+                        <input type="radio" id="bank" name="payment" value="bank" required>
+                        <label for="bank">Chuyển khoản</label>
+                    </div>
+                    <div class="payment-option">
+                        <input type="radio" id="cod" name="payment" value="cod">
+                        <label for="cod">Thu hộ (COD)</label>
+                    </div>
+                </div>
+
+                <!-- QR code -->
+                <div class="qr-code" id="qrCode">
+                    <p>Vui lòng quét mã QR để chuyển khoản:</p>
+                    <img src="images/QRcode.jpg" alt="QR Code">
+                </div>
+
+                <!-- Ghi chú đơn hàng -->
+                <label for="note">Ghi chú đơn hàng</label>
+                <textarea id="note" rows="4" placeholder="Bạn có ghi chú gì cho đơn hàng không?"></textarea>
+
+                <!-- Upload ảnh xác nhận thanh toán -->
+                <label for="proof">Tải lên ảnh xác nhận thanh toán (nếu có)</label>
+                <input type="file" id="proof" accept="image/*">
+            </div>
+
+            <!-- Giỏ hàng -->
+            <div class="cart-summary">
+                <h3>Đơn hàng</h3>
+                <div id="checkout-cart-items">
+                    <!-- Sẽ tự động render giỏ hàng ở đây -->
+                </div>
+
+                <div class="coupon-row">
+                    <input type="text" id="couponInput" placeholder="Nhập mã khuyến mãi">
+                    <button id="applyCouponBtn">Áp dụng</button>
+                </div>
+
+                <div class="cart-summary-total">
+                    <p><span>Tạm tính:</span> <span id="product-total">0đ</span></p>
+                    <p><span>Giảm giá:</span> <span id="discount-amount">0đ</span></p>
+                    <p><span>Phí vận chuyển:</span> <span id="shipping-fee">0đ</span></p>
+                    <p class="cart-summary-final">
+                        <span class="cart-summary-final-label">Tổng cộng:</span>
+                        <span class="cart-summary-final-value" id="checkout-cart-total">0đ</span>
+                    </p>
+                </div>
+
+                <div class="checkout-actions">
+                    <a href="giohang.html" class="back-to-cart">
+                        <i class="fas fa-arrow-left"></i> Quay về giỏ hàng
+                    </a>
+                    <button class="checkout-btn" onclick="placeOrder()">ĐẶT HÀNG</button>
+                </div>
+            </div>
+
+</main>
+
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="newsletter">
+                <i class="icon-email">✉️</i>
+                <span>Hãy để chúng mình lắng nghe góp ý của cậu!</span>
+            </div>
+            <form class="subscribe" id="feedbackForm">
+                <input type="text" id="feedbackInput" placeholder="Nhập góp ý của bạn" required>
+                <button type="submit">Gửi</button>
+            </form>
+
+        </div>
+
+        <div class="footer-content">
+            <div class="footer-section logo-contact">
+                <img src="images/logo2.jpg" alt="Matsuya Logo" class="logo">
+                <ul>
+                    <li><i class="icon">📍</i> 12 phố Chùa Bộc, phường Quang Trung, quận Đống Đa, Hà Nội</li>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.620803649952!2d105.82537677387555!3d21.007832088499686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac806cfc0845%3A0x3848505bd3b9490f!2zMTIgUC4gQ2jDuWEgQuG7mWMsIFF1YW5nIFRydW5nLCDEkOG7kW5nIMSQYSwgSMOgIE7hu5lpIDEwMDAwMCwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1746035458690!5m2!1sen!2s"
+                                width="300"
+                                height="300"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy">
+                        </iframe>
+
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+                <ul>
+                    <li><i class="icon">📧</i> matsuya2025@gmail.com</li>
+                    <li><i class="icon">📞</i> 0394889183</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>CHÍNH SÁCH</h3>
+
+                <ul class="policy-list">
+                    <li><i class="fas fa-chevron-right"></i> <a href="chinhsach3.html">Chính sách bán hàng</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="chinhsach1.html">Chính sách thanh toán</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="chinhsach.html">Điều khoản dịch vụ</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="chinhsach2.html">Chính sách bảo mật</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>GIỜ MỞ CỬA</h4>
+                <p>Từ 9:00 - 21:30 tất cả các ngày trong tuần<br>(bao gồm cả các ngày lễ, ngày Tết).</p>
+                <h4>GÓP Ý, KHIẾU NẠI</h4>
+                <p><i class="icon">📞</i> 1900 6750</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let productTotal = 0;
+        let discount = 0;
+        let shippingFee = 0;
+
+        const cartItemsDiv = document.getElementById("checkout-cart-items");
+        const productTotalEl = document.getElementById("product-total");
+        const shippingFeeEl = document.getElementById("shipping-fee");
+        const discountEl = document.getElementById("discount-amount");
+        const finalTotalEl = document.getElementById("checkout-cart-total");
+
+        const cartData = JSON.parse(localStorage.getItem("cart")) || [];
+        cartItemsDiv.innerHTML = "";
+
+        cartData.forEach(item => {
+            const itemTotal = item.price * item.quantity;
+            productTotal += itemTotal;
+
+            const itemHTML = `
+                <div style="display: flex; align-items: center; margin-bottom: 10px; gap: 10px;">
+                    <img src="${item.image}" alt="${item.name}" style="width: 60px; height: 60px; object-fit: cover;">
+                    <div>
+                        <p><strong>${item.name}</strong></p>
+                        <p>Số lượng: ${item.quantity}</p>
+                        <p>Giá: ${item.price.toLocaleString()}đ</p>
+                        <p>Thành tiền: ${(itemTotal).toLocaleString()}đ</p>
+                    </div>
+                </div>
+            `;
+            cartItemsDiv.innerHTML += itemHTML;
+        });
+
+        productTotalEl.textContent = productTotal.toLocaleString() + "đ";
+        discountEl.textContent =  discount.toLocaleString() + "đ";
+        shippingFeeEl.textContent = shippingFee.toLocaleString() + "đ";
+
+        function updateFinalTotal() {
+            const total = productTotal + shippingFee - discount;
+            document.getElementById("checkout-cart-total").innerText = total.toLocaleString() + "đ";
+        }
+
+
+        updateFinalTotal();
+
+        // Mã khuyến mãi
+        document.getElementById("applyCouponBtn").addEventListener("click", function () {
+            const code = document.getElementById("couponInput").value.trim().toUpperCase();
+
+            if (code === "MATSUYANF") {
+                if (productTotal >= 200000) {
+                    discount = 50000;
+                    alert("Áp dụng mã thành công! Được giảm 50.000đ.");
+                } else {
+                    alert("Đơn hàng chưa đủ 200.000đ để áp dụng mã.");
+                    discount = 0;
+                }
+            } else {
+                alert("Mã không hợp lệ!");
+                discount = 0;
+            }
+
+            // ✅ Format lại: không nhảy dấu “-” trễ nữa
+            discountEl.textContent = discount > 0 ? `- ${discount.toLocaleString()}đ` : "0đ";
+
+            updateFinalTotal();  // tính lại tổng
+        });
+
+
+
+        // Phí vận chuyển theo quận (đã sửa cho phù hợp với value tiếng Việt)
+        document.getElementById("district").addEventListener("change", function () {
+            const district = this.value;
+
+            switch (district) {
+                case "Đống Đa":
+                case "Hoàn Kiếm":
+                case "Cầu Giấy":
+                    shippingFee = 20000;
+                    break;
+                case "Thanh Xuân":
+                    shippingFee = 25000;
+                    break;
+                case "Hoàng Mai":
+                case "Hà Đông":
+                    shippingFee = 30000;
+                    break;
+                default:
+                    shippingFee = 0;
+            }
+
+            shippingFeeEl.textContent = shippingFee.toLocaleString() + "đ";
+            updateFinalTotal();
+        });
+
+
+        // QR Code toggle
+        document.querySelectorAll('input[name="payment"]').forEach(function (radio) {
+            radio.addEventListener('change', function () {
+                const qrCode = document.getElementById('qrCode');
+                qrCode.style.display = this.value === 'bank' ? 'block' : 'none';
+            });
+        });
+
+        // Gửi góp ý
+        document.getElementById("feedbackForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            const feedback = document.getElementById("feedbackInput").value.trim();
+            if (!feedback) {
+                alert("Vui lòng nhập góp ý của bạn.");
+                return;
+            }
+            alert("Cảm ơn bạn đã góp ý: " + feedback);
+            document.getElementById("feedbackInput").value = "";
+        });
+        function renderCheckoutCart() {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const container = document.getElementById("checkout-cart-items");
+            container.innerHTML = "";
+
+            cart.forEach(item => {
+                const productHTML = `
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <div style="position: relative;">
+                    <img src="${item.image}" alt="${item.name}" style="width: 48px; height: 48px; border-radius: 8px; object-fit: cover;">
+                  <span class="quantity-badge">${item.quantity}</span>
+                </div>
+                <div style="font-size: 13px;">${item.name}</div>
+            </div>
+            <div style="font-weight: bold;">${item.price.toLocaleString()}đ</div>
+        </div>
+        `;
+                container.innerHTML += productHTML;
+            });
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            renderCheckoutCart();
+        });
+        function placeOrder() {
+            const name = document.querySelector('input[placeholder="Nhập họ tên"]').value.trim();
+            const phone = document.querySelector('input[placeholder="Nhập số điện thoại"]').value.trim();
+            const email = document.querySelector('input[placeholder="Nhập email"]').value.trim();
+            const address = document.querySelector('input[placeholder="Nhập địa chỉ"]').value.trim();
+            const district = document.getElementById("district").value;
+            const ward = document.getElementById("ward").value;
+            const paymentMethodEl = document.querySelector('input[name="payment"]:checked');
+            const paymentMethod = paymentMethodEl?.id === "bank" ? "Chuyển khoản" : "Thu hộ (COD)";
+
+
+            if (!name || !phone || !email || !address || !district || !ward || !paymentMethod) {
+                alert("Vui lòng điền đầy đủ thông tin bắt buộc.");
+                return;
+            }
+
+            const fullAddress = `${address}, ${ward}, ${district}, Hà Nội`;
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            const orderInfo = {
+                name,
+                phone,
+                email,
+                address: fullAddress,
+                paymentMethod,
+                total: document.getElementById("checkout-cart-total").innerText,
+                cart
+            };
+
+            // 🔹 Thêm các thông tin bổ sung
+            localStorage.setItem("orderInfo", JSON.stringify(orderInfo));
+            localStorage.setItem("shippingFee", shippingFee);
+            localStorage.setItem("discount", discount);
+            localStorage.setItem("productTotal", productTotal);
+
+            localStorage.setItem("orderInfo", JSON.stringify(orderInfo));
+            alert("Đặt hàng thành công!");
+            window.location.href = "donhang.html";
+
+        }
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matcha Drink Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+</head>
+<body>
+
+    <header>
+        <div class="ad-banner">
+            <marquee>Nhập mã MATSUYANF để nhận ưu đãi 50K cho đơn hàng trên 200k!</marquee>
+        </div>
+
+        <nav class="navbar">
+            <div class="navbar-left">
+                <!-- Nút ☰ đưa vào đây -->
+                <button class="menu-toggle" onclick="toggleMenu()">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+
+                <div class="logo">
+                    <a href="trangchu.html">
+                        <img src="images/logo2.jpg" alt="Logo Matsuya">
+                    </a>
+                </div>
+
+
+                <ul class="navigation">
+                    <li><a href="trangchu.html">TRANG CHỦ</a></li>
+                    <li><a href="gioithieu.html">GIỚI THIỆU</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">SẢN PHẨM</a>
+                        <div class="dropdown-content">
+                            <a href="tatcasp.html">Tất cả sản phẩm</a>
+                            <a href="matcha.html">Trà Matcha</a>
+                            <a href="houji.html">Trà Houjicha</a>
+                            <a href="banh.html">Bánh Matcha</a>
+                            <a href="bot.html">Bột Matcha</a>
+                            <a href="dungcu.html">Dụng cụ</a>
+                            <a href="combo.html">Combo</a>
+                        </div>
+                    </li>
+                    <li><a href="tintuc.html">TIN TỨC</a></li>
+                    <li><a href="lienhe.html">LIÊN HỆ</a></li>
+                </ul>
+            </div>
+            <div class="navbar-right">
+                <div class="icon-bar">
+                    <button class="icon-button" onclick="window.location.href='giohang.html'">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                    </button>
+
+                    <button class="icon-button" onclick="window.location.href='spyeuthich.html'">
+                        <span class="material-symbols-outlined">favorite</span>
+                    </button>
+                    <button class="icon-button" onclick="window.location.href='login.html'">
+                        <span class="material-symbols-outlined">person</span>
+                    </button>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- Side menu -->
+    <div id="side-menu" class="side-menu">
+        <button class="close-btn" onclick="toggleMenu()">x</button>
+        <nav class="menu-items">
+            <a href="trangchu.html">Trang chủ</a>
+            <a href="gioithieu.html">Giới thiệu</a>
+            <!-- Dropdown sản phẩm -->
+            <a href="#" onclick="toggleDropdown(event)">Sản phẩm ▾</a>
+            <ul class="dropdown-menu" id="product-dropdown">
+                <a href="matcha.html">Trà Matcha</a>
+                <a href="houji.html">Trà Houjicha</a>
+                <a href="banh.html">Bánh Matcha</a>
+                <a href="bot.html">Bột Matcha</a>
+                <a href="dungcu.html">Dụng cụ</a>
+                <a href="combo.html">Combo</a>
+            </ul>
+            <a href="tintuc.html">Tin tức</a>
+            <a href="lienhe.html">Liên hệ</a>
+        </nav>
+    </div>
+
+
+
+  <!-- Script -->
+<script>
+function toggleMenu() {
+  document.getElementById("side-menu").classList.toggle("active");
+}
+</script>
+
+<div class="container">
+  <div class="breadcrumb">
+  <a href="trangchu.html">Trang chủ</a> / 
+  <a href="tintuc.html">Tin tức</a> / 
+  <strong>MATCHA "NGON" HAY "DỞ" PHẦN LỚN ĐƯỢC QUYẾT ĐỊNH BỞI TENCHA</strong>
+</div>
+
+  <div class="main-content">
+    <div class="article-header">
+  <h1 class="post-title">MATCHA "NGON" HAY "DỞ" PHẦN LỚN ĐƯỢC QUYẾT ĐỊNH BỞI TENCHA</h1>
+
+    <div class="author-date">
+        <i class="fa-pen-nib"></i> Lê Minh Ngọc &nbsp;&nbsp; 13/06/2025
+      </div>
+  </div>
+
+            <p>
+                Trà xanh là một loại trà được ủ từ lá của cây trà camellia sinensis.
+                Không giống như các loại trà khác, trà xanh không được lên men. Thay vào đó, trà xanh được làm bằng chảo rán hoặc hấp lá Camellia sinensis, sau đó làm nguội hoặc sấy khô lá để ngăn chặn quá trình oxy hóa. Điều này cung cấp cho thức uống xuất hiện màu xanh lá cây của nó và hương vị không bị oxy hóa. Có hàng ngàn loại trà xanh, với những loại trà nổi tiếng nhất là Matcha, Shincha, Hojicha và Gyokuro.
+            </p>
+            <img src="images/tintuc55.jpg" alt="Các loại trà thảo mộc" class="news-image">
+
+            <p>
+                Tencha là tên của những lá trà được sử dụng làm trà Matcha, trước khi những là này được bỏ vào nghiền thành bột mịn. Tencha được ủ khá giống với trà Gyokuro, thực sự độc đáo và nguyên chất, sang trọng và tao nhã.
+            </p>
+            <p>
+                Màu trà xanh nhạt, hương thơm đậm và ngọt dịu và mùi thơm phảng phất, thanh tao, vị ngọt hậu giữ lại ở miệng một lúc sau khi uống. Đó chính là sự khác biệt từ Tencha và Gyokucha với những loại trà xanh khác.
+            </p>
+            <img src="images/tintuc51.jpg" alt="Tencha trước khi được nghiền thanh bột Matcha" class="news-image">
+
+            <P>
+                Lá trà thu hoạch cho Tencha và Gyokuro đều được trồng dưới bóng râm trong khoảng thời gian từ 20 đến 30 ngày trước khi thu hoạch, để chúng chứa nhiều Theanine, tạo ra hương vị đặc trưng của Tencha và Gyokuro.
+            </P>
+
+            <p>
+                Sau khi được thu hoạch, lá trà sẽ được được bỏ vào hấp trước, đối với Gyokuro thì sau khi được hấ lá trà sẽ được làm khô từ 2 đến 3 lần, mỗi lần thời gian rất ngắn, sau khi đã được làm khô, lá trà sẽ được bỏ vào máy và vo cuộn lá trà nhỏ lại nhỏ nhất có thể.
+            </p>
+            <p>
+                Còn đối với Tencha thì lá trà sau khi hấp sẽ được làm lạnh lại sau đó sấy khô bằng cách thả vào một khoang không khí nóng từ trên cao và bỏ rơi tự do, trong quá trình này lá trà sẽ được làm khô và thả rơi tự do xuống một dây chuyền ở dưới. Việc làm khô bằng buồng không khí khô này giúp cho lá trà thẳng và không bị co, gập, gãy. Điều này giúp cho việc tách bỏ cuống và gân lá sau này được dễ dàng hơn.
+            </p>
+            <p>
+                Tencha không được cho vào máy nhào, vò, cuộn lại giống như Gyokuro hay Sencha. Lớp màng lá của Gyokuro và Sencha được bẻ vỡ trong quá trình vò cuộn. Đó là lý do tại sao mà toàn bộ hương thơm từ Gyokuro và Sencha có thể dễ dàng được thẩm thấu và dậy dậy mùi thơm khi pha với nước nóng.
+            </p>
+
+            <p>
+                Còn Tencha thì kém vị hơn một chút, chỉ với những loại hương thơm đặc trưng của trà mới dễ dàng thẩm thấu vào nước ngoại trừ những loại Tencha cao cấp hoặc cao cấp nhất mới có thể ủ lên hương thơm một cách hoàn toàn trong nước. Tuy nhiên sẽ giữ lại được nhiều hương thơm và tinh chất tối đa khi được nghiền thành Matcha.
+            </p>
+
+            <p>
+                Khi những nhà sản xuất Matcha thu mua Tencha từ những nông trại, và người nông dân, hoặc họ trực tiếp xử lý, chế biến Tencha để sản xuất Matcha. Họ sẽ phải đánh giá từng trường hợp của những lá trà để kiểm tra các công đoạn từ Aracha, tới hoàn thiện, thêm vào đó là  điều kiện môi trường, không khí, độ ẩm …
+            </p>
+
+            <p>
+                Và đừng quên Matsuya - thương hiệu matcha trà xanh chuẩn Nhật uy tín, nơi bạn an tâm chất lượng với giá thành hợp lý. Matsuya chúng tôi hân hạnh là người bạn đồng hành của bạn trong cuộc sống hàng ngày, giúp bạn khỏe hơn, đẹp hơn và sống vui hơn!
+            </p>
+
+        </div> <!-- ✅ Đóng main-content đúng chỗ -->
+
+        <aside class="sidebar">
+            <h3>Tin tức cho bạn</h3>
+            <ul class="news-list">
+
+                <li class="news-item">
+                    <img src="images/tea1.jpg" alt="Matcha" />
+                    <div class="news-text">
+                        <a href="tinchoban1.html">
+                            <p>Giảm cân hiệu quả với trà xanh Matcha</p>
+                        </a>
+                        <span class="time">Vừa xong</span>
+                    </div>
+                </li>
+
+                <li class="news-item">
+                    <img src="images/tea2.jpg" alt="Matcha chống lão hóa" />
+                    <div class="news-text">
+                        <a href="tinchoban2.html">
+                            <p>Matcha chống lão hóa</p>
+                        </a>
+                        <span>5 ngày</span>
+                    </div>
+                </li>
+                <li class="news-item">
+                    <img src="images/tea3.jpg" alt="Nên uống Matcha khi nào" />
+                    <div class="news-text">
+                        <a href="tinchoban3.html">
+                            <p>Nên uống Matcha khi nào</p>
+                        </a>
+                        <span>8 ngày</span>
+                    </div>
+                </li>
+
+                <li class="news-item">
+                    <img src="images/tea4.jpg" alt="Bột trà xanh Matcha Đài Loan kém chất lượng ?" />
+                    <div class="news-text">
+                        <a href="tinchoban4.html">
+                            <p>Bột trà xanh Matcha Đài Loan kém chất lượng ?</p>
+                        </a>
+                        <span>10 ngày</span>
+                    </div>
+                </li>
+
+                <li class="news-item">
+                    <img src="images/tea5.jpg" alt="Trà cho bà bầu" />
+                    <div class="news-text">
+                        <a href="tinchoban5.html">
+                            <p>Trà cho bà bầu</p>
+                        </a>
+                        <span>12 ngày</span>
+                    </div>
+                </li>
+
+                <li class="news-item">
+                    <img src="images/tea6.jpg" alt="Uống trà xanh Matcha bao nhiêu là đủ và uống trà Matcha như thế nào?" />
+                    <div class="news-text">
+                        <a href="tinchoban6.html">
+                            <p>Uống trà xanh Matcha bao nhiêu là đủ và uống trà Matcha như thế nào?</p>
+                        </a>
+                        <span>14 ngày</span>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+    </div>
+
+    <div class="custom-social-section">
+        <div class="line-divider"></div>
+        <div class="custom-social-icons">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://example.com" target="_blank" class="social-icon" title="Chia sẻ Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/intent/tweet?url=https://example.com&text=Check%20this%20out!" target="_blank" class="social-icon" title="Chia sẻ Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="mailto:?subject=Bạn nên xem cái này&body=Hãy xem link này: https://example.com" class="social-icon" title="Gửi email">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://pinterest.com/pin/create/button/?url=https://example.com" target="_blank" class="social-icon" title="Chia sẻ Pinterest">
+                <i class="fab fa-pinterest-p"></i>
+            </a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://example.com" target="_blank" class="social-icon" title="Chia sẻ LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="newsletter">
+                <i class="icon-email">✉️</i>
+                <span>Hãy để chúng mình lắng nghe góp ý của cậu!</span>
+            </div>
+            <form class="subscribe" id="feedbackForm">
+                <input type="text" id="feedbackInput" placeholder="Nhập góp ý của bạn" required>
+                <button type="submit">Gửi</button>
+            </form>
+
+        </div>
+
+        <div class="footer-content">
+            <div class="footer-section logo-contact">
+                <img src="images/logo2.jpg" alt="Matsuya Logo" class="logo">
+                <ul>
+                    <li><i class="icon">📍</i> 12 phố Chùa Bộc, phường Quang Trung, quận Đống Đa, Hà Nội</li>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.620803649952!2d105.82537677387555!3d21.007832088499686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac806cfc0845%3A0x3848505bd3b9490f!2zMTIgUC4gQ2jDuWEgQuG7mWMsIFF1YW5nIFRydW5nLCDEkOG7kW5nIMSQYSwgSMOgIE7hu5lpIDEwMDAwMCwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1746035458690!5m2!1sen!2s"
+                                width="300"
+                                height="300"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy">
+                        </iframe>
+
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+                <ul>
+                    <li><i class="icon">📧</i> matsuya2025@gmail.com</li>
+                    <li><i class="icon">📞</i> 0394889183</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>CHÍNH SÁCH</h3>
+
+                <ul class="policy-list">
+                    <li><i class="fas fa-chevron-right"></i> <a href="chinhsach3.html">Chính sách bán hàng</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="chinhsach1.html">Chính sách thanh toán</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="chinhsach.html">Điều khoản dịch vụ</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="chinhsach2.html">Chính sách bảo mật</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>GIỜ MỞ CỬA</h4>
+                <p>Từ 9:00 - 21:30 tất cả các ngày trong tuần<br>(bao gồm cả các ngày lễ, ngày Tết).</p>
+                <h4>GÓP Ý, KHIẾU NẠI</h4>
+                <p><i class="icon">📞</i> 1900 6750</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById("feedbackForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Ngăn form reload trang
+
+
+            const feedback = document.getElementById("feedbackInput").value.trim();
+
+
+            if (feedback === "") {
+                alert("Vui lòng nhập góp ý của bạn.");
+                return;
+            }
+
+
+
+            // Hiển thị alert
+            alert("Cảm ơn bạn đã góp ý: " + feedback);
+
+
+            // Xoá nội dung sau khi gửi
+            document.getElementById("feedbackInput").value = "";
+        });
+    </script>
+</body>
+
+</html>
+

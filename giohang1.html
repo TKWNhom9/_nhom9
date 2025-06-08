@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matcha Drink Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="script.js"></script>
+
+  </head>
+<body onload="renderCart()">
+
+
+    <header>
+        <div class="ad-banner">
+            <marquee>Nhập mã MATSUYANF để nhận ưu đãi 50K cho đơn hàng trên 200k!</marquee>
+        </div>
+        
+        <nav class="navbar">
+            <div class="navbar-left">
+
+               <!-- Nút ☰ đưa vào đây -->
+              <button class="menu-toggle" onclick="toggleMenu()">
+                <span class="material-symbols-outlined">menu</span>
+              </button>
+
+                <div class="logo">
+                <a href="trangchu.html">
+                <img src="images/logo2.jpg" alt="Logo Matsuya">
+                </a>
+                </div> 
+                  
+  
+                <ul class="navigation">
+                    <li><a href="trangchu.html">TRANG CHỦ</a></li>
+                    <li><a href="gioithieu.html">GIỚI THIỆU</a></li>
+                    <li class="dropdown">
+                      <a href="#" class="dropbtn">SẢN PHẨM</a>
+                      <div class="dropdown-content">
+                          <a href="tatcasp.html">Tất cả sản phẩm</a>
+                          <a href="matcha.html">Trà Matcha</a>
+                          <a href="houji.html">Trà Houjicha</a>
+                          <a href="banh.html">Bánh Matcha</a>
+                          <a href="bot.html">Bột Matcha</a>
+                          <a href="dungcu.html">Dụng cụ</a>
+                          <a href="combo.html">Combo</a>
+                      </div>
+                  </li>     
+                    <li><a href="tintuc.html">TIN TỨC</a></li>
+                    <li><a href="lienhe.html">LIÊN HỆ</a></li>
+                </ul>
+            </div>
+    
+            <div class="navbar-right">
+  <div class="icon-bar">
+    <button class="icon-button">
+      <span class="material-symbols-outlined">shopping_cart</span>
+    </button>
+    <button class="icon-button">
+      <span class="material-symbols-outlined">favorite</span>
+    </button>
+    <button class="icon-button">
+      <span class="material-symbols-outlined">person</span>
+    </button>
+  </div>
+</div>
+
+
+        </nav>
+    </header>
+
+    <!-- Side menu -->
+<div id="side-menu" class="side-menu">
+  <button class="close-btn" onclick="toggleMenu()">x</button>
+  <nav class="menu-items">
+    <a href="trangchu.html">Trang chủ</a>
+    <a href="gioithieu.html">Giới thiệu</a>
+    <!-- Dropdown sản phẩm -->
+      <a href="#" onclick="toggleDropdown(event)">Sản phẩm ▾</a>
+      <ul class="dropdown-menu" id="product-dropdown">
+        <a href="matcha.html">Trà Matcha</a>
+        <a href="houji.html">Trà Houjicha</a>
+        <a href="banh.html">Bánh Matcha</a>
+        <a href="bot.html">Bột Matcha</a>
+        <a href="dungcu.html">Dụng cụ</a>
+        <a href="combo.html">Combo</a>
+      </ul>
+    <a href="tintuc.html">Tin tức</a>
+    <a href="lienhe.html">Liên hệ</a>
+  </nav>
+</div>
+
+
+
+<!-- Script -->
+<script>
+function toggleMenu() {
+  document.getElementById("side-menu").classList.toggle("active");
+}
+</script>
+
+<!-- MAIN: NỘI DUNG GIỎ HÀNG -->
+<main>
+    <h1 class="page-title">GIỎ HÀNG CỦA BẠN</h1>
+
+    <section class="cart-container" style="max-width: 1000px; margin: 20px auto; padding: 20px;">
+        <table style="width: 100%; border-collapse: collapse;">
+            <thead style="background-color: #eaf2ec;">
+                <tr>
+                    <th style="padding: 10px; border: 1px solid #ccc;">Sản phẩm</th>
+                    <th style="padding: 10px; border: 1px solid #ccc;">Giá</th>
+                    <th style="padding: 10px; border: 1px solid #ccc;">Số lượng</th>
+                    <th style="padding: 10px; border: 1px solid #ccc;">Thành tiền</th>
+                    <th style="padding: 10px; border: 1px solid #ccc;">Xóa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tbody id="cart-items">
+                     <!-- Chưa có sản phẩm nào -->
+                </tbody>
+
+                <!-- Có thể thêm nhiều sản phẩm khác -->
+            </tbody>
+        </table>
+
+        <!-- Tổng tiền -->
+        <div style="text-align: right; margin-top: 20px;">
+            <strong class="cart-total" style="font-size: 18px;">Tổng cộng: 0đ</strong>
+
+        </div>
+
+        <!-- Nút thanh toán -->
+        <div style="text-align: right; margin-top: 10px;">
+            
+            <button class="pay-btn" style="padding: 12px 20px; background-color: #2c5f2d; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;" onclick="proceedToCheckout()">THANH TOÁN</button>
+
+        </div>
+    </section>
+</main>
+<footer class="footer">
+        <div class="footer-top">
+          <div class="newsletter">
+            <i class="icon-email">✉️</i>
+            <span>Hãy để chúng mình lắng nghe góp ý của cậu!</span>
+          </div>
+          <div class="subscribe">
+            <input type="email" placeholder="Nhập email của bạn">
+            <button>Đăng ký</button>
+          </div>
+        </div>
+      
+        <div class="footer-content">
+          <div class="footer-section logo-contact">
+            <img src="images/logo2.jpg" alt="Matsuya Logo" class="logo">
+            <ul>
+              <li><i class="icon">📍</i> 12 phố Chùa Bộc, phường Quang Trung, quận Đống Đa, Hà Nội</li>
+              <div class="map-container">
+                <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.620803649952!2d105.82537677387555!3d21.007832088499686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac806cfc0845%3A0x3848505bd3b9490f!2zMTIgUC4gQ2jDuWEgQuG7mWMsIFF1YW5nIFRydW5nLCDEkOG7kW5nIMSQYSwgSMOgIE7hu5lpIDEwMDAwMCwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1746035458690!5m2!1sen!2s" 
+    width="300" 
+    height="300" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy">
+    </iframe>
+             
+            </ul>
+          </div>
+      
+          <div class="footer-section">
+            <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+            <ul>
+                <li><i class="icon">📧</i> matsuya2025@gmail.com</li>
+                <li><i class="icon">📞</i> 0394889183</li>
+            </ul>
+          </div>
+      
+          <div class="footer-section">
+            <h3>THÔNG TIN</h3>
+                <p>Chính sách bảo mật</p>
+                <p>Chính sách hoàn trả</p>
+                <p>Điều khoản sử dụng</p>
+          </div>
+      
+          <div class="footer-section">
+            <h4>GIỜ MỞ CỬA</h4>
+            <p>Từ 9:00 - 21:30 tất cả các ngày trong tuần<br>(bao gồm cả các ngày lễ, ngày Tết).</p>
+            <h4>GÓP Ý, KHIẾU NẠI</h4>
+            <p><i class="icon">📞</i> 1900 6750</p>
+          </div>
+        </div>
+      </footer>
+      <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const cartData = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItemsTbody = document.getElementById('cart-items');
+    const cartTotal = document.querySelector('.cart-total');
+
+    let total = 0;
+    cartItemsTbody.innerHTML = '';
+
+    cartData.forEach((item, index) => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td style="padding: 10px; border: 1px solid #ccc;">
+                <img src="${item.image}" alt="${item.name}" style="width: 60px; height: 60px; object-fit: cover;">
+                <p>${item.name}</p>
+            </td>
+            <td style="padding: 10px; border: 1px solid #ccc;">${item.price.toLocaleString()}đ</td>
+            <td style="padding: 10px; border: 1px solid #ccc;">${item.quantity}</td>
+            <td style="padding: 10px; border: 1px solid #ccc;">${itemTotal.toLocaleString()}đ</td>
+            <td style="padding: 10px; border: 1px solid #ccc;">
+                <button onclick="removeFromCart(${index})" style="color: red; cursor: pointer;">Xóa</button>
+            </td>
+        `;
+        cartItemsTbody.appendChild(tr);
+    });
+
+    cartTotal.textContent = `Tổng cộng: ${total.toLocaleString()}đ`;
+});
+
+// Hàm Xóa sản phẩm
+function removeFromCart(index) {
+    let cartData = JSON.parse(localStorage.getItem('cart')) || [];
+    cartData.splice(index, 1); // Xóa sản phẩm tại vị trí index
+    localStorage.setItem('cart', JSON.stringify(cartData));
+    location.reload(); // Refresh lại trang để cập nhật giao diện
+}
+</script>
+
+</body>
+</html>

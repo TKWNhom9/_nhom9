@@ -1,0 +1,438 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matcha Drink Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <style>
+        .product-name a {
+            color: #3c5f3b;
+            text-decoration: none;
+        }
+
+            .product-name a:hover {
+                text-decoration: none; /* hoặc giữ là none nếu không muốn gạch chân khi hover */
+                color: #3c5f3b;
+            }
+    </style>
+</head>
+<body>
+      
+    <header>
+        <div class="ad-banner">
+            <marquee>Nhập mã MATSUYANF để nhận ưu đãi 50K cho đơn hàng trên 200k!</marquee>
+        </div>
+
+        <nav class="navbar">
+            <div class="navbar-left">
+                <div class="logo">
+                    <img src="images/logo2.jpg" alt="Logo Matsuya">
+                </div>
+                <!-- Thay nút ☰ bằng icon material -->
+
+
+                <ul class="navigation">
+                    <li><a href="trangchu.html">TRANG CHỦ</a></li>
+                    <li><a href="gioithieu.html">GIỚI THIỆU</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">SẢN PHẨM</a>
+                        <div class="dropdown-content">
+                            <a href="tatcasp.html">Tất cả sản phẩm</a>
+                            <a href="matcha.html">Trà Matcha</a>
+                            <a href="houji.html">Trà Houjicha</a>
+                            <a href="banh.html">Bánh Matcha</a>
+                            <a href="bot.html">Bột Matcha</a>
+                            <a href="dungcu.html">Dụng cụ</a>
+                            <a href="combo.html">Combo</a>
+                        </div>
+                    </li>
+                    <li><a href="tintuc.html">TIN TỨC</a></li>
+                    <li><a href="lienhe.html">LIÊN HỆ</a></li>
+                </ul>
+            </div>
+
+            <div class="navbar-right">
+                <div class="icon-bar">
+                    <button class="icon-button" onclick="window.location.href='giohang.html'">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                    </button>
+
+                    <button class="icon-button" onclick="window.location.href='spyeuthich.html'">
+                        <span class="material-symbols-outlined">favorite</span>
+                    </button>
+                    <button class="icon-button" onclick="window.location.href='login.html'">
+                        <span class="material-symbols-outlined">person</span>
+                    </button>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+
+
+
+
+    <img src="images/nenbanh.jpg" alt="Trà Matcha" style="width: 100%;">
+
+    <div id="banh" class="products active">
+        <div class="product-item">
+            <div class="product-image-wrapper">
+                <img src="images/banhkem.jpg" alt="Bánh Matcha Cheesecake">
+                <div class="product-hover-wrapper">
+                    <div class="hover-overlay">
+                        <div class="top-icons">
+                            <button class="icon-btn heart-btn"><i class="fas fa-heart"></i></button>
+                            <button class="icon-btn"
+                                    onclick="event.stopPropagation(); addToCartAndGoCart(this);"
+                                    data-name="Matcha Tiramisu"
+                                    data-price="45000"
+                                    data-image="images/banhkem.jpg">
+                                <i class="fas fa-shopping-bag"></i>
+                            </button>
+
+                        </div>
+                        <button class="btn-buy-hover"
+                                data-name="Matcha Tiramisu"
+                                data-price="45000"
+                                data-image="images/banhkem.jpg"
+                                onclick="event.stopPropagation(); buyNow(this);">
+                            Mua ngay
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-name">
+                <a href="ctbanhtira.html">Matcha Tiramisu</a>
+            </div>
+            <div class="product-price">45.000đ</div>
+        </div>
+
+        <div class="product-item">
+            <div class="product-image-wrapper">
+                <img src="images/cookie.jpg" alt="Bánh Matcha Tiramisu">
+                <div class="product-hover-wrapper">
+                    <div class="hover-overlay">
+                        <div class="top-icons">
+                            <button class="icon-btn heart-btn"><i class="fas fa-heart"></i></button>
+                            <button class="icon-btn"
+                                    onclick="event.stopPropagation(); addToCartAndGoCart(this);"
+                                    data-name="Matcha Cookie"
+                                    data-price="10000"
+                                    data-image="images/cookie.jpg">
+                                <i class="fas fa-shopping-bag"></i>
+                            </button>
+                        </div>
+                        <button class="btn-buy-hover"
+                                data-name="Matcha Cookie"
+                                data-price="10000"
+                                data-image="images/cookie.jpg"
+                                onclick="event.stopPropagation(); buyNow(this);">
+                            Mua ngay
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-name">
+                <a href="ctbanhcookie.html">Matcha Cookie</a>
+            </div>
+            <div class="product-price">10.000đ</div>
+        </div>
+
+        <div class="product-item">
+            <div class="product-image-wrapper">
+                <img src="images/cupcake.jpg" alt="Bánh Brownie Matcha">
+                <div class="product-hover-wrapper">
+                    <div class="hover-overlay">
+                        <div class="top-icons">
+                            <button class="icon-btn heart-btn"><i class="fas fa-heart"></i></button>
+                            <button class="icon-btn"
+                                    onclick="event.stopPropagation(); addToCartAndGoCart(this);"
+                                     data-name="Muffin Matcha"
+                                     data-price="15000"
+                                     data-image="images/cupcake.jpg">
+                                <i class="fas fa-shopping-bag"></i>
+                            </button>
+                        </div>
+                        <button class="btn-buy-hover"
+                                data-name="Muffin Matcha"
+                                data-price="15000"
+                                data-image="images/cupcake.jpg"
+                                onclick="event.stopPropagation(); buyNow(this);">
+                            Mua ngay
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-name">
+                <a href="ctbanhmuffin.html">Muffin Matcha</a>
+            </div>
+            <div class="product-price">15.000đ</div>
+        </div>
+
+        <div class="product-item">
+            <div class="product-image-wrapper">
+                <img src="images/cupcakekem.jpg" alt="Bánh Pancake Matcha">
+                <div class="product-hover-wrapper">
+                    <div class="hover-overlay">
+                        <div class="top-icons">
+                            <button class="icon-btn heart-btn"><i class="fas fa-heart"></i></button>
+                            <button class="icon-btn"
+                                    onclick="event.stopPropagation(); addToCartAndGoCart(this);"
+                                    data-name="Cupcake"
+                                    data-price="20000"
+                                    data-image="images/cupcakekem.jpg">
+                                <i class="fas fa-shopping-bag"></i>
+                            </button>
+                        </div>
+                        <button class="btn-buy-hover"
+                                data-name="Cupcake"
+                                data-price="20000"
+                                data-image="images/cupcakekem.jpg"
+                                onclick="event.stopPropagation(); buyNow(this);">
+                            Mua ngay
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-name">
+                <a href="ctbanhcupcake.html">Cupcake Matcha</a>
+            </div>
+            <div class="product-price">20.000đ</div>
+        </div>
+
+        <div class="product-item">
+            <div class="product-image-wrapper">
+                <img src="images/crepe.jpg" alt="Bánh Roll Matcha">
+                <div class="product-hover-wrapper">
+                    <div class="hover-overlay">
+                        <div class="top-icons">
+                            <button class="icon-btn heart-btn"><i class="fas fa-heart"></i></button>
+                            <button class="icon-btn"
+                                    onclick="event.stopPropagation(); addToCartAndGoCart(this);"
+                                     data-name="Crepe Matcha"
+                                     data-price="40000"
+                                     data-image="images/crepe.jpg">
+                                <i class="fas fa-shopping-bag"></i>
+                            </button>
+                        </div>
+                        <button class="btn-buy-hover"
+                                data-name="Crepe Matcha"
+                                data-price="40000"
+                                data-image="images/crepe.jpg"
+                                onclick="event.stopPropagation(); buyNow(this);">
+                            Mua ngay
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-name">
+                <a href="ctbanhcrepe.html"> Crepe Matcha </a>
+            </div>
+            <div class="product-price">40.000đ</div>
+        </div>
+
+        <div class="product-item">
+            <div class="product-image-wrapper">
+                <img src="images/mochi.jpg" alt="Bánh Lava Matcha">
+                <div class="product-hover-wrapper">
+                    <div class="hover-overlay">
+                        <div class="top-icons">
+                            <button class="icon-btn heart-btn"><i class="fas fa-heart"></i></button>
+                            <button class="icon-btn"
+                                    onclick="event.stopPropagation(); addToCartAndGoCart(this);"
+                                    data-name="Mochi matcha chấm sữa "
+                                    data-price="150000"
+                                    data-image="images/mochi.jpg">
+                                <i class="fas fa-shopping-bag"></i>
+                            </button>
+                        </div>
+                        <button class="btn-buy-hover"
+                                data-name="Mochi matcha chấm sữa "
+                                data-price="150000"
+                                data-image="images/mochi.jpg"
+                                onclick="event.stopPropagation(); buyNow(this);">
+                            Mua ngay
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-name">
+                <a href="ctbanhmochi.html">Mochi matcha chấm sữa</a>
+            </div>
+            <div class="product-price">15.000đ</div>
+        </div>
+
+
+        <div class="product-item">
+            <div class="product-image-wrapper">
+                <img src="images/macaron.jpg" alt="Bánh Soufflé Matcha">
+                <div class="product-hover-wrapper">
+                    <div class="hover-overlay">
+                        <div class="top-icons">
+                            <button class="icon-btn heart-btn"><i class="fas fa-heart"></i></button>
+                            <button class="icon-btn"
+                                    onclick="event.stopPropagation(); addToCartAndGoCart(this);"
+                                    data-name="Macaron Matcha"
+                                    data-price="15000"
+                                    data-image="images/macaron.jpg">
+                                <i class="fas fa-shopping-bag"></i>
+                            </button>
+                        </div>
+                        <button class="btn-buy-hover"
+                                data-name="Macaron Matcha"
+                                data-price="15000"
+                                data-image="images/macaron.jpg"
+                                onclick="event.stopPropagation(); buyNow(this);">
+                            Mua ngay
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-name">
+                <a href="ctbanhmaca.html"> Macaron Matcha</a>
+            </div>
+            <div class="product-price">15.000đ</div>
+        </div>
+
+        <div class="product-item">
+            <div class="product-image-wrapper">
+                <img src="images/mochikem.jpg" alt="Bánh Mochi Matcha">
+                <div class="product-hover-wrapper">
+                    <div class="hover-overlay">
+                        <div class="top-icons">
+                            <button class="icon-btn heart-btn"><i class="fas fa-heart"></i></button>
+                            <button class="icon-btn"
+                                    onclick="event.stopPropagation(); addToCartAndGoCart(this);"
+                                    data-name="Matcha mochi kem lạnh"
+                                    data-price="15000"
+                                    data-image="images/mochikem.jpg">
+                                <i class="fas fa-shopping-bag"></i>
+                            </button>
+                        </div>
+                        <button class="btn-buy-hover"
+                                data-name="Matcha mochi kem lạnh"
+                                data-price="15000"
+                                data-image="images/mochikem.jpg"
+                                onclick="event.stopPropagation(); buyNow(this);">
+                            Mua ngay
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-name">
+                <a href="ctbanhmochikem.html">Matcha mochi kem lạnh</a>
+            </div>
+            <div class="product-price">15.000đ</div>
+        </div>
+
+
+        <footer class="footer">
+            <div class="footer-top">
+                <div class="newsletter">
+                    <i class="icon-email">✉️</i>
+                    <span>Hãy để chúng mình lắng nghe góp ý của cậu!</span>
+                </div>
+                <form class="subscribe" id="feedbackForm">
+                    <input type="text" id="feedbackInput" placeholder="Nhập góp ý của bạn" required>
+                    <button type="submit">Gửi</button>
+                </form>
+
+            </div>
+
+            <div class="footer-content">
+                <div class="footer-section logo-contact">
+                    <img src="images/logo2.jpg" alt="Matsuya Logo" class="logo">
+                    <ul>
+                        <li><i class="icon">📍</i> 12 phố Chùa Bộc, phường Quang Trung, quận Đống Đa, Hà Nội</li>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.620803649952!2d105.82537677387555!3d21.007832088499686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac806cfc0845%3A0x3848505bd3b9490f!2zMTIgUC4gQ2jDuWEgQuG7mWMsIFF1YW5nIFRydW5nLCDEkOG7kW5nIMSQYSwgSMOgIE7hu5lpIDEwMDAwMCwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1746035458690!5m2!1sen!2s"
+                                    width="300"
+                                    height="300"
+                                    style="border:0;"
+                                    allowfullscreen=""
+                                    loading="lazy">
+                            </iframe>
+
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+                    <ul>
+                        <li><i class="icon">📧</i> matsuya2025@gmail.com</li>
+                        <li><i class="icon">📞</i> 0394889183</li>
+                    </ul>
+                </div>
+
+
+                <div class="footer-section">
+                    <h3>CHÍNH SÁCH</h3>
+
+                    <ul class="policy-list">
+                        <li><i class="fas fa-chevron-right"></i> <a href="chinhsach3.html">Chính sách bán hàng</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="chinhsach1.html">Chính sách thanh toán</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="chinhsach.html">Điều khoản dịch vụ</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="chinhsach2.html">Chính sách bảo mật</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>GIỜ MỞ CỬA</h4>
+                    <p>Từ 9:00 - 21:30 tất cả các ngày trong tuần<br>(bao gồm cả các ngày lễ, ngày Tết).</p>
+                    <h4>GÓP Ý, KHIẾU NẠI</h4>
+                    <p><i class="icon">📞</i> 1900 6750</p>
+                </div>
+            </div>
+        </footer>
+        <script src="script.js"></script>
+        <script>
+            document.querySelectorAll('.heart-btn').forEach((btn) => {
+                btn.addEventListener('click', function () {
+                    const productItem = btn.closest('.product-item');
+                    const name = productItem.querySelector('.product-name').innerText;
+                    const price = productItem.querySelector('.product-price').innerText;
+                    const imgSrc = productItem.querySelector('img').getAttribute('src');
+
+                    // Lưu vào localStorage
+                    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+                    const exists = favorites.find(p => p.name === name);
+
+                    if (!exists) {
+                        favorites.push({ name, price, img: imgSrc });
+                        localStorage.setItem('favorites', JSON.stringify(favorites));
+                        alert("Đã thêm sản phẩm vào danh sách yêu thích!");
+                    } else {
+                        alert("Sản phẩm này đã có trong danh sách yêu thích.");
+                    }
+                });
+            });
+            // Thêm sự kiện để gửi form khi nhấn Enter
+            document.getElementById("feedbackForm").addEventListener("submit", function (event) {
+                event.preventDefault(); // Ngăn form reload trang
+
+
+                const feedback = document.getElementById("feedbackInput").value.trim();
+
+
+                if (feedback === "") {
+                    alert("Vui lòng nhập góp ý của bạn.");
+                    return;
+                }
+
+
+
+                // Hiển thị alert
+                alert("Cảm ơn bạn đã góp ý: " + feedback);
+
+
+                // Xoá nội dung sau khi gửi
+                document.getElementById("feedbackInput").value = "";
+            });
+        </script>
+
+</body>
+</html>

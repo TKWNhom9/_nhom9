@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matcha Drink Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  </head>
+<body>
+
+    <header>
+        <div class="ad-banner">
+            <marquee>Nhập mã MATSUYANF để nhận ưu đãi 50K cho đơn hàng trên 200k!</marquee>
+        </div>
+        
+        <nav class="navbar">
+            <div class="navbar-left">
+               <!-- Nút ☰ đưa vào đây -->
+              <button class="menu-toggle" onclick="toggleMenu()">
+                <span class="material-symbols-outlined">menu</span>
+              </button>
+
+                <div class="logo">
+                <a href="trangchu.html">
+                <img src="images/logo2.jpg" alt="Logo Matsuya">
+                </a>
+                </div> 
+                  
+  
+                <ul class="navigation">
+                    <li><a href="trangchu.html">TRANG CHỦ</a></li>
+                    <li><a href="gioithieu.html">GIỚI THIỆU</a></li>
+                    <li class="dropdown">
+                      <a href="#" class="dropbtn">SẢN PHẨM</a>
+                      <div class="dropdown-content">
+                          <a href="tatcasp.html">Tất cả sản phẩm</a>
+                          <a href="matcha.html">Trà Matcha</a>
+                          <a href="houji.html">Trà Houjicha</a>
+                          <a href="banh.html">Bánh Matcha</a>
+                          <a href="bot.html">Bột Matcha</a>
+                          <a href="dungcu.html">Dụng cụ</a>
+                          <a href="combo.html">Combo</a>
+                      </div>
+                  </li>     
+                    <li><a href="tintuc.html">TIN TỨC</a></li>
+                    <li><a href="lienhe.html">LIÊN HỆ</a></li>
+                </ul>
+            </div>
+    
+            <div class="navbar-right">
+  <div class="icon-bar">
+    <button class="icon-button">
+      <span class="material-symbols-outlined">shopping_cart</span>
+    </button>
+    <button class="icon-button">
+      <span class="material-symbols-outlined">favorite</span>
+    </button>
+    <button class="icon-button">
+      <span class="material-symbols-outlined">person</span>
+    </button>
+  </div>
+</div>
+
+        </nav>
+    </header>
+
+          <!-- Side menu -->
+<div id="side-menu" class="side-menu">
+  <button class="close-btn" onclick="toggleMenu()">x</button>
+  <nav class="menu-items">
+    <a href="trangchu.html">Trang chủ</a>
+    <a href="gioithieu.html">Giới thiệu</a>
+    <!-- Dropdown sản phẩm -->
+      <a href="#" onclick="toggleDropdown(event)">Sản phẩm ▾</a>
+      <ul class="dropdown-menu" id="product-dropdown">
+        <a href="matcha.html">Trà Matcha</a>
+        <a href="houji.html">Trà Houjicha</a>
+        <a href="banh.html">Bánh Matcha</a>
+        <a href="bot.html">Bột Matcha</a>
+        <a href="dungcu.html">Dụng cụ</a>
+        <a href="combo.html">Combo</a>
+      </ul>
+    <a href="tintuc.html">Tin tức</a>
+    <a href="lienhe.html">Liên hệ</a>
+  </nav>
+</div>
+
+
+
+<!-- Script -->
+<script>
+function toggleMenu() {
+  document.getElementById("side-menu").classList.toggle("active");
+}
+</script>
+
+<div class="container">
+  <div class="breadcrumb">
+  <a href="trangchu.html">Trang chủ</a> / 
+  <a href="tintuc.html">Tin tức</a> / 
+  <strong>QUY TRÌNH SẢN XUẤT BỘT MATCHA NHẬT BẢN.</strong>
+</div>
+
+  <div class="main-content">
+    <div class="article-header">
+  <h1 class="post-title">QUY TRÌNH SẢN XUẤT BỘT MATCHA NHẬT BẢN</h1>
+
+    <div class="author-date">
+        <i class="fa-pen-nib"></i> Lê Minh Ngọc &nbsp;&nbsp; 13/06/2025
+      </div>
+  </div>
+
+    <p>
+ Matcha là gì ?: là sản phẩm của cả một quy trình sản xuất nghiêm ngặt, khép kín bảo gồm nhiều công đoạn từ chăm sóc cây, chất đất, nguồn nước, thời tiết, độ che phủ, độ tuổi cây trà, quá trình thu hái, chọn lựa búp trà, thời gian thu hoạch trà tại nông trại…. tới nhà máy sơ chế, hấp nóng nhiệt độ cao và làm lạnh nhanh, quá trình oxy hóa, tách bỏ gân, cuống lá, công nghệ sàng lọc màu, phân loại màu lá trà, sấy hơi, sấy khô, tới quá trình vận chuyển, lưu trữ từ aracha, tencha, độ mịn và các bí quyết sản xuất.   </p>
+    <img src="images/tintuc31.jpg" alt="Các loại trà thảo mộc" class="news-image">
+
+    <p>
+Thông thường quy trình sản xuất Matcha từ nông trại đến người tiêu dùng bao gồm 4 công đoạn:<p>
+    <h2>Giai đoạn 1: Vụ mùa - Thu hoạch lá trà</h2>      
+Hiên tại có một số loại trà có xuất xứ từ nước ngoài như Đài Loan, Trung Quốc, Nhật Bản… Bên cạnh đó trong nước cũng đang sản xuất trà bột, hay bột trà xanh để phục vụ thị trường nội địa, tuy nhiên, theo đánh giá chung của chúng tôi thì chất lượng bột trà xanh của Việt Nam còn khá kém so với các nước khác. Công nghệ sản xuất trà của Nhật bản có thể nói là tốt nhất thế giới hiện nay khi họ đang dần thống lĩnh thị trường Châu Âu và Châu Á</p>
+<img src="images/tintuc32.jpg" alt="Quy trình sản xuất matcha trà xanh nhật bản " class="news-image">
+<p>      
+    Công đoạn này được gọi là ” Chatsumi” : Tại Nhật Bản, vào những ngày đầu tháng 4, khi những búp trà bắp đầu nhú lên, cả cánh đồng trà được che phủ bởi một lớp lưới màu đen ngăn ánh sáng từ mặt trời chiếu trực tiếp vào cây trà. ( Thời gian đầu việc che phủ được làm rất thủ công, chưa có lưới che công nghiệp, việc che phủ được thực hiện bằng cách dựng giàn tre và phủ rơm, lá cói lên trên).
+</p>
+
+<p>      Việc che phủ ngăn ánh sáng mặt trời gây ức cây trà tạo ra theanine trong lá trà, một thành phần tạo nên mùi thơm của trà được chuyển hóa từ chất tanin, chất có vị đắng trong trà. Matcha được làm từ những lá trà được che phủ bớt gắt và đắng hơn.
+</p>
+<p>      Quá trình này cũng tạo ra một mùi vị đặc biệt của Matcha được gọi là ” Oika” và màu xanh nổi bật và tự nhiên của Matcha.
+
+Vụ thu hoạch lá trà được bắt đầu vào ngày thứ 88 tính từ ngày bắt đầu mùa xuân tại Nhật Bản, ngày này được gọi là : Hachiju-Hachiya
+</p>
+<h2>Giai đoạn 2: Từ lá trà thành ARACHA</h2>
+<img src="images/tintuc32.jpg" alt="Từ lá trà thành ARACHA" class="news-image">
+
+  <p>
+    Lá trà vừa thu hoạch từ nông trại được đưa trực tiếp tới khu vực sơ chế Aracha trong nhà máy. Lá trà được làm sạch và hấp ở nhiệt độ cao. Quá trình này diễn ra nhanh chóng mục đích nhằm ngăn quá trình lên men, oxy hóa và giữ được dưỡng chất tối đa trong lá trà cũng như màu xanh của Matcha sau này. </p>
+
+<h2>Giai đoạn 3: Từ Aracha thành Tencha </h2>
+<img src="images/tintuc33.jpg" alt="Từ lá trà thành ARACHA" class="news-image">
+
+<p>
+    Sau khi được làm khô, Aracha được đưa đến khu vực xử lý Tencha. Tại đây, Aracha được tách bỏ gân lá, cuống và chỉ những phần “thịt” lá được giữ lại để sản xuất Matcha.
+
+Đặc biệt là, aracha được xử lý với một hệ thống thông minh, và nhiều quá trình như cắt nhỏ, phân loại kích thước, làm khô lại lần nữa, phân loại màu sắc…  </p>
+
+<h2>Giai đoạn 4: Từ Tencha thành Matcha </h2>
+<img src="images/tintuc33.jpg" alt="Từ lá trà thành ARACHA" class="news-image">
+  <p>
+Tencha sau khi được xử lý kỹ sẽ được bảo quản ở kho lạnh. Tencha được vận chuyển tới khu vực sản xuất Matcha tại nhà máy. Tencha được nghiền thanh bột mịn bằng cối đá granite được làm thủ công bằng các nghệ nhân Nhật Bản. Những loại matcha cao cấp được nghiền rất kỹ và kiểm soát môi trường cũng như nhiệt độ 24/24. Loại Matcha cao cấp nhất phục vụ lễ hội truyền thống thường phải mất từ 20-25 tiếng để sản xuất được 1kg.</p>
+  <p>  Và đừng quên Matsuya - thương hiệu matcha trà xanh chuẩn Nhật uy tín, nơi bạn an tâm chất lượng với giá thành hợp lý. Matsuya chúng tôi hân hạnh là người bạn đồng hành của bạn trong cuộc sống hàng ngày, giúp bạn khỏe hơn, đẹp hơn và sống vui hơn!
+</p>
+    
+  </div> <!-- ✅ Đóng main-content đúng chỗ -->
+
+   <aside class="sidebar">
+  <h3>Tin tức cho bạn</h3>
+  <ul class="news-list">
+
+    <li class="news-item">
+  <img src="images/tea1.jpg" alt="Matcha" />
+  <div class="news-text">
+    <a href="tinchoban1.html">
+      <p>Giảm cân hiệu quả với trà xanh Matcha</p>
+    </a>
+    <span class="time">Vừa xong</span>
+  </div>
+</li>
+
+    <li class="news-item">
+      <img src="images/tea2.jpg" alt="Matcha chống lão hóa" />
+      <div class="news-text">
+        <a href="tinchoban2.html">
+      <p>Matcha chống lão hóa</p>
+    </a>
+        <span>5 ngày</span>
+      </div>
+    </li>
+    <li class="news-item">
+      <img src="images/tea3.jpg" alt="Nên uống Matcha khi nào" />
+      <div class="news-text">
+        <a href="tinchoban3.html">
+      <p>Nên uống Matcha khi nào</p>
+        </a>        
+        <span>8 ngày</span>
+      </div>
+    </li>
+
+    <li class="news-item">
+      <img src="images/tea4.jpg" alt="Bột trà xanh Matcha Đài Loan kém chất lượng ?" />
+      <div class="news-text">
+        <a href="tinchoban4.html">
+      <p>Bột trà xanh Matcha Đài Loan kém chất lượng ?</p>
+        </a>    
+        <span>10 ngày</span>
+      </div>
+    </li>
+
+    <li class="news-item">
+      <img src="images/tea5.jpg" alt="Trà cho bà bầu" />
+      <div class="news-text">
+        <a href="tinchoban5.html">
+      <p>Trà cho bà bầu</p>
+        </a>
+        <span>12 ngày</span>
+      </div>
+    </li>
+
+    <li class="news-item">
+      <img src="images/tea6.jpg" alt="Uống trà xanh Matcha bao nhiêu là đủ và uống trà Matcha như thế nào?" />
+      <div class="news-text">
+         <a href="tinchoban6.html">
+      <p>Uống trà xanh Matcha bao nhiêu là đủ và uống trà Matcha như thế nào?</p>
+        </a>
+        <span>14 ngày</span>
+      </div>
+    </li>
+  </ul>
+</aside>
+</div>
+
+<div class="custom-social-section">
+  <div class="line-divider"></div>
+  <div class="custom-social-icons">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://example.com" target="_blank" class="social-icon" title="Chia sẻ Facebook">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://twitter.com/intent/tweet?url=https://example.com&text=Check%20this%20out!" target="_blank" class="social-icon" title="Chia sẻ Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+    <a href="mailto:?subject=Bạn nên xem cái này&body=Hãy xem link này: https://example.com" class="social-icon" title="Gửi email">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://pinterest.com/pin/create/button/?url=https://example.com" target="_blank" class="social-icon" title="Chia sẻ Pinterest">
+      <i class="fab fa-pinterest-p"></i>
+    </a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://example.com" target="_blank" class="social-icon" title="Chia sẻ LinkedIn">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+  </div>
+</div>
+ 
+
+ <footer class="footer">
+        <div class="footer-top">
+          <div class="newsletter">
+            <i class="icon-email">✉️</i>
+            <span>Hãy để chúng mình lắng nghe góp ý của cậu!</span>
+          </div>
+          <div class="subscribe">
+            <input type="email" placeholder="Nhập email của bạn">
+            <button>Đăng ký</button>
+          </div>
+        </div>
+      
+        <div class="footer-content">
+          <div class="footer-section logo-contact">
+            <img src="images/logo2.jpg" alt="Matsuya Logo" class="logo">
+            <ul>
+              <li><i class="icon">📍</i> 12 phố Chùa Bộc, phường Quang Trung, quận Đống Đa, Hà Nội</li>
+              <div class="map-container">
+                <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.620803649952!2d105.82537677387555!3d21.007832088499686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac806cfc0845%3A0x3848505bd3b9490f!2zMTIgUC4gQ2jDuWEgQuG7mWMsIFF1YW5nIFRydW5nLCDEkOG7kW5nIMSQYSwgSMOgIE7hu5lpIDEwMDAwMCwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1746035458690!5m2!1sen!2s" 
+    width="300" 
+    height="300" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy">
+    </iframe>
+             
+            </ul>
+          </div>
+      
+          <div class="footer-section">
+            <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+            <ul>
+                <li><i class="icon">📧</i> matsuya2025@gmail.com</li>
+                <li><i class="icon">📞</i> 0394889183</li>
+            </ul>
+          </div>
+      
+          <div class="footer-section">
+            <h3>THÔNG TIN</h3>
+                <p>Chính sách bảo mật</p>
+                <p>Chính sách hoàn trả</p>
+                <p>Điều khoản sử dụng</p>
+          </div>
+      
+          <div class="footer-section">
+            <h4>GIỜ MỞ CỬA</h4>
+            <p>Từ 9:00 - 21:30 tất cả các ngày trong tuần<br>(bao gồm cả các ngày lễ, ngày Tết).</p>
+            <h4>GÓP Ý, KHIẾU NẠI</h4>
+            <p><i class="icon">📞</i> 1900 6750</p>
+          </div>
+        </div>
+      </footer>
+
+</body>
+
+</html>
+

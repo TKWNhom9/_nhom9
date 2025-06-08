@@ -3,107 +3,314 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matcha Drink Store - Đăng nhập</title>
+    <title>Matcha Drink Store</title>
     <link rel="stylesheet" href="styles.css">
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+<style>
+  /* ================= FORM ĐĂNG NHẬP & ĐĂNG KÝ ================== */
+
+/* 🌿 Flat Matcha Style (Không đổ bóng) */
+.login-page, .register-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f8fdfa;
+    padding: 40px 16px;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.login-container, .register-container {
+    width: 100%;
+    max-width: 420px;
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 20px;
+    border: 1px solid #d2e5d1; /* viền nhẹ thay cho đổ bóng */
+    text-align: center;
+}
+
+.login-container h2, .register-container h2 {
+    font-size: 26px;
+    color: #2d593a;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Input */
+form input {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 18px;
+    font-size: 15px;
+    background: #fbfff9;
+    border: 1px solid #cde5cc;
+    border-radius: 12px;
+    transition: border-color 0.3s;
+}
+
+form input:focus {
+    border-color: #74a976;
+    outline: none;
+}
+
+/* Nút */
+form button,
+.try-button {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    background-color: #74c47b;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover,
+.try-button:hover {
+    background-color: #5bad60;
+}
+
+/* Link nhỏ dưới */
+.register-link {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 14px;
+    color: #4c7f4c;
+    text-decoration: none;
+}
+
+.register-link:hover {
+    color: #2e6633;
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .login-container, .register-container {
+        padding: 24px;
+        border-radius: 16px;
+    }
+}
+
+</style>
+  </head>
 <body>
 
-<header>
-    <div class="ad-banner">
-        <marquee>Nhập mã MATSUYANF để nhận ưu đãi 50K cho đơn hàng trên 200k!</marquee>
-    </div>
-    <nav class="navbar">
-        <div class="logo">
-            <img src="images/logo.jpg" alt="Logo Matsuya">    
-        </div>   
-        <ul class="navigation">
-            <li><a href="trangchu.html">TRANG CHỦ</a></li>
-            <li><a href="#">GIỚI THIỆU</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropbtn">SẢN PHẨM</a>
-                <div class="dropdown-content">
-                    <a href="sanpham.html#matcha" onclick="showProducts('matcha', event)">Trà Matcha</a>
-                    <a href="sanpham.html#houjicha" onclick="showProducts('houjicha', event)">Trà Houjicha</a>
-                    <a href="sanpham.html#banh" onclick="showProducts('banh', event)">Bánh Matcha</a>
-                    <a href="sanpham.html#bot" onclick="showProducts('bot', event)">Bột Matcha</a>
-                    <a href="sanpham.html#dungcu" onclick="showProducts('dungcu', event)">Dụng cụ</a>
-                </div>
-            </li>            
-            <li><a href="#">TIN TỨC</a></li>
-            <li><a href="#">LIÊN HỆ</a></li>
-            <li><a href="#">KHÁC</a></li>
-        </ul>
-
-        <div class="search-container">
-            <input type="text" placeholder="Tìm kiếm..." class="search-input">
-            <button class="search-btn"></button>
+    <header>
+        <div class="ad-banner">
+            <marquee>Nhập mã MATSUYANF để nhận ưu đãi 50K cho đơn hàng trên 200k!</marquee>
         </div>
-    </nav>
-</header>
+        
+        <nav class="navbar">
+            <div class="navbar-left">
+
+                <!-- Nút ☰ đưa vào đây -->
+                <button class="menu-toggle" onclick="toggleMenu()">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+
+                <div class="logo">
+                    <a href="trangchu.html">
+                        <img src="images/logo2.jpg" alt="Logo Matsuya">
+                    </a>
+                </div>
+
+
+                <ul class="navigation">
+                    <li><a href="trangchu.html">TRANG CHỦ</a></li>
+                    <li><a href="gioithieu.html">GIỚI THIỆU</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">SẢN PHẨM</a>
+                        <div class="dropdown-content">
+                            <a href="tatcasp.html">Tất cả sản phẩm</a>
+                            <a href="matcha.html">Trà Matcha</a>
+                            <a href="houji.html">Trà Houjicha</a>
+                            <a href="banh.html">Bánh Matcha</a>
+                            <a href="bot.html">Bột Matcha</a>
+                            <a href="dungcu.html">Dụng cụ</a>
+                            <a href="combo.html">Combo</a>
+                        </div>
+                    </li>
+                    <li><a href="tintuc.html">TIN TỨC</a></li>
+                    <li><a href="lienhe.html">LIÊN HỆ</a></li>
+                </ul>
+            </div>
+            <div class="navbar-right">
+                <div class="icon-bar">
+                    <button class="icon-button" onclick="window.location.href='giohang.html'">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                    </button>
+
+                    <button class="icon-button" onclick="window.location.href='spyeuthich.html'">
+                        <span class="material-symbols-outlined">favorite</span>
+                    </button>
+                    <button class="icon-button" onclick="window.location.href='login.html'">
+                        <span class="material-symbols-outlined">person</span>
+                    </button>
+                </div>
+            </div>
+
+
+        </nav>
+    </header>
+    
+<!-- Side menu -->
+<div id="side-menu" class="side-menu">
+  <button class="close-btn" onclick="toggleMenu()">x</button>
+  <nav class="menu-items">
+    <a href="trangchu.html">Trang chủ</a>
+    <a href="gioithieu.html">Giới thiệu</a>
+    <!-- Dropdown sản phẩm -->
+      <a href="#" onclick="toggleDropdown(event)">Sản phẩm ▾</a>
+      <ul class="dropdown-menu" id="product-dropdown">
+        <a href="matcha.html">Trà Matcha</a>
+        <a href="houji.html">Trà Houjicha</a>
+        <a href="banh.html">Bánh Matcha</a>
+        <a href="bot.html">Bột Matcha</a>
+        <a href="dungcu.html">Dụng cụ</a>
+        <a href="combo.html">Combo</a>
+      </ul>
+    <a href="tintuc.html">Tin tức</a>
+    <a href="lienhe.html">Liên hệ</a>
+  </nav>
+</div>
+
+
+
+<!-- Script -->
+<script>
+function toggleMenu() {
+  document.getElementById("side-menu").classList.toggle("active");
+}
+</script>
 
 <!-- Form Đăng nhập -->
 <main class="login-page">
     <div class="login-container">
       <h2>ĐĂNG NHẬP</h2>
-      <p>Nếu bạn chưa có tài khoản, <a href="#" class="register-link">đăng ký tại đây</a></p>
-      <form action="#">
-        <input type="email" placeholder="Email" required>
-        <input type="password" placeholder="Mật khẩu" required>
-        <button type="submit">Đăng nhập</button>
-      </form>
-      <a href="#" class="forgot-password">Quên mật khẩu</a>
+      <form id="loginForm" action="#">
+  <input type="email" id="email" placeholder="Email" required>
+  <input type="password" id="password" placeholder="Mật khẩu" required>
+  <button type="submit">Đăng nhập</button>
+</form>
+       <p>Nếu bạn chưa có tài khoản, <a href="register.html" class="register-link">đăng ký tại đây</a></p>
+
     </div>
   </main>
-  
-  <footer class="footer">
-    <div class="footer-top">
-      <div class="newsletter">
-        <i class="icon-email">✉️</i>
-        <span>Hãy để chúng mình lắng nghe góp ý của cậu!</span>
-      </div>
-      <div class="subscribe">
-        <input type="email" placeholder="Nhập email của bạn">
-        <button>Đăng ký</button>
-      </div>
-    </div>
-  
-    <div class="footer-content">
-      <div class="footer-section logo-contact">
-        <img src="images/logo.jpg" alt="Matsuya Logo" class="logo">
-        <ul>
-          <li><i class="icon">📍</i> 12 phố Chùa Bộc, phường Quang Trung, quận Đống Đa, Hà Nội</li>
-          <div class="map-container">
-            <iframe 
-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.620803649952!2d105.82537677387555!3d21.007832088499686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac806cfc0845%3A0x3848505bd3b9490f!2zMTIgUC4gQ2jDuWEgQuG7mWMsIFF1YW5nIFRydW5nLCDEkOG7kW5nIMSQYSwgSMOgIE7hu5lpIDEwMDAwMCwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1746035458690!5m2!1sen!2s" 
-width="300" 
-height="300" 
-style="border:0;" 
-allowfullscreen="" 
-loading="lazy">
-</iframe>
-         
-        </ul>
-      </div>
-  
-      <div class="footer-section">
-        <h4>HỖ TRỢ KHÁCH HÀNG</h4>
-        <ul>
-            <li><i class="icon">📧</i> matsuya2025@gmail.com</li>
-            <li><i class="icon">📞</i> 0394889183</li>
-        </ul>
-      </div>
-  
-      <div class="footer-section">
-        <h3>THÔNG TIN</h3>
-            <p>Chính sách bảo mật</p>
-            <p>Chính sách hoàn trả</p>
-            <p>Điều khoản sử dụng</p>
-      </div>
-  
-      <div class="footer-section">
-        <h4>GIỜ MỞ CỬA</h4>
-        <p>Từ 9:00 - 21:30 tất cả các ngày trong tuần<br>(bao gồm cả các ngày lễ, ngày Tết).</p>
-        <h4>GÓP Ý, KHIẾU NẠI</h4>
-        <p><i class="icon">📞</i> 1900 6750</p>
-      </div>
-    </div>
+
+ <footer class="footer">
+        <div class="footer-top">
+          <div class="newsletter">
+            <i class="icon-email">✉️</i>
+            <span>Hãy để chúng mình lắng nghe góp ý của cậu!</span>
+          </div>
+          <div class="subscribe">
+            <input type="email" placeholder="Nhập email của bạn">
+            <button>Đăng ký</button>
+          </div>
+        </div>
+      
+        <div class="footer-content">
+          <div class="footer-section logo-contact">
+            <img src="images/logo2.jpg" alt="Matsuya Logo" class="logo">
+            <ul>
+              <li><i class="icon">📍</i> 12 phố Chùa Bộc, phường Quang Trung, quận Đống Đa, Hà Nội</li>
+              <div class="map-container">
+                <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.620803649952!2d105.82537677387555!3d21.007832088499686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac806cfc0845%3A0x3848505bd3b9490f!2zMTIgUC4gQ2jDuWEgQuG7mWMsIFF1YW5nIFRydW5nLCDEkOG7kW5nIMSQYSwgSMOgIE7hu5lpIDEwMDAwMCwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1746035458690!5m2!1sen!2s" 
+    width="300" 
+    height="300" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy">
+    </iframe>
+             
+            </ul>
+          </div>
+      
+          <div class="footer-section">
+            <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+            <ul>
+                <li><i class="icon">📧</i> matsuya2025@gmail.com</li>
+                <li><i class="icon">📞</i> 0394889183</li>
+            </ul>
+          </div>
+      
+          <div class="footer-section">
+              <h3>CHÍNH SÁCH</h3>
+
+              <ul class="policy-list">
+                  <li><i class="fas fa-chevron-right"></i> <a href="chinhsach3.html">Chính sách bán hàng</a></li>
+                  <li><i class="fas fa-chevron-right"></i> <a href="chinhsach1.html">Chính sách thanh toán</a></li>
+                  <li><i class="fas fa-chevron-right"></i> <a href="chinhsach.html">Điều khoản dịch vụ</a></li>
+                  <li><i class="fas fa-chevron-right"></i> <a href="chinhsach2.html">Chính sách bảo mật</a></li>
+              </ul>
+          </div>
+      
+          <div class="footer-section">
+            <h4>GIỜ MỞ CỬA</h4>
+            <p>Từ 9:00 - 21:30 tất cả các ngày trong tuần<br>(bao gồm cả các ngày lễ, ngày Tết).</p>
+            <h4>GÓP Ý, KHIẾU NẠI</h4>
+            <p><i class="icon">📞</i> 1900 6750</p>
+          </div>
+        </div>
+      </footer>
+
+</body>
+
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+        e.preventDefault(); // Ngăn form gửi đi
+
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value;
+
+        if (!email || !password) {
+            alert('Vui lòng nhập đầy đủ thông tin.');
+            return;
+        }
+
+        const isGmail = email.endsWith('@gmail.com');
+        const specialCharRegex = /[!@#$%^&*(),.?":{}|<>]/;
+        const isValidPassword = password.length >= 8 && specialCharRegex.test(password);
+
+        if (isGmail && isValidPassword) {
+            alert('Đăng nhập thành công!');
+            window.location.href = 'trangchu.html';
+        } else {
+            alert('Email hoặc mật khẩu không đúng!');
+        }
+    });
+
+        document.getElementById("feedbackForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Ngăn form reload trang
+
+
+        const feedback = document.getElementById("feedbackInput").value.trim();
+
+
+        if (feedback === "") {
+            alert("Vui lòng nhập góp ý của bạn.");
+        return;
+         }
+
+
+
+        // Hiển thị alert
+        alert("Cảm ơn bạn đã góp ý: " + feedback);
+
+
+        // Xoá nội dung sau khi gửi
+        document.getElementById("feedbackInput").value = "";
+     });
+
+</script>
+
+
+</html>
+

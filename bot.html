@@ -6,9 +6,19 @@
     <title>Matcha Drink Store</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <style>
+        .product-name a {
+            color: #3c5f3b;
+            text-decoration: none;
+        }
 
-  </head>
+            .product-name a:hover {
+                text-decoration: none; /* hoặc giữ là none nếu không muốn gạch chân khi hover */
+                color: #3c5f3b;
+            }
+    </style>
+</head>
 <body>
 
     <header>
@@ -18,18 +28,17 @@
         
         <nav class="navbar">
             <div class="navbar-left">
+
                 <!-- Nút ☰ đưa vào đây -->
                 <button class="menu-toggle" onclick="toggleMenu()">
                     <span class="material-symbols-outlined">menu</span>
                 </button>
-
 
                 <div class="logo">
                     <a href="trangchu.html">
                         <img src="images/logo2.jpg" alt="Logo Matsuya">
                     </a>
                 </div>
-                <!-- Thay nút ☰ bằng icon material -->
 
 
                 <ul class="navigation">
@@ -51,6 +60,7 @@
                     <li><a href="lienhe.html">LIÊN HỆ</a></li>
                 </ul>
             </div>
+
             <div class="navbar-right">
                 <div class="icon-bar">
                     <button class="icon-button" onclick="window.location.href='giohang.html'">
@@ -66,11 +76,10 @@
                 </div>
             </div>
 
-
         </nav>
     </header>
-
-<!-- Side menu -->
+    
+                <!-- Side menu -->
 <div id="side-menu" class="side-menu">
   <button class="close-btn" onclick="toggleMenu()">x</button>
   <nav class="menu-items">
@@ -99,140 +108,86 @@ function toggleMenu() {
   document.getElementById("side-menu").classList.toggle("active");
 }
 </script>
+ 
 
-<main class="container">
-    <div class="main-content">
-        <div class="top-banner">
-            <img src="images/Banner1.jpg" alt="Banner1">
-            <div class="text-overlay">
-                <h1>LỢI ÍCH CỦA MATCHA CHO SỨC KHỎE</h1>
-                <p>Khác với các loại trà thông thường... Lợi ích cụ thể sẽ được giải đáp ngay sau đây.</p>
-                <a href="chitiettintuc1.html">Xem thêm</a>
+
+<img src="images/nenbot.jpg" alt="Trà Matcha" style="width: 100%;">   
+
+<div id="bot" class="products active">
+
+    <div class="product-item">
+        <div class="product-image-wrapper">
+            <img src="images/botharu.jpg" alt="Bột Matcha Haru">
+            <div class="product-hover-wrapper">
+                <div class="hover-overlay">
+                    <div class="top-icons">
+                        <button class="icon-btn heart-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="icon-btn"
+                                onclick="event.stopPropagation(); addToCartAndGoCart(this);"
+                                data-name="Bột Matcha Haru"
+                                data-price="300000"
+                                data-image="images/botharu.jpg">
+                            <i class="fas fa-shopping-bag"></i>
+                        </button>
+
+
+                    </div>
+
+                    <button class="btn-buy-hover"
+                            data-name="Bột Matcha Haru"
+                            data-price="300000"
+                            data-image="images/botharu.jpg"
+                            onclick="event.stopPropagation(); buyNow(this);">
+                        Mua ngay
+                    </button>
+                </div>
             </div>
         </div>
-
-        <div class="news-list">
-            <div class="news-card">
-                <img src="images/tea1.jpg" alt="Trà 1">
-                <div class="content">
-                    <h3>1 ly matcha mỗi sáng bảo vệ cơ thể khỏi tế bào ung thư</h3>
-                    <p>Sản phẩm tự nhiên thường xuyên được nhắc đến và ưu tiên sử dụng...</p>
-                    <a href="chitiet2.html">Xem thêm</a>
-                </div>
-            </div>
-            <div class="news-card">
-                <img src="images/tea2.jpg" alt="Trà 2">
-                <div class="content">
-                    <h3>Quy trình sản xuất Bột Matcha Nhật Bản</h3>
-                    <p>Giới thiệu đến bạn quy trình sản xuất Bột matcha Nhật Bản cơ bản...</p>
-                    <a href="chitiet3.html">Xem thêm</a>
-                </div>
-            </div>
-
-            <div class="news-card">
-                <img src="images/tea3.jpg" alt="Trà 1">
-                <div class="content">
-                    <h3>Giá bột trà xanh Matcha giá bao nhiêu là phù hợp?</h3>
-                    <p>Giá bột trà xanh Matcha giá bao nhiêu trên thị trường?...</p>
-                    <a href="chitiet4.html">Xem thêm</a>
-                </div>
-            </div>
-
-            <div class="news-card">
-                <img src="images/tea4.jpg" alt="Trà 1">
-                <div class="content">
-                    <h3>Trà xanh: Nguồn, lợi ích sức khỏe, chất dinh dưỡng, sử dụng và thành phần</h3>
-                    <p>Trà xanh là một loại trà được ủ từ lá của cây trà camellia sinensis...</p>
-                    <a href="chitiet5.html">Xem thêm</a>
-                </div>
-            </div>
-
-            <div class="news-card">
-                <img src="images/tea5.jpg" alt="Trà 1">
-                <div class="content">
-                    <h3>Matcha “ngon” hay “dở” phần lớn được quyết định bởi Tencha</h3>
-                    <p>Tencha là tên của những lá trà được sử dụng làm trà Matcha...</p>
-                    <a href="chitiet6.html">Xem thêm</a>
-                </div>
-            </div>
-
-            <div class="news-card">
-                <img src="images/tea6.jpg" alt="Trà 1">
-                <div class="content">
-                    <h3>Phương pháp điều trị bằng trà xanh cho bệnh nhân Parkinson</h3>
-                    <p>Nghiên cứu phương pháp điều trị bằng trà xanh cho bệnh nhân Parkinson...</p>
-                    <a href="chitiet7.html">Xem thêm</a>
-                </div>
-            </div>
-
-
+        <div class="product-name">
+            <a href="ctbotharu.html">Bột Matcha Haru</a>
         </div>
+        <div class="product-price">300.000đ</div>
     </div>
 
-    <aside class="sidebar">
-        <h3>Tin tức cho bạn</h3>
-        <ul class="news-list">
 
-            <li class="news-item">
-                <img src="images/tea1.jpg" alt="Matcha" />
-                <div class="news-text">
-                    <a href="tinchoban1.html">
-                        <p>Giảm cân hiệu quả với trà xanh Matcha</p>
-                    </a>
-                    <span class="time">Vừa xong</span>
-                </div>
-            </li>
 
-            <li class="news-item">
-                <img src="images/tea2.jpg" alt="Matcha chống lão hóa" />
-                <div class="news-text">
-                    <a href="tinchoban2.html">
-                        <p>Matcha chống lão hóa</p>
-                    </a>
-                    <span>5 ngày</span>
-                </div>
-            </li>
-            <li class="news-item">
-                <img src="images/tea3.jpg" alt="Nên uống Matcha khi nào" />
-                <div class="news-text">
-                    <a href="tinchoban3.html">
-                        <p>Nên uống Matcha khi nào</p>
-                    </a>
-                    <span>8 ngày</span>
-                </div>
-            </li>
+    <div class="product-item">
+        <div class="product-image-wrapper">
+            <img src="images/botuji.jpg" alt="Bột Matcha Uji">
+            <div class="product-hover-wrapper">
+                <div class="hover-overlay">
+                    <div class="top-icons">
+                        <button class="icon-btn heart-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="icon-btn"
+                                onclick="event.stopPropagation(); addToCartAndGoCart(this);"
+                                data-name="Bột Matcha Uji"
+                                data-price="200000"
+                                data-image="images/botuji.jpg">
+                            <i class="fas fa-shopping-bag"></i>
+                        </button>
 
-            <li class="news-item">
-                <img src="images/tea4.jpg" alt="Bột trà xanh Matcha Đài Loan kém chất lượng ?" />
-                <div class="news-text">
-                    <a href="tinchoban4.html">
-                        <p>Bột trà xanh Matcha Đài Loan kém chất lượng ?</p>
-                    </a>
-                    <span>10 ngày</span>
-                </div>
-            </li>
 
-            <li class="news-item">
-                <img src="images/tea5.jpg" alt="Trà cho bà bầu" />
-                <div class="news-text">
-                    <a href="tinchoban5.html">
-                        <p>Trà cho bà bầu</p>
-                    </a>
-                    <span>12 ngày</span>
-                </div>
-            </li>
+                    </div>
 
-            <li class="news-item">
-                <img src="images/tea6.jpg" alt="Uống trà xanh Matcha bao nhiêu là đủ và uống trà Matcha như thế nào?" />
-                <div class="news-text">
-                    <a href="tinchoban6.html">
-                        <p>Uống trà xanh Matcha bao nhiêu là đủ và uống trà Matcha như thế nào?</p>
-                    </a>
-                    <span>14 ngày</span>
+                    <button class="btn-buy-hover"
+                            data-name="Bột Matcha Uji"
+                            data-price="200000"
+                            data-image="images/botuji.jpg"
+                            onclick="event.stopPropagation(); buyNow(this);">
+                        Mua ngay
+                    </button>
                 </div>
-            </li>
-        </ul>
-    </aside>
+            </div>
+        </div>
+        <div class="product-name">
+            <a href="ctbotuji.html">Bột Matcha Uji</a>
+        </div>
+        <div class="product-price">200.000đ</div>
+    </div>
 
     <footer class="footer">
         <div class="footer-top">
@@ -291,9 +246,42 @@ function toggleMenu() {
             </div>
         </div>
     </footer>
-
-   
+    <script src="script.js"></script>
     <script>
+        document.querySelectorAll('.heart-btn').forEach((btn) => {
+            btn.addEventListener('click', function () {
+                const productItem = btn.closest('.product-item');
+
+                if (!productItem) return;
+
+                const nameElem = productItem.querySelector('.product-name');
+                const priceElem = productItem.querySelector('.product-price');
+                const imgElem = productItem.querySelector('img');
+
+                if (!nameElem || !priceElem || !imgElem) return;
+
+                const name = nameElem.innerText.trim();
+
+                // Lấy giá từ <span> nếu có, hoặc fallback về textContent
+                const priceSpan = priceElem.querySelector('span');
+                const price = priceSpan ? priceSpan.innerText.trim() : priceElem.innerText.trim();
+
+                const imgSrc = imgElem.getAttribute('src');
+
+                // Lưu vào localStorage
+                let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+                const exists = favorites.find(p => p.name === name);
+
+                if (!exists) {
+                    favorites.push({ name, price, img: imgSrc });
+                    localStorage.setItem('favorites', JSON.stringify(favorites));
+                    alert("Đã thêm sản phẩm vào danh sách yêu thích!");
+                } else {
+                    alert("Sản phẩm này đã có trong danh sách yêu thích.");
+                }
+            });
+        });
+        // Thêm sự kiện để gửi form khi nhấn Enter
         document.getElementById("feedbackForm").addEventListener("submit", function (event) {
             event.preventDefault(); // Ngăn form reload trang
 
@@ -316,7 +304,7 @@ function toggleMenu() {
             document.getElementById("feedbackInput").value = "";
         });
     </script>
+
+
 </body>
-
 </html>
-

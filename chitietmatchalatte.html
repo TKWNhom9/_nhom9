@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm - Coco Matcha </title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="script.js"></script>
+</head>
+<body>
+    <style>
+        .btn-buy-now {
+            cursor: pointer;
+        }
+        .product-detail-container {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            align-items: flex-start;
+            padding-left: 20px;
+        }
+
+        .breadcrumb-wrapper {
+            width: 100%;
+            background-color: #5e8540; /* Xanh đậm */
+            padding: 12px 0;
+        }
+
+        .breadcrumb {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            font-family: "Segoe UI", sans-serif;
+            font-size: 17px;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+
+            .breadcrumb a {
+                color: #2a4421;
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.2s;
+            }
+
+                .breadcrumb a:hover {
+                    color: #ffffff; /* Màu trắng đậm khi hover */
+                    text-decoration: none; /* Không gạch chân */
+                    font-weight: bold;
+                }
+
+
+            .breadcrumb .separator {
+                margin: 0 8px;
+                color: #2e2e2e;
+            }
+
+            .breadcrumb .current {
+                font-weight: bold;
+                color: white;
+            }
+
+
+
+        .left-column {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .main-image {
+            width: 380px;
+            border-radius: 10px;
+        }
+
+        .image-gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .thumbnail-slider-wrapper {
+            display: flex;
+            align-items: center;
+            margin-top: 16px;
+            width: 100%;
+            max-width: 400px;
+            position: relative;
+        }
+
+        .thumbnail-slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            gap: 12px;
+            padding: 8px 0;
+            flex: 1;
+        }
+
+            .thumbnail-slider img {
+                width: 70px;
+                height: 70px;
+                object-fit: cover;
+                border-radius: 8px;
+                border: 1px solid #aaa;
+                cursor: pointer;
+            }
+
+        .slider-btn {
+            background-color: transparent;
+            border: none;
+            font-size: 26px;
+            color: #444;
+            cursor: pointer;
+            transition: color 0.2s;
+            padding: 4px 8px;
+        }
+
+            .slider-btn.left {
+                margin-right: 12px;
+            }
+
+            .slider-btn:hover {
+                color: #000;
+            }
+
+        .right-column {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .product-title {
+            font-size: 28px;
+            color: #2a4421;
+            font-weight: bold;
+        }
+
+        .product-price {
+            font-size: 22px;
+            color: #f294aa;
+            margin: 10px 0;
+        }
+
+
+        .options {
+            font-size: 14px; /* 👉 chỉnh cỡ chữ tại đây */
+            font-family: "Segoe UI", Roboto, sans-serif;
+            margin: 15px 0;
+            color: #333;
+        }
+
+            .options label {
+                display: block;
+                margin-bottom: 8px;
+                font-size: 14px;
+                color: #2f6642;
+                font-family: "Segoe UI", Roboto, sans-serif;
+            }
+
+        .option-icon {
+            width: 28px;
+            height: 20px;
+            margin-right: 5px;
+        }
+
+        .new-price {
+            color: #2e7d32;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .options i {
+            margin-right: 8px;
+            color: #444;
+        }
+
+        .btn-add-to-cart {
+            background-color: #1c643f;
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            font-weight: bold;
+            border-radius: 10px;
+            font-family: "Segoe UI", Roboto, sans-serif;
+        }
+
+            .btn-add-to-cart:hover {
+                background-color: #388e3c;
+            }
+
+        .btn-buy-now {
+            background-color: #1c643f;
+            color: white;
+            padding: 14px 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            font-family: "Segoe UI", Roboto, sans-serif;
+        }
+
+            .btn-buy-now:hover {
+                background-color: #388e3c;
+            }
+
+        /* Nút bấm */
+        .product-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            font-family: "Segoe UI", Roboto, sans-serif;
+            padding: 14px 22px;
+            border-radius: 10px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border: 2px solid #1C643F;
+        }
+
+        /* Nút Thêm giỏ hàng: trắng, hover xanh lá đậm */
+        .product-hover-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hover-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4); /* overlay tối giống ảnh */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 10;
+        }
+
+        .quantity-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 5px 0;
+        }
+
+        .quantity-label {
+            font-weight: bold;
+            color: #2f6642;
+            font-size: 14px;
+            min-width: 90px;
+            font-family: "Segoe UI", Roboto, sans-serif;
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            overflow: hidden;
+            height: 35px;
+        }
+
+            .quantity-control input {
+                width: 40px;
+                text-align: center;
+                border: none;
+                font-size: 16px;
+                background-color: #f3fffc;
+                color: #2a4421;
+            }
+
+            .quantity-control button {
+                width: 35px;
+                height: 100%;
+                background-color: #f3fffc;
+                border: 1px solid #ccc;
+                font-size: 18px;
+                font-weight: bold;
+                color: #2a4421;
+                cursor: pointer;
+                transition: all 0.2s ease;
+            }
+
+                .quantity-control button:hover {
+                    background-color: #065f46;
+                    color: white;
+                    border-color: #065f46;
+                }
+
+        .product-tabs {
+            width: 100%;
+            margin-top: 40px;
+            display: block;
+            clear: both;
+            margin-left: 30px;
+            max-width: 1200px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .custom-tab-wrapper {
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 40px;
+            font-family: sans-serif;
+        }
+
+        .custom-tab-buttons {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .tab-btn {
+            font-family: "Segoe UI", Roboto, sans-serif;
+            font-size: 14px; /* Nhỏ hơn 1 chút cho nhẹ nhàng hơn */
+            font-weight: 600; /* Đậm vừa phải, tránh nặng nề */
+            padding: 10px 16px;
+            color: #2f6642;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-bottom: none;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+            .tab-btn.active {
+                background-color: #96cd82;
+                color: white;
+                border-color: #96cd82;
+            }
+
+
+            .tab-btn:not(:last-child) {
+                margin-right: 4px;
+            }
+
+        .custom-tab-content {
+            display: none;
+            border: 1px solid #ddd;
+            border-radius: 0 0 8px 8px;
+            padding: 20px;
+            background-color: #fff;
+            font-size: 14px;
+            font-family: "Segoe UI", Roboto, sans-serif;
+            color: #2f6642;
+        }
+
+            .custom-tab-content.active {
+                display: block;
+            }
+
+
+        .product-hover-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+
+            .product-hover-wrapper:hover .hover-overlay {
+                opacity: 1;
+            }
+
+        .suggested-products img {
+            width: 100%;
+            height: auto;
+            object-fit: contain; /* Hiển thị toàn bộ ảnh mà không cắt */
+            border-radius: 12px;
+            padding: 4px;
+            box-sizing: border-box;
+        }
+
+
+        .suggested-products {
+            padding: 50px 20px;
+            background-color: #f1fcf3;
+            text-align: center;
+            margin-top: 40px; /* tạo khoảng cách với phần tiếp theo */
+        }
+
+            .suggested-products h2 {
+                font-size: 28px;
+                margin-bottom: 20px;
+                color: #2e7d32;
+            }
+
+        .scroll-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scroll-wrapper {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 10px 10px 30px 10px;
+            white-space: nowrap; /* quan trọng cho cuộn ngang */
+        }
+
+
+            .scroll-wrapper::-webkit-scrollbar {
+                display: none; /* Ẩn thanh cuộn mặc định */
+            }
+
+        .product-item {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 16px;
+            flex: 0 0 auto;
+            width: 220px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+            position: relative;
+            flex: 0 0 220px; /* không co lại */
+        }
+
+
+
+            .product-item:hover {
+                transform: translateY(-5px);
+            }
+
+            .product-item h3 {
+                font-size: 16px;
+                margin: 5px 0;
+                color: #004714;
+            }
+
+                .product-item h3 a {
+                    color: #004714;
+                    text-decoration: none;
+                }
+
+                    .product-item h3 a:hover {
+                        text-decoration: none; /* hoặc giữ là none nếu không muốn gạch chân khi hover */
+                        color: #165132; /* có thể đổi màu khi hover nếu muốn */
+                    }
+
+
+            .product-item p {
+                color: #f294aa;
+                margin-bottom: 10px;
+            }
+
+        .suggest-hover-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+
+
+        .hover-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            gap: 12px;
+            padding: 10px;
+        }
+
+        .suggest-hover-wrapper:hover .hover-overlay {
+            opacity: 1;
+        }
+
+        .btn-add-to-cart {
+            background-color: #96cd82; /* <- đây là màu nền */
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            font-weight: bold;
+            border-radius: 10px;
+            font-family: "Segoe UI", Roboto, sans-serif;
+        }
+
+            .btn-add-to-cart:hover {
+                background-color: #388e3c;
+            }
+
+        .btn-buy-now {
+            background-color: #96cd82;
+            /* <- đây là màu nền */
+            color: white;
+            padding: 14px 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+        }
+
+            .btn-buy-now:hover {
+                background-color: #388e3c;
+            }
+
+
+        /* Icon trái tim và túi */
+        .icon-btn {
+            background-color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+            .icon-btn:hover {
+                transform: scale(1.1);
+            }
+
+        .action-row {
+            display: flex;
+            gap: 14px;
+        }
+
+        .center-icon {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+
+
+
+        .scroll-btn {
+            position: absolute;
+            top: 45%;
+            transform: translateY(-50%);
+            background-color: #fce4ec;
+            border: none;
+            font-size: 24px;
+            color: #165132;
+            cursor: pointer;
+            padding: 10px 12px;
+            border-radius: 50%;
+            z-index: 10;
+        }
+
+            .scroll-btn.left {
+                left: 5px;
+            }
+
+            .scroll-btn.right {
+                right: 5px;
+            }
+    </style>
+
+    <!-- phần HTML gốc giữ nguyên từ body trở đi -->
+    <!-- Header và navbar từ trang chủ -->
+    <header>
+        <div class="ad-banner">
+            <marquee>Nhập mã MATSUYANF để nhận ưu đãi 50K cho đơn hàng trên 200k!</marquee>
+        </div>
+        <nav class="navbar">
+            <div class="navbar-left">
+                 <!-- Nút ☰ đưa vào đây -->
+              <button class="menu-toggle" onclick="toggleMenu()">
+                <span class="material-symbols-outlined">menu</span>
+              </button>
+
+                <div class="logo">
+                    <img src="images/logo2.jpg" alt="Logo Matsuya">
+                </div>
+                <ul class="navigation">
+                    <li><a href="trangchu.html">TRANG CHỦ</a></li>
+                    <li><a href="gioithieu.html">GIỚI THIỆU</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">SẢN PHẨM</a>
+                        <div class="dropdown-content">
+                            <a href="tatcasp.html">Tất cả sản phẩm</a>
+                            <a href="matcha.html">Trà Matcha</a>
+                            <a href="houji.html">Trà Houjicha</a>
+                            <a href="banh.html">Bánh Matcha</a>
+                            <a href="bot.html">Bột Matcha</a>
+                            <a href="dungcu.html">Dụng cụ</a>
+                            <a href="combo.html">Combo</a>
+                        </div>
+                    </li>
+                    <li><a href="tintuc.html">TIN TỨC</a></li>
+                    <li><a href="lienhe.html">LIÊN HỆ</a></li>
+                </ul>
+            </div>
+
+            <div class="navbar-right">
+                <div class="icon-bar">
+                    <button class="icon-button" onclick="window.location.href='giohang.html'">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                    </button>
+
+                    <button class="icon-button" onclick="window.location.href='spyeuthich.html'">
+                        <span class="material-symbols-outlined">favorite</span>
+                    </button>
+                    <button class="icon-button" onclick="window.location.href='login.html'">
+                        <span class="material-symbols-outlined">person</span>
+                    </button>
+                </div>
+            </div>
+
+
+        </nav>
+    </header>
+
+          
+<!-- Side menu -->
+<div id="side-menu" class="side-menu">
+  <button class="close-btn" onclick="toggleMenu()">x</button>
+  <nav class="menu-items">
+    <a href="trangchu.html">Trang chủ</a>
+    <a href="gioithieu.html">Giới thiệu</a>
+    <!-- Dropdown sản phẩm -->
+      <a href="#" onclick="toggleDropdown(event)">Sản phẩm ▾</a>
+      <ul class="dropdown-menu" id="product-dropdown">
+        <a href="matcha.html">Trà Matcha</a>
+        <a href="houji.html">Trà Houjicha</a>
+        <a href="banh.html">Bánh Matcha</a>
+        <a href="bot.html">Bột Matcha</a>
+        <a href="dungcu.html">Dụng cụ</a>
+        <a href="combo.html">Combo</a>
+      </ul>
+    <a href="tintuc.html">Tin tức</a>
+    <a href="lienhe.html">Liên hệ</a>
+  </nav>
+</div>
+
+
+
+<!-- Script -->
+<script>
+function toggleMenu() {
+  document.getElementById("side-menu").classList.toggle("active");
+}
+</script>
+
+<script>
+function toggleDropdown(event) {
+  event.preventDefault();
+  const dropdown = document.getElementById("product-dropdown");
+  dropdown.classList.toggle("show");
+}
+</script>
+
+
+    <div class="breadcrumb-wrapper">
+        <div class="breadcrumb">
+            <a href="matcha.html">Trà Matcha</a>
+            <span class="separator">»</span>
+            <span class="current">Matcha Latte</span>
+        </div>
+    </div>
+
+
+    <!-- Chi tiết sản phẩm -->
+    <div class="container product-detail-container">
+        <div class="left-column">
+            <div class="image-gallery">
+                <div class="main-image">
+                    <img id="product-image" src="images/matcha/latte.jpg" alt="Coco Matcha" style="width: 100%; border-radius: 10px;">
+                </div>
+                <div class="thumbnail-slider-wrapper">
+                    <button class="slider-btn left">&#10094;</button>
+                    <div class="thumbnail-slider">
+                        <img src="images/matcha/latte.jpg" alt="Coco Matcha thumbnail">
+                    </div>
+                    <button class="slider-btn right">&#10095;</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-column">
+            <h1 class="product-title" id="product-name">Matcha Latte </h1>
+            <div class="product-price">
+                <span class="new-price" id="product-price">40.000đ</span>
+            </div>
+            <div class="options">
+                <p><i class="fas fa-shipping-fast"></i> Giao hàng nhanh trong nội thành</p>
+                <p><i class="fas fa-exchange-alt"></i> Đảm bảo chất lượng – thức uống luôn thơm ngon và an toàn</p>
+                <p style="color: brown; font-weight: bold; font-family: Segoe UI; Robotosans-serif">Còn hàng</p>
+            </div>
+            <div class="quantity-box">
+                <label class="quantity-label" for="quantity">Số lượng:</label>
+                <div class="quantity-control">
+                    <button>-</button>
+                    <input type="text" value="1" id="quantity">
+                    <button>+</button>
+                </div>
+            </div>
+            <div class="product-actions">
+                <button class="btn btn-add-to-cart" onclick="addDetailProductToCart()">Thêm vào giỏ hàng</button>
+                <button class="btn-buy-now"
+                        data-name="Matcha Latte"
+                        data-price="40000"
+                        data-image="images/matcha/latte.jpg"
+                        onclick="event.stopPropagation();  buyQuick(this);">
+                    Mua ngay
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB -->
+    <div class="product-tabs">
+        <div class="custom-tab-wrapper">
+            <div class="custom-tab-buttons">
+                <button class="tab-btn active" onclick="showCustomTab(0)">Mô tả</button>
+                <button class="tab-btn" onclick="showCustomTab(1)">Hướng dẫn đặt hàng</button>
+            </div>
+            <div class="custom-tab-content active">
+                <p>
+                    <strong>Matcha Latte</strong> là sự kết hợp hài hòa giữa bột matcha nguyên chất nhập khẩu từ Nhật Bản và sữa tươi béo ngậy. Vị đắng nhẹ đặc trưng của matcha quyện cùng vị ngọt thanh và độ béo dịu của sữa, tạo nên một thức uống mượt mà, tinh tế và đầy cuốn hút.
+                    <br><br>
+
+                    <strong>Giàu chất chống oxy hóa & axit amin</strong>: giúp giảm căng thẳng, tăng cường năng lượng và hỗ trợ trao đổi chất hiệu quả.<br>
+                    <strong>Thưởng thức nóng hoặc lạnh</strong>: thơm nồng khi nóng, mát lạnh sảng khoái khi dùng lạnh – phù hợp mọi thời điểm trong ngày.<br>
+                    <strong>Không chất bảo quản – không phẩm màu</strong>: đảm bảo an toàn cho sức khỏe, phù hợp cho lối sống lành mạnh.<br>
+                    <br><br>
+
+                    Một lựa chọn lý tưởng cho những ai yêu thích sự cân bằng giữa vị truyền thống và hiện đại, thích hợp cho cả làm việc, thư giãn hay trò chuyện cùng bạn bè.
+                </p>
+
+
+            </div>
+            <div class="custom-tab-content">
+                <p>
+                    <strong>Bước 1: Chọn sản phẩm cần mua</strong><br>
+                    Bạn có thể truy cập trang web để tìm và chọn sản phẩm mong muốn qua nhiều cách sau:<br>
+                     Sử dụng ô tìm kiếm ở phía trên, nhập tên sản phẩm cần mua (có thể tìm theo tên cụ thể, theo hãng sản xuất...). Trang web sẽ cung cấp cho bạn những gợi ý chính xác để chọn lựa.<br><br>
+
+                    <strong>Bước 2: Đặt hàng sản phẩm</strong><br>
+                    Sau khi đã chọn được sản phẩm ưng ý, bạn tiến hành đặt hàng bằng cách:<br>
+                     Nhấp vào nút <em>MUA NGAY</em> nếu muốn thanh toán toàn bộ số tiền của sản phẩm.<br>
+                    Điền đầy đủ thông tin theo yêu cầu trên trang web, sau đó chọn hình thức nhận hàng là giao tận nơi hoặc ra siêu thị nhận hàng, chọn cách thanh toán là trả tiền khi nhận hàng hoặc thanh toán trực tuyến (bằng thẻ ATM, VISA, hoặc MasterCard) và hoàn tất việc đặt hàng.<br><br>
+
+                    <strong>Lưu ý:</strong><br>
+                    1. Chúng tôi chỉ chấp nhận đơn hàng khi có đủ thông tin chính xác về địa chỉ và số điện thoại. Sau khi bạn đặt hàng, chúng tôi sẽ liên lạc lại để xác minh thông tin và thỏa thuận thêm nếu cần thiết.<br>
+                    2. Trong một số trường hợp đặc biệt như giá trị đơn hàng quá lớn hoặc thời gian giao hàng vào buổi tối đến địa chỉ khó tiếp cận hoặc có thể gây nguy hiểm, chúng tôi sẽ chủ động liên lạc với quý khách để thống nhất thời gian giao hàng cụ thể.
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <section class="suggested-products">
+        <h2>SẢN PHẨM TƯƠNG TỰ</h2>
+        <div class="scroll-container">
+            <button class="scroll-btn left" onclick="scrollLeft()">&#10094;</button>
+            <div class="scroll-wrapper" id="scrollArea">
+                <!-- Lặp lại sản phẩm này nhiều lần -->
+                <div class="product-item">
+                    <div class="suggest-hover-wrapper">
+                        <img src="images/matcha/cotcoco.jpg" alt="Matcha cốt dừa">
+                        <div class="hover-overlay">
+                            <div class="center-icon">
+                                <button class="icon-btn heart-btn"><i class="fas fa-heart"></i></button>
+                                <button class="icon-btn"
+                                        onclick="addToCartAndGoCart(this)"
+                                        data-name="Matcha cốt dừa"
+                                        data-price="50000"
+                                        data-image="images/matcha/cotcoco.jpg">
+                                    <i class="fas fa-shopping-bag"></i>
+                                </button>
+                            </div>
+                            <div class="action-row">
+                                <button class="btn-buy-hover"
+                                      data-name="Matcha cốt dừa"
+data-price="50000"
+data-image="images/matcha/cotcoco.jpg"
+                                        onclick="event.stopPropagation(); buyNow(this);">
+                                    Mua ngay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <h3><a href="chitietmatchacotdua.html">Matcha cốt dừa</a></h3>
+                    <p>50.000đ</p>
+                </div>
+
+                <div class="product-item">
+                    <div class="suggest-hover-wrapper">
+                        <img src="images/matcha/coco.jpg" alt="Coco Matcha">
+                        <div class="hover-overlay">
+                            <div class="center-icon">
+                                <button class="icon-btn heart-btn"><i class="fas fa-heart"></i></button>
+                                <button class="icon-btn"
+                                        onclick="addToCartAndGoCart(this)"
+                                        data-name="Coco Matcha"
+                                        data-price="45000"
+                                        data-image="images/matcha/coco.jpg">
+                                    <i class="fas fa-shopping-bag"></i>
+                                </button>
+
+                            </div>
+                            <div class="action-row">
+                                <button class="btn-buy-hover"
+                                        data-name="Coco Matcha"
+data-price="45000"
+data-image="images/matcha/coco.jpg"
+                                        onclick="event.stopPropagation(); buyNow(this);">
+                                    Mua ngay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <h3><a href="chitietcocomatcha.html">Coco Matcha</a></h3>
+                    <p>45.000đ</p>
+                </div>
+
+                <div class="product-item">
+                    <div class="suggest-hover-wrapper">
+                        <img src="images/matcha/xoai.jpg" alt="Matcha Xoài">
+                        <div class="hover-overlay">
+                            <div class="center-icon">
+                                <button class="icon-btn heart-btn"><i class="fas fa-heart"></i></button>
+                                <button class="icon-btn"
+                                        onclick="addToCartAndGoCart(this)"
+                                        data-name="Matcha Xoài"
+                                        data-price="45000"
+                                        data-image="images/matcha/xoai.jpg">
+                                    <i class="fas fa-shopping-bag"></i>
+                                </button>
+                            </div>
+                            <div class="action-row">
+                                <button class="btn-buy-hover"
+                                        data-name="Matcha Xoài"
+data-price="45000"
+data-image="images/matcha/xoai.jpg"
+                                        onclick="event.stopPropagation(); buyNow(this);">
+                                    Mua ngay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <h3><a href="chitietmatchaxoai.html">Matcha Xoài</a></h3>
+                    <p>45.000đ</p>
+                </div>
+
+                <div class="product-item">
+                    <div class="suggest-hover-wrapper">
+                        <img src="images/matcha/dau.jpg" alt="Matcha Latte Dâu">
+                        <div class="hover-overlay">
+                            <div class="center-icon">
+                                <button class="icon-btn heart-btn"><i class="fas fa-heart"></i></button>
+                                <button class="icon-btn"
+                                        onclick="addToCartAndGoCart(this)"
+                                        data-name="Matcha Latte Dâu"
+                                        data-price="45000"
+                                        data-image="images/matcha/dau.jpg">
+                                    <i class="fas fa-shopping-bag"></i>
+                                </button>
+                            </div>
+                            <div class="action-row">
+                                <button class="btn-buy-hover"
+                                       data-name="Matcha Latte Dâu"
+data-price="45000"
+data-image="images/matcha/dau.jpg"
+                                        onclick="event.stopPropagation(); buyNow(this);">
+                                    Mua ngay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <h3><a href="chitietmatchadau.html">Matcha Latte Dâu</a></h3>
+                    <p>45.000đ</p>
+                </div>
+
+                <div class="product-item">
+                    <div class="suggest-hover-wrapper">
+                        <img src="images/matcha/daudo.jpg" alt="Matcha Đậu Đỏ">
+                        <div class="hover-overlay">
+                            <div class="center-icon">
+                                <button class="icon-btn heart-btn"><i class="fas fa-heart"></i></button>
+                                <button class="icon-btn"
+                                        onclick="addToCartAndGoCart(this)"
+                                        data-name="Matcha Đậu Đỏ"
+                                        data-price="50000"
+                                        data-image="images/matcha/daudo.jpg">
+                                    <i class="fas fa-shopping-bag"></i>
+                                </button>
+                            </div>
+                            <div class="action-row">
+                                <button class="btn-buy-hover"
+                                         data-name="Matcha Đậu Đỏ"
+ data-price="50000"
+ data-image="images/matcha/daudo.jpg"
+                                        onclick="event.stopPropagation(); buyNow(this);">
+                                    Mua ngay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <h3><a href="chitietmatchadaudo.html">Matcha Đậu Đỏ</a></h3>
+                    <p>50.000đ</p>
+                </div>
+
+
+                <div class="product-item">
+                    <div class="suggest-hover-wrapper">
+                        <img src="images/matcha/daxay.jpg" alt="Matcha Đá xay">
+                        <div class="hover-overlay">
+                            <div class="center-icon">
+                                <button class="icon-btn heart-btn"><i class="fas fa-heart"></i></button>
+                                <button class="icon-btn"
+                                        onclick="addToCartAndGoCart(this)"
+                                        data-name="Matcha Đá xay"
+                                        data-price="50000"
+                                        data-image="images/matcha/daxay.jpg">
+                                    <i class="fas fa-shopping-bag"></i>
+                                </button>
+                            </div>
+                            <div class="action-row">
+                                <button class="btn-buy-hover"
+                                        data-name="Matcha Đá xay"
+data-price="50000"
+data-image="images/matcha/daxay.jpg"
+                                        onclick="event.stopPropagation(); buyNow(this);">
+                                    Mua ngay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <h3><a href="chitietmatchadaxay.html">Matcha Đá xay</a></h3>
+                    <p>50.000đ</p>
+                </div>
+
+                <div class="product-item">
+                    <div class="suggest-hover-wrapper">
+                        <img src="images/matcha/americano.jpg" alt="Matcha Americano">
+                        <div class="hover-overlay">
+                            <div class="center-icon">
+                                <button class="icon-btn heart-btn"><i class="fas fa-heart"></i></button>
+                                <button class="icon-btn"
+                                        onclick="addToCartAndGoCart(this)"
+                                        data-name="Matcha Americano"
+                                        data-price="45000"
+                                        data-image="images/matcha/americano.jpg">
+                                    <i class="fas fa-shopping-bag"></i>
+                                </button>
+                            </div>
+                            <div class="action-row">
+                                <button class="btn-buy-hover"
+                                       data-name="Matcha Americano"
+data-price="45000"
+data-image="images/matcha/americano.jpg"
+                                        onclick="event.stopPropagation(); buyNow(this);">
+                                    Mua ngay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <h3><a href="chitietmatchaamericano.html">Matcha Americano</a></h3>
+                    <p>45.000đ</p>
+                </div>
+
+
+                <!-- Bạn có thể copy thêm block .product-item để thêm sản phẩm -->
+            </div>
+            <button class="scroll-btn right" onclick="scrollRight()">&#10095;</button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="newsletter">
+                <i class="icon-email">✉️</i>
+                <span>Hãy để chúng mình lắng nghe góp ý của cậu!</span>
+            </div>
+            <form class="subscribe" id="feedbackForm">
+                <input type="text" id="feedbackInput" placeholder="Nhập góp ý của bạn" required>
+                <button type="submit">Gửi</button>
+            </form>
+
+        </div>
+
+        <div class="footer-content">
+            <div class="footer-section logo-contact">
+                <img src="images/logo2.jpg" alt="Matsuya Logo" class="logo">
+                <ul>
+                    <li><i class="icon">📍</i> 12 phố Chùa Bộc, phường Quang Trung, quận Đống Đa, Hà Nội</li>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.620803649952!2d105.82537677387555!3d21.007832088499686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac806cfc0845%3A0x3848505bd3b9490f!2zMTIgUC4gQ2jDuWEgQuG7mWMsIFF1YW5nIFRydW5nLCDEkOG7kW5nIMSQYSwgSMOgIE7hu5lpIDEwMDAwMCwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1746035458690!5m2!1sen!2s"
+                                width="300"
+                                height="300"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy">
+                        </iframe>
+
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+                <ul>
+                    <li><i class="icon">📧</i> matsuya2025@gmail.com</li>
+                    <li><i class="icon">📞</i> 0394889183</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>CHÍNH SÁCH</h3>
+
+                <ul class="policy-list">
+                    <li><i class="fas fa-chevron-right"></i> <a href="chinhsach3.html">Chính sách bán hàng</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="chinhsach1.html">Chính sách thanh toán</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="chinhsach.html">Điều khoản dịch vụ</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="chinhsach2.html">Chính sách bảo mật</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>GIỜ MỞ CỬA</h4>
+                <p>Từ 9:00 - 21:30 tất cả các ngày trong tuần<br>(bao gồm cả các ngày lễ, ngày Tết).</p>
+                <h4>GÓP Ý, KHIẾU NẠI</h4>
+                <p><i class="icon">📞</i> 1900 6750</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Tabs cũ
+        function showTab(index) {
+            const tabs = document.querySelectorAll('.tab-content');
+            const buttons = document.querySelectorAll('.tab-buttons button');
+            tabs.forEach(t => t.classList.remove('active'));
+            buttons.forEach(b => b.classList.remove('active'));
+            tabs[index].classList.add('active');
+            buttons[index].classList.add('active');
+        }
+
+        // Tabs chi tiết sản phẩm
+        function showCustomTab(index) {
+            const tabs = document.querySelectorAll('.custom-tab-content');
+            const buttons = document.querySelectorAll('.tab-btn');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            buttons.forEach(btn => btn.classList.remove('active'));
+            tabs[index].classList.add('active');
+            buttons[index].classList.add('active');
+        }
+
+        function changeImage(src) {
+            document.getElementById("mainImage").src = src;
+        }
+
+
+
+
+        // Tăng giảm số lượng
+        document.addEventListener('DOMContentLoaded', () => {
+            const decreaseBtn = document.querySelector('.quantity-control button:first-child');
+            const increaseBtn = document.querySelector('.quantity-control button:last-child');
+            const qtyInput = document.getElementById('quantity');
+
+            decreaseBtn.addEventListener('click', () => {
+                let value = parseInt(qtyInput.value);
+                if (value > 1) qtyInput.value = value - 1;
+            });
+
+            increaseBtn.addEventListener('click', () => {
+                let value = parseInt(qtyInput.value);
+                qtyInput.value = value + 1;
+            });
+        });
+
+
+        // Thanh trượt cuộn ngang (scroll-by)
+
+        function changeImage(src) {
+            document.getElementById("mainImage").src = src;
+        }
+
+        function scrollThumbnails(direction) {
+            const container = document.getElementById('thumbnailSlider');
+            const scrollAmount = 100;
+            container.scrollBy({
+                left: scrollAmount * direction,
+                behavior: 'smooth'
+            });
+        }
+
+
+        function scrollLeft() {
+            const container = document.getElementById("scrollArea");
+            console.log("Scroll Left to:", container.scrollLeft - 300);
+            container.scrollBy({ left: -300, behavior: "smooth" });
+        }
+
+
+        function scrollRight() {
+            const container = document.getElementById("scrollArea");
+            container.scrollBy({ left: 300, behavior: "smooth" });
+        }
+
+
+
+        // Thanh trượt theo index (slide thủ công)
+        document.addEventListener('DOMContentLoaded', () => {
+            let currentIndex = 0;
+            const itemsToShow = 3;
+            const productList = document.querySelector('.product-list');
+            const totalItems = document.querySelectorAll('.product-item').length;
+            const prevButton = document.querySelector('.prev');
+            const nextButton = document.querySelector('.next');
+
+            function updateSlider() {
+                const offset = -currentIndex * 220;
+                productList.style.transform = `translateX(${offset}px)`;
+                productList.style.transition = 'transform 0.3s ease';
+            }
+
+            if (prevButton && nextButton && productList) {
+                prevButton.addEventListener('click', () => {
+                    if (currentIndex > 0) {
+                        currentIndex--;
+                        updateSlider();
+                    }
+                });
+
+                nextButton.addEventListener('click', () => {
+                    if (currentIndex < totalItems - itemsToShow) {
+                        currentIndex++;
+                        updateSlider();
+                    }
+                });
+
+                updateSlider();
+            }
+        });
+
+        document.querySelectorAll('.heart-btn').forEach((btn) => {
+            btn.addEventListener('click', function () {
+                const productItem = btn.closest('.product-item');
+                const name = productItem.querySelector('h3')?.innerText || 'Không tên';
+                const price = productItem.querySelector('p')?.innerText || '0đ';
+                const imgSrc = productItem.querySelector('img')?.getAttribute('src') || '';
+
+                let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+                const exists = favorites.find(p => p.name === name);
+
+                if (!exists) {
+                    favorites.push({ name, price, img: imgSrc });
+                    localStorage.setItem('favorites', JSON.stringify(favorites));
+                    alert("Đã thêm sản phẩm vào danh sách yêu thích!");
+                } else {
+                    alert("Sản phẩm này đã có trong danh sách yêu thích.");
+                }
+            });
+        });
+        // Thêm sự kiện để gửi form khi nhấn Enter
+        document.getElementById("feedbackForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Ngăn form reload trang
+
+
+            const feedback = document.getElementById("feedbackInput").value.trim();
+
+
+            if (feedback === "") {
+                alert("Vui lòng nhập góp ý của bạn.");
+                return;
+            }
+
+
+
+            // Hiển thị alert
+            alert("Cảm ơn bạn đã góp ý: " + feedback);
+
+
+            // Xoá nội dung sau khi gửi
+            document.getElementById("feedbackInput").value = "";
+        });
+
+    </script>
+</body>
+</html>

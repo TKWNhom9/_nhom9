@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matcha Drink Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  </head>
+<body>
+
+    <header>
+        <div class="ad-banner">
+            <marquee>Nhập mã MATSUYANF để nhận ưu đãi 50K cho đơn hàng trên 200k!</marquee>
+        </div>
+
+        <nav class="navbar">
+            <div class="navbar-left">
+
+                <!-- Nút ☰ đưa vào đây -->
+                <button class="menu-toggle" onclick="toggleMenu()">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+
+                <div class="logo">
+                    <a href="trangchu.html">
+                        <img src="images/logo2.jpg" alt="Logo Matsuya">
+                    </a>
+                </div>
+
+
+                <ul class="navigation">
+                    <li><a href="trangchu.html">TRANG CHỦ</a></li>
+                    <li><a href="gioithieu.html">GIỚI THIỆU</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">SẢN PHẨM</a>
+                        <div class="dropdown-content">
+                            <a href="tatcasp.html">Tất cả sản phẩm</a>
+                            <a href="matcha.html">Trà Matcha</a>
+                            <a href="houji.html">Trà Houjicha</a>
+                            <a href="banh.html">Bánh Matcha</a>
+                            <a href="bot.html">Bột Matcha</a>
+                            <a href="dungcu.html">Dụng cụ</a>
+                            <a href="combo.html">Combo</a>
+                        </div>
+                    </li>
+                    <li><a href="tintuc.html">TIN TỨC</a></li>
+                    <li><a href="lienhe.html">LIÊN HỆ</a></li>
+                </ul>
+            </div>
+
+            <div class="navbar-right">
+                <div class="icon-bar">
+                    <button class="icon-button" onclick="window.location.href='giohang.html'">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                    </button>
+
+                    <button class="icon-button" onclick="window.location.href='spyeuthich.html'">
+                        <span class="material-symbols-outlined">favorite</span>
+                    </button>
+                    <button class="icon-button" onclick="window.location.href='login.html'">
+                        <span class="material-symbols-outlined">person</span>
+                    </button>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <!-- Side menu -->
+    <div id="side-menu" class="side-menu">
+        <button class="close-btn" onclick="toggleMenu()">x</button>
+        <nav class="menu-items">
+            <a href="trangchu.html">Trang chủ</a>
+            <a href="gioithieu.html">Giới thiệu</a>
+            <!-- Dropdown sản phẩm -->
+            <a href="#" onclick="toggleDropdown(event)">Sản phẩm ▾</a>
+            <ul class="dropdown-menu" id="product-dropdown">
+                <a href="matcha.html">Trà Matcha</a>
+                <a href="houji.html">Trà Houjicha</a>
+                <a href="banh.html">Bánh Matcha</a>
+                <a href="bot.html">Bột Matcha</a>
+                <a href="dungcu.html">Dụng cụ</a>
+                <a href="combo.html">Combo</a>
+            </ul>
+            <a href="tintuc.html">Tin tức</a>
+            <a href="lienhe.html">Liên hệ</a>
+        </nav>
+    </div>
+
+
+
+    <!-- Script -->
+    <script>
+        function toggleMenu() {
+            document.getElementById("side-menu").classList.toggle("active");
+        }
+    </script>
+
+
+
+    <body class="about-page">
+        <main class="about-page content">
+
+            <img src="images/slogan.jpg" alt="Banner quảng cáo">
+
+            <!-- SECTION 2: Logo -->
+            <div class="section-block reverse">
+                <div class="section-image">
+                    <img src="images/logo2.jpg" alt="Logo Matsuya">
+                </div>
+                <div class="section-text">
+                    <h2>Logo thương hiệu</h2>
+                    <p>
+                        Matsuya là sự kết hợp giữa "matcha" (trà xanh Nhật Bản) và "ya” (や) có nghĩa là "nhà".
+                        Vậy nên "Matsuya" có thể hiểu là "Nhà của matcha" – nơi thưởng thức món ăn, đồ uống matcha trong không gian ấm cúng và thân thiện.
+                        Logo mang hình ảnh tối giản nhưng tinh tế, thể hiện sự thanh lịch và truyền thống trong văn hoá trà đạo Nhật Bản.
+                    </p>
+                </div>
+            </div>
+            <!-- SECTION 1: Tên cửa hàng -->
+            <!-- SECTION 3: Về sản phẩm matcha -->
+            <div class="section-block">
+                <div class="section-image">
+                    <img src="images/Nen2.jpg" alt="Sản phẩm matcha">
+                </div>
+                <div class="section-text">
+                    <h2>Lý do kinh doanh</h2>
+                    <p>
+                        Trong thế giới đồ uống ngày càng đa dạng và cạnh tranh, matcha đang nổi lên như một ngôi sao sáng. Với hương vị thanh mát, màu sắc bắt mắt và vô số lợi ích sức khỏe, matcha đã nhanh chóng chiếm được cảm tình của giới trẻ. Nhận thấy tiềm năng to lớn của loại trà này, Matsuya đã quyết định mang đến một làn gió mới cho thị trường F&B bằng việc xây dựng một thương hiệu chuyên cung cấp các sản phẩm matcha chất lượng, từ trà, bánh ngọt matcha hot trend cho đến bột matcha chính hãng và cả những dụng cụ pha trà, nhằm mang đến cho khách hàng những trải nghiệm văn hoá trà đạo Nhật Bản độc đáo và tinh tế từ nguyên liệu thiên nhiên này.
+                    </p>
+                </div>
+            </div>
+            <!-- SECTION 1: Tên cửa hàng -->
+            <div class="section-block">
+
+                <div class="section-text">
+                    <h2>Mục tiêu của Matsuya</h2>
+                    <p>
+                        Tại Matsuya, chúng tôi luôn coi trọng sự trải nghiệm của khách hàng. Chúng tôi không chỉ tập trung vào việc tạo ra các món uống truyền thống, mà còn lắng nghe ý kiến và nguyện vọng của họ để tạo ra những sản phẩm mới. Chúng tôi muốn đáp ứng đam mê của những người yêu thích matcha và mang tới cho họ những trải nghiệm độc đáo.
+                    </p>
+                    <p>Chúng tôi tin rằng những sản phẩm đến từ Matsuya sẽ chinh phục được các tín đồ ăn uống và không ngừng cải thiện để đem lại những trải nghiệm về sản phẩm và dịch vụ hài lòng cho khách hàng ở thời điểm hiện tại cũng như trong tương lai</p>
+                </div>
+                <div class="section-image">
+                    <img src="images/Nen3.jpg" alt="Sản phẩm matcha">
+                </div>
+            </div>
+        </main>
+
+    </body>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="newsletter">
+                <i class="icon-email">✉️</i>
+                <span>Hãy để chúng mình lắng nghe góp ý của cậu!</span>
+            </div>
+            <form class="subscribe" id="feedbackForm">
+                <input type="text" id="feedbackInput" placeholder="Nhập góp ý của bạn" required>
+                <button type="submit">Gửi</button>
+            </form>
+
+        </div>
+
+        <div class="footer-content">
+            <div class="footer-section logo-contact">
+                <img src="images/logo2.jpg" alt="Matsuya Logo" class="logo">
+                <ul>
+                    <li><i class="icon">📍</i> 12 phố Chùa Bộc, phường Quang Trung, quận Đống Đa, Hà Nội</li>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.620803649952!2d105.82537677387555!3d21.007832088499686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac806cfc0845%3A0x3848505bd3b9490f!2zMTIgUC4gQ2jDuWEgQuG7mWMsIFF1YW5nIFRydW5nLCDEkOG7kW5nIMSQYSwgSMOgIE7hu5lpIDEwMDAwMCwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1746035458690!5m2!1sen!2s"
+                                width="300"
+                                height="300"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy">
+                        </iframe>
+
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+                <ul>
+                    <li><i class="icon">📧</i> matsuya2025@gmail.com</li>
+                    <li><i class="icon">📞</i> 0394889183</li>
+                </ul>
+            </div>
+
+
+            <div class="footer-section">
+                <h3>CHÍNH SÁCH</h3>
+
+                <ul class="policy-list">
+                    <li><i class="fas fa-chevron-right"></i> <a href="chinhsach3.html">Chính sách bán hàng</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="chinhsach1.html">Chính sách thanh toán</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="chinhsach.html">Điều khoản dịch vụ</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="chinhsach2.html">Chính sách bảo mật</a></li>
+                </ul>
+            </div>
+
+
+            <div class="footer-section">
+                <h4>GIỜ MỞ CỬA</h4>
+                <p>Từ 9:00 - 21:30 tất cả các ngày trong tuần<br>(bao gồm cả các ngày lễ, ngày Tết).</p>
+                <h4>GÓP Ý, KHIẾU NẠI</h4>
+                <p><i class="icon">📞</i> 1900 6750</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById("feedbackForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Ngăn form reload trang
+
+
+            const feedback = document.getElementById("feedbackInput").value.trim();
+
+
+            if (feedback === "") {
+                alert("Vui lòng nhập góp ý của bạn.");
+                return;
+            }
+
+
+
+            // Hiển thị alert
+            alert("Cảm ơn bạn đã góp ý: " + feedback);
+
+
+            // Xoá nội dung sau khi gửi
+            document.getElementById("feedbackInput").value = "";
+        });
+    </script>
+    </body>
+</html>

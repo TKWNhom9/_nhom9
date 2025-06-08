@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matcha Drink Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+</head>
+<body>
+
+    <header>
+        <div class="ad-banner">
+            <marquee>Nhập mã MATSUYANF để nhận ưu đãi 50K cho đơn hàng trên 200k!</marquee>
+        </div>
+
+        <nav class="navbar">
+            <div class="navbar-left">
+                <!-- Nút ☰ đưa vào đây -->
+                <button class="menu-toggle" onclick="toggleMenu()">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+
+                <div class="logo">
+                    <a href="trangchu.html">
+                        <img src="images/logo2.jpg" alt="Logo Matsuya">
+                    </a>
+                </div>
+
+
+                <ul class="navigation">
+                    <li><a href="trangchu.html">TRANG CHỦ</a></li>
+                    <li><a href="gioithieu.html">GIỚI THIỆU</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">SẢN PHẨM</a>
+                        <div class="dropdown-content">
+                            <a href="tatcasp.html">Tất cả sản phẩm</a>
+                            <a href="matcha.html">Trà Matcha</a>
+                            <a href="houji.html">Trà Houjicha</a>
+                            <a href="banh.html">Bánh Matcha</a>
+                            <a href="bot.html">Bột Matcha</a>
+                            <a href="dungcu.html">Dụng cụ</a>
+                            <a href="combo.html">Combo</a>
+                        </div>
+                    </li>
+                    <li><a href="tintuc.html">TIN TỨC</a></li>
+                    <li><a href="lienhe.html">LIÊN HỆ</a></li>
+                </ul>
+            </div>
+            <div class="navbar-right">
+                <div class="icon-bar">
+                    <button class="icon-button" onclick="window.location.href='giohang.html'">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                    </button>
+
+                    <button class="icon-button" onclick="window.location.href='spyeuthich.html'">
+                        <span class="material-symbols-outlined">favorite</span>
+                    </button>
+                    <button class="icon-button" onclick="window.location.href='login.html'">
+                        <span class="material-symbols-outlined">person</span>
+                    </button>
+                </div>
+            </div>
+
+
+        </nav>
+    </header>
+
+    <!-- Side menu -->
+    <div id="side-menu" class="side-menu">
+        <button class="close-btn" onclick="toggleMenu()">x</button>
+        <nav class="menu-items">
+            <a href="trangchu.html">Trang chủ</a>
+            <a href="gioithieu.html">Giới thiệu</a>
+            <!-- Dropdown sản phẩm -->
+            <a href="#" onclick="toggleDropdown(event)">Sản phẩm ▾</a>
+            <ul class="dropdown-menu" id="product-dropdown">
+                <a href="matcha.html">Trà Matcha</a>
+                <a href="houji.html">Trà Houjicha</a>
+                <a href="banh.html">Bánh Matcha</a>
+                <a href="bot.html">Bột Matcha</a>
+                <a href="dungcu.html">Dụng cụ</a>
+                <a href="combo.html">Combo</a>
+            </ul>
+            <a href="tintuc.html">Tin tức</a>
+            <a href="lienhe.html">Liên hệ</a>
+        </nav>
+    </div>
+
+
+
+    <!-- Script -->
+    <script>
+        function toggleMenu() {
+            document.getElementById("side-menu").classList.toggle("active");
+        }
+    </script>
+
+
+   <div class="container">
+  <div class="breadcrumb">
+  <a href="trangchu.html">Trang chủ</a> / 
+  <a href="tintuc.html">Tin tức</a> / 
+  <strong>LỢI ÍCH CỦA MATCHA CHO SỨC KHỎE</strong>
+</div>
+
+  <div class="main-content">
+    <div class="article-header">
+  <h1 class="post-title">LỢI ÍCH CỦA MATCHA CHO SỨC KHỎE</h1>
+
+    <div class="author-date">
+        <i class="fa-pen-nib"></i> Lê Minh Ngọc &nbsp;&nbsp; 13/06/2025
+      </div>
+  </div>
+
+            <p>
+                Khi muốn cải thiện sức khỏe qua chế độ ăn uống thì ở thời điểm này, trà matcha là đồ uống được lựa chọn nhiều nhất.
+                Có lẽ 4 lợi ích sau của loại trà này là nguyên nhân “đánh bại” thói quen uống cà phê hay rượu và được ưa chuộng vào mỗi sáng.
+            </p>
+            <img src="images/tintuc11.jpg" alt="Các loại trà thảo mộc" class="news-image">
+
+            <h2>1. Tốt cho não bộ</h2>
+            <p>
+                Các nghiên cứu đã cho thấy catechins trong trà xanh có thể giúp ngăn ngừa sự tích tụ các mảng amyloid và protein.
+                Đây là hai trong các quá trình xảy ra trong bệnh Alzheimer, căn bệnh dẫn đến suy giảm trí nhớ và chức năng nhận thức.
+                Các nghiên cứu cũng cho thấy L-theanine, các axit amin trong trà xanh và matcha có lợi cho trí nhớ và tăng chức năng nhận thức khi chúng ta già.
+            </p>
+
+            <h2>2. Thúc đẩy trao đổi chất và giảm cân</h2>
+            <p>
+                Trong một nghiên cứu được thực hiện với 35 người đàn ông và phụ nữ béo phì được chia thành hai nhóm.
+                Kết quả cho thấy những người uống bốn ly trà xanh mỗi ngày trong hai tháng bị mất trọng lượng nhiều hơn đáng kể so với nhóm dùng giả dược.
+                Trong một thử nghiệm khác, 10 người đàn ông uống matcha vào buổi sáng cho thấy họ đốt cháy năng lượng nhiều hơn 4% calo so với khi dùng giả dược.
+                Trà xanh hỗ trợ quá trình chuyển hóa và quản lý cân nặng bằng các cách: tăng sinh nhiệt, tăng oxy hóa chất béo, giảm hấp thu chất béo và giảm cảm giác thèm ăn.
+            </p>
+
+            <h2>3. Cho răng khỏe và hơi thở thơm tho</h2>
+            <p>
+                Matcha đã được chứng minh có hoạt tính kháng khuẩn mạnh chống lại các vi khuẩn gây bệnh nướu và sâu răng.
+                Ngoài ra, matcha còn giúp giảm hôi miệng nhờ các chất khử trùng và khử mùi tự nhiên.
+            </p>
+
+            <h2>4. Giàu chất chống oxy hóa</h2>
+            <p>
+                Một trong những lợi ích lớn nhất của matcha là chứa chất chống oxy hóa, đặc biệt là catechin trong đó có epigallocatechin gallate (EGCG).
+                EGCG có hoạt tính kháng viêm, chống ung thư và chống lão hóa. Một nghiên cứu tại Đại học Colorado cho thấy,
+                một ly matcha có lượng EGCG cao gấp 100 lần so với trà xanh, trà đen hay trà thông thường khác.
+            </p>
+        </div> <!-- ✅ Đóng main-content đúng chỗ -->
+
+        <aside class="sidebar">
+            <h3>Tin tức cho bạn</h3>
+            <ul class="news-list">
+
+                <li class="news-item">
+                    <img src="images/tea1.jpg" alt="Matcha" />
+                    <div class="news-text">
+                        <a href="tinchoban1.html">
+                            <p>Giảm cân hiệu quả với trà xanh Matcha</p>
+                        </a>
+                        <span class="time">Vừa xong</span>
+                    </div>
+                </li>
+
+                <li class="news-item">
+                    <img src="images/tea2.jpg" alt="Matcha chống lão hóa" />
+                    <div class="news-text">
+                        <a href="tinchoban2.html">
+                            <p>Matcha chống lão hóa</p>
+                        </a>
+                        <span>5 ngày</span>
+                    </div>
+                </li>
+                <li class="news-item">
+                    <img src="images/tea3.jpg" alt="Nên uống Matcha khi nào" />
+                    <div class="news-text">
+                        <a href="tinchoban3.html">
+                            <p>Nên uống Matcha khi nào</p>
+                        </a>
+                        <span>8 ngày</span>
+                    </div>
+                </li>
+
+                <li class="news-item">
+                    <img src="images/tea4.jpg" alt="Bột trà xanh Matcha Đài Loan kém chất lượng ?" />
+                    <div class="news-text">
+                        <a href="tinchoban4.html">
+                            <p>Bột trà xanh Matcha Đài Loan kém chất lượng ?</p>
+                        </a>
+                        <span>10 ngày</span>
+                    </div>
+                </li>
+
+                <li class="news-item">
+                    <img src="images/tea5.jpg" alt="Trà cho bà bầu" />
+                    <div class="news-text">
+                        <a href="tinchoban5.html">
+                            <p>Trà cho bà bầu</p>
+                        </a>
+                        <span>12 ngày</span>
+                    </div>
+                </li>
+
+                <li class="news-item">
+                    <img src="images/tea6.jpg" alt="Uống trà xanh Matcha bao nhiêu là đủ và uống trà Matcha như thế nào?" />
+                    <div class="news-text">
+                        <a href="tinchoban6.html">
+                            <p>Uống trà xanh Matcha bao nhiêu là đủ và uống trà Matcha như thế nào?</p>
+                        </a>
+                        <span>14 ngày</span>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+    </div>
+
+    <div class="custom-social-section">
+        <div class="line-divider"></div>
+        <div class="custom-social-icons">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://example.com" target="_blank" class="social-icon" title="Chia sẻ Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/intent/tweet?url=https://example.com&text=Check%20this%20out!" target="_blank" class="social-icon" title="Chia sẻ Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="mailto:?subject=Bạn nên xem cái này&body=Hãy xem link này: https://example.com" class="social-icon" title="Gửi email">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://pinterest.com/pin/create/button/?url=https://example.com" target="_blank" class="social-icon" title="Chia sẻ Pinterest">
+                <i class="fab fa-pinterest-p"></i>
+            </a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://example.com" target="_blank" class="social-icon" title="Chia sẻ LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="newsletter">
+                <i class="icon-email">✉️</i>
+                <span>Hãy để chúng mình lắng nghe góp ý của cậu!</span>
+            </div>
+            <form class="subscribe" id="feedbackForm">
+                <input type="text" id="feedbackInput" placeholder="Nhập góp ý của bạn" required>
+                <button type="submit">Gửi</button>
+            </form>
+
+        </div>
+
+        <div class="footer-content">
+            <div class="footer-section logo-contact">
+                <img src="images/logo2.jpg" alt="Matsuya Logo" class="logo">
+                <ul>
+                    <li><i class="icon">📍</i> 12 phố Chùa Bộc, phường Quang Trung, quận Đống Đa, Hà Nội</li>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.620803649952!2d105.82537677387555!3d21.007832088499686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac806cfc0845%3A0x3848505bd3b9490f!2zMTIgUC4gQ2jDuWEgQuG7mWMsIFF1YW5nIFRydW5nLCDEkOG7kW5nIMSQYSwgSMOgIE7hu5lpIDEwMDAwMCwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1746035458690!5m2!1sen!2s"
+                                width="300"
+                                height="300"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy">
+                        </iframe>
+
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+                <ul>
+                    <li><i class="icon">📧</i> matsuya2025@gmail.com</li>
+                    <li><i class="icon">📞</i> 0394889183</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>CHÍNH SÁCH</h3>
+
+                <ul class="policy-list">
+                    <li><i class="fas fa-chevron-right"></i> <a href="chinhsach3.html">Chính sách bán hàng</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="chinhsach1.html">Chính sách thanh toán</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="chinhsach.html">Điều khoản dịch vụ</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="chinhsach2.html">Chính sách bảo mật</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>GIỜ MỞ CỬA</h4>
+                <p>Từ 9:00 - 21:30 tất cả các ngày trong tuần<br>(bao gồm cả các ngày lễ, ngày Tết).</p>
+                <h4>GÓP Ý, KHIẾU NẠI</h4>
+                <p><i class="icon">📞</i> 1900 6750</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById("feedbackForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Ngăn form reload trang
+
+
+            const feedback = document.getElementById("feedbackInput").value.trim();
+
+
+            if (feedback === "") {
+                alert("Vui lòng nhập góp ý của bạn.");
+                return;
+            }
+
+
+
+            // Hiển thị alert
+            alert("Cảm ơn bạn đã góp ý: " + feedback);
+
+
+            // Xoá nội dung sau khi gửi
+            document.getElementById("feedbackInput").value = "";
+        });
+    </script>
+</body>
+
+</html>

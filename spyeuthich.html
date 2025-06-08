@@ -1,0 +1,412 @@
+﻿﻿
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm yêu thích</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body>
+    <style>
+
+        .remove-icon {
+            color: #1a7f3c;
+            font-size: 20px;
+            cursor: pointer;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        .img-cell {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 12px; /* 🔥 Tăng khoảng cách giữa icon và ảnh */
+            margin-left: 20px;
+        }
+
+            .img-cell img {
+                margin-left: 70px; /* hoặc 12px, tuỳ bạn muốn xa bao nhiêu */
+            }
+
+        .product-name {
+            font-family: monospace, sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #1b5e20; /* xanh đậm */
+            padding-left: 8px;
+        }
+
+        .product-price {
+            font-family: monospace, sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #f48fb1; /* hồng pastel */
+        }
+
+
+
+        input[type="number"] {
+            width: 60px;
+            padding: 6px 10px;
+            font-size: 14px;
+            border: 1px solid #a5d6a7;
+            border-radius: 8px;
+            background-color: #f1f8e9;
+            text-align: center;
+            color: #2e7d32;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+            input[type="number"]:focus {
+                border-color: #66bb6a;
+                background-color: #ffffff;
+                box-shadow: 0 0 0 2px rgba(102, 187, 106, 0.2);
+            }
+
+        .favorites-section {
+            padding: 60px 20px;
+            background-color: #ffffff;
+            font-family: 'Quicksand', sans-serif;
+            color: #165132;
+        }
+
+            .favorites-section h2 {
+                text-align: center;
+                font-size: 20px;
+                margin-bottom: 40px;
+                color: #1a4d2e;
+            }
+
+        .favorites-table {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 30px auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+            .favorites-table th,
+            .favorites-table td {
+                padding: 14px 16px;
+                text-align: center;
+                border-bottom: 1px solid #eee;
+                font-size: 16px;
+            }
+
+                .favorites-table td:nth-child(2),
+                .favorites-table th:nth-child(2) {
+                    width: 220px;
+                    text-align: left;
+                    padding-left: 8px;
+                }
+
+                .favorites-table td:nth-child(3),
+                .favorites-table th:nth-child(3) {
+                    width: 120px;
+                    text-align: left;
+                    padding-left: 8px;
+                }
+
+            .favorites-table th {
+                background-color: #e8f5e9;
+                color: #165132;
+            }
+
+            .favorites-table td img {
+                width: 80px;
+                height: 80px;
+                object-fit: cover;
+                border-radius: 8px;
+            }
+
+        .btn-cart, .btn-update {
+            background-color: #96cd82;
+            color: white;
+            padding: 10px 14px;
+            font-size: 14px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            font-family: "Segoe UI", Roboto, sans-serif;
+        }
+
+            .btn-cart:hover, .btn-update:hover {
+                background-color: #388e3c;
+            }
+
+        .btn-cart {
+            background-color: #96cd82;
+            color: white;
+            padding: 10px 14px;
+            font-size: 14px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            font-family: "Segoe UI", Roboto, sans-serif;
+            cursor: pointer; /* ✅ DÒNG NÀY GIÚP CON TRỎ HIỆN BÀN TAY */
+        }
+    </style>
+    <!-- Header -->
+
+
+
+    <header>
+        <div class="ad-banner">
+            <marquee>Nhập mã MATSUYANF để nhận ưu đãi 50K cho đơn hàng trên 200k!</marquee>
+        </div>
+
+        <nav class="navbar">
+            <div class="navbar-left">
+                <div class="logo">
+                    <img src="images/logo2.jpg" alt="Logo Matsuya">
+                </div>
+
+
+                <ul class="navigation">
+                    <li><a href="trangchu.html">TRANG CHỦ</a></li>
+                    <li><a href="gioithieu.html">GIỚI THIỆU</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">SẢN PHẨM</a>
+                        <div class="dropdown-content">
+                            <a href="tatcasp.html">Tất cả sản phẩm</a>
+                            <a href="matcha.html">Trà Matcha</a>
+                            <a href="houji.html">Trà Houjicha</a>
+                            <a href="banh.html">Bánh Matcha</a>
+                            <a href="bot.html">Bột Matcha</a>
+                            <a href="dungcu.html">Dụng cụ</a>
+                            <a href="combo.html">Combo</a>
+                        </div>
+                    </li>
+                    <li><a href="tintuc.html">TIN TỨC</a></li>
+                    <li><a href="lienhe.html">LIÊN HỆ</a></li>
+                </ul>
+            </div>
+
+            <div class="navbar-right">
+                <div class="icon-bar">
+                    <button class="icon-button" onclick="window.location.href='giohang.html'">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                    </button>
+
+                    <button class="icon-button" onclick="window.location.href='spyeuthich.html'">
+                        <span class="material-symbols-outlined">favorite</span>
+                    </button>
+                    <button class="icon-button" onclick="window.location.href='login.html'">
+                        <span class="material-symbols-outlined">person</span>
+                    </button>
+                </div>
+            </div>
+
+
+        </nav>
+    </header>
+    <!-- Side menu -->
+    <div id="side-menu" class="side-menu">
+        <button class="close-btn" onclick="toggleMenu()">x</button>
+        <nav class="menu-items">
+            <a href="trangchu.html">Trang chủ</a>
+            <a href="gioithieu.html">Giới thiệu</a>
+            <!-- Dropdown sản phẩm -->
+            <a href="#" onclick="toggleDropdown(event)">Sản phẩm ▾</a>
+            <ul class="dropdown-menu" id="product-dropdown">
+                <a href="matcha.html">Trà Matcha</a>
+                <a href="houji.html">Trà Houjicha</a>
+                <a href="banh.html">Bánh Matcha</a>
+                <a href="bot.html">Bột Matcha</a>
+                <a href="dungcu.html">Dụng cụ</a>
+                <a href="combo.html">Combo</a>
+            </ul>
+            <a href="tintuc.html">Tin tức</a>
+            <a href="lienhe.html">Liên hệ</a>
+        </nav>
+    </div>
+
+    <section class="favorites-section">
+        <h2>DANH SÁCH SẢN PHẨM YÊU THÍCH</h2>
+        <table class="favorites-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Tên sản phẩm</th>
+                    <th>Đơn giá</th>
+                    <th>Số lượng</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+
+            </tbody>
+        </table>
+
+
+    </section>
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="newsletter">
+                <i class="icon-email">✉️</i>
+                <span>Hãy để chúng mình lắng nghe góp ý của cậu!</span>
+            </div>
+            <form class="subscribe" id="feedbackForm">
+                <input type="text" id="feedbackInput" placeholder="Nhập góp ý của bạn" required>
+                <button type="submit">Gửi</button>
+            </form>
+
+        </div>
+
+        <div class="footer-content">
+            <div class="footer-section logo-contact">
+                <img src="images/logo2.jpg" alt="Matsuya Logo" class="logo">
+                <ul>
+                    <li><i class="icon">📍</i> 12 phố Chùa Bộc, phường Quang Trung, quận Đống Đa, Hà Nội</li>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.620803649952!2d105.82537677387555!3d21.007832088499686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac806cfc0845%3A0x3848505bd3b9490f!2zMTIgUC4gQ2jDuWEgQuG7mWMsIFF1YW5nIFRydW5nLCDEkOG7kW5nIMSQYSwgSMOgIE7hu5lpIDEwMDAwMCwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1746035458690!5m2!1sen!2s"
+                                width="300"
+                                height="300"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy">
+                        </iframe>
+
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+                <ul>
+                    <li><i class="icon">📧</i> matsuya2025@gmail.com</li>
+                    <li><i class="icon">📞</i> 0394889183</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>CHÍNH SÁCH</h3>
+
+                <ul class="policy-list">
+                    <li><i class="fas fa-chevron-right"></i> <a href="chinhsach3.html">Chính sách bán hàng</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="chinhsach1.html">Chính sách thanh toán</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="chinhsach.html">Điều khoản dịch vụ</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="chinhsach2.html">Chính sách bảo mật</a></li>
+                </ul>
+            </div>
+
+
+            <div class="footer-section">
+                <h4>GIỜ MỞ CỬA</h4>
+                <p>Từ 9:00 - 21:30 tất cả các ngày trong tuần<br>(bao gồm cả các ngày lễ, ngày Tết).</p>
+                <h4>GÓP Ý, KHIẾU NẠI</h4>
+                <p><i class="icon">📞</i> 1900 6750</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        window.onload = function () {
+            const tableBody = document.querySelector(".favorites-table tbody");
+            let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+            if (favorites.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="5">Chưa có sản phẩm yêu thích nào.</td></tr>';
+            } else {
+                tableBody.innerHTML = "";
+
+                favorites.forEach((item, index) => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td class="img-cell">
+                            <i class="fas fa-times remove-icon" style="cursor: pointer;"></i>
+                            <img src="${item.img}" alt="${item.name}">
+                        </td>
+                        <td><span class="product-name">${item.name}</span></td>
+                        <td><span class="product-price">${item.price}</span></td>
+                        <td><input type="number" min="1" value="1" class="quantity-input"></td>
+                        <td>
+                            <button class="btn-cart">Thêm giỏ hàng</button>
+                        </td>
+                    `;
+
+                    // Sự kiện XÓA không reload
+                    row.querySelector('.remove-icon').addEventListener('click', () => {
+                        removeFavorite(item.name, row);
+                    });
+
+                    // Sự kiện thêm giỏ hàng
+                    row.querySelector('.btn-cart').addEventListener('click', () => {
+                        const quantity = parseInt(row.querySelector('.quantity-input').value);
+                        addToCart(item.name, item.price, item.img, quantity);
+                    });
+
+                    tableBody.appendChild(row);
+                });
+            }
+
+            // XÓA và cập nhật giao diện trực tiếp (không reload)
+            function removeFavorite(name, rowElement) {
+                let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+                favorites = favorites.filter(item => item.name !== name);
+                localStorage.setItem("favorites", JSON.stringify(favorites));
+
+                rowElement.remove(); // Xóa dòng khỏi bảng
+                // Nếu hết sản phẩm → hiển thị thông báo
+                if (document.querySelectorAll('.favorites-table tbody tr').length === 0) {
+                    tableBody.innerHTML = '<tr><td colspan="5">Chưa có sản phẩm yêu thích nào.</td></tr>';
+                }
+            }
+
+
+        };
+        function addToCart(name, price, img, quantity) {
+            // Chuyển giá về số (loại bỏ "đ", dấu .)
+            const numericPrice = parseInt((price + "").replace(/[^\d]/g, ""));
+
+            if (isNaN(numericPrice) || quantity <= 0) {
+                alert("Dữ liệu không hợp lệ.");
+                return;
+            }
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const index = cart.findIndex(item => item.name === name);
+
+            if (index !== -1) {
+                cart[index].quantity += quantity;
+            } else {
+                cart.push({ name, price: numericPrice, image: img, quantity });
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert(`Đã thêm ${quantity} sản phẩm vào giỏ hàng!`);
+        }
+
+        document.getElementById("feedbackForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Ngăn form reload trang
+
+
+            const feedback = document.getElementById("feedbackInput").value.trim();
+
+
+            if (feedback === "") {
+                alert("Vui lòng nhập góp ý của bạn.");
+                return;
+            }
+
+
+
+            // Hiển thị alert
+            alert("Cảm ơn bạn đã góp ý: " + feedback);
+
+
+            // Xoá nội dung sau khi gửi
+            document.getElementById("feedbackInput").value = "";
+        });
+
+    </script>
+
+</body>
+</html>
